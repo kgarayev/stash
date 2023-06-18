@@ -4,6 +4,7 @@ import React from "react";
 // import logo from "../assets/logos/Logo5.svg";
 // import logo from "../assets/logos/Logo7.svg";
 import logo from "../assets/logos/Logo6.svg";
+// import logo from "../assets/logos/Logo8.png";
 
 import "./styles/Logo.css";
 

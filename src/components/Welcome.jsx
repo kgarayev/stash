@@ -1,7 +1,5 @@
 import React from "react";
-import { Routes, Route } from "react-router-dom";
-import Register from "./Register";
-import Login from "./Login";
+import { Link } from "react-router-dom";
 
 import "./styles/Welcome.css";
 import Logo from "./Logo";
@@ -15,8 +13,12 @@ const Welcome = () => {
         <Name></Name>
         <Logo></Logo>
 
-        <button className="button">register</button>
-        <button className="button">login</button>
+        <Link to="/register">
+          <button className="button">register</button>
+        </Link>
+        <Link to="/login">
+          <button className="button">login</button>
+        </Link>
       </div>
     </>
   );
