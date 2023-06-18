@@ -1,0 +1,27 @@
+.logoContainer {
+  width: 15rem;
+}
+
+.logo {
+  width: 100%;
+}
+
+.logoName {
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.3rem;
+  font-size: 3rem;
+}
+
+.logoNameContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* border: 0.1rem solid black; */
+  padding: 1rem;
+  text-align: center;
+  border-radius: 5rem;
+  height: 4rem;
+  width: 8rem;
+  /* background-color: #c8ecc8; */
+}
