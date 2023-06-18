@@ -1,17 +1,21 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./styles/Welcome.css";
+import "../stylesheets/Welcome.css";
 import Logo from "./Logo";
 import Name from "./Name";
-import Button from "@mui/material/Button";
 
 const Welcome = () => {
   return (
     <>
       <div className="welcomeContainer">
-        <Name></Name>
-        <Logo></Logo>
+        <div className="welcomeName">
+          <Name></Name>
+        </div>
+
+        <div className="welcomeLogo">
+          <Logo></Logo>
+        </div>
 
         <Link to="/register">
           <button className="button">register</button>

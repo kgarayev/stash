@@ -1,0 +1,17 @@
+.welcomeContainer {
+  /* border: 0.1rem grey solid; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.welcomeName {
+  font-size: 2.5rem;
+  color: var(--primary-color);
+}
+
+.welcomeLogo {
+  width: 20rem;
+  padding: 3rem;
+}

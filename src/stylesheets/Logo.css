@@ -1,0 +1,15 @@
+.logo {
+  width: 100%;
+}
+
+.logoName {
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.25rem;
+}
+
+.logoNameContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
