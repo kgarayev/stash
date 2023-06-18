@@ -1,0 +1,37 @@
+.buttonOne {
+  background-color: #00e800;
+  color: rgb(0, 0, 0);
+  border: 0.15rem solid #000000;
+  border-radius: 5rem;
+  box-shadow: #868686 2px 2px 0 0;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 500;
+  font-size: 1.8rem;
+  padding: 0 1rem;
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin: 0.25rem;
+  width: 10rem;
+}
+
+.buttonOne:hover {
+  background-color: #fff;
+  color: black;
+}
+
+.buttonOne:active {
+  box-shadow: #000000 2px 2px 0 0;
+  transform: translate(2px, 2px);
+}
+
+@media (min-width: 768px) {
+  .buttonOne {
+    min-width: 120px;
+    padding: 0 25px;
+  }
+}

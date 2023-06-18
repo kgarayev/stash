@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "./Logo";
 import Name from "./Name";
 import "./styles/Welcome.css";
-import { Button } from "antd";
+import Button from "@mui/material/Button";
 
 const Welcome = () => {
   return (
@@ -10,7 +10,9 @@ const Welcome = () => {
       <div className="welcomeContainer">
         <Name></Name>
         <Logo></Logo>
-        <Button type="primary">Primary Button</Button>
+
+        <button className="buttonOne">register</button>
+        <button className="buttonOne">login</button>
       </div>
     </>
   );
