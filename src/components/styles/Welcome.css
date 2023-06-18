@@ -1,5 +1,5 @@
 .welcomeContainer {
-  border: 0.1rem grey solid;
+  /* border: 0.1rem grey solid; */
   display: flex;
   flex-direction: column;
   align-items: center;
