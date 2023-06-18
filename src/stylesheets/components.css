@@ -28,13 +28,21 @@
   width: 1.6rem;
 }
 
-.componentBox {
+.boxWrapper {
   background-color: var(--background-color);
   width: 95%;
   height: 85%;
   border-radius: 2rem;
   border: none;
-  padding: 2rem;
+  padding: 1rem;
+}
+
+.componentBox {
+  background-color: var(--background-color);
+  width: 100%;
+  height: 100%;
+  border: none;
+  padding: 1rem;
   overflow-y: auto;
 }
 

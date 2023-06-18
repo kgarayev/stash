@@ -45,101 +45,102 @@ const Register = () => {
           </div>
         </div>
 
-        <div className="componentBox">
-          <div className="componentBoxHeader">
-            <h1>Register</h1>
-            <p>Let's Sign Up first</p>
-          </div>
-
-          <div className="registerNames">
-            <TextField
-              required
-              autoFocus
-              fullWidth
-              label="First Name"
-              margin="dense"
-              type="string"
-              size="small"
-            />
-            <TextField
-              required
-              fullWidth
-              label="Last Name"
-              margin="dense"
-              type="string"
-              size="small"
-            />
-          </div>
-
-          <div className="registerNumber">
-            <p>+44</p>
-            <TextField
-              fullWidth
-              required
-              label="Phone Number"
-              margin="dense"
-              type="string"
-              size="small"
-            />
-          </div>
-
-          <div className="registerEmail">
-            <TextField
-              fullWidth
-              required
-              label="Email"
-              margin="dense"
-              type="string"
-              size="small"
-            />
-          </div>
-
-          <div className="registerDob">
-            <LocalizationProvider dateAdapter={AdapterDayjs}>
-              <DateField
-                required
-                disableFuture
-                fullWidth
-                margin="dense"
-                maxDate={formattedDate}
-                label="Date of Birth"
-                format="DD/MM/YYYY"
-                size="small"
-              />
-            </LocalizationProvider>
-          </div>
-
-          <div className="registerAddress">
-            <div className="registerStreet">
-              <TextField
-                fullWidth
-                required
-                label="Street Address"
-                margin="dense"
-                type="string"
-                size="small"
-              />
+        <div className="boxWrapper">
+          <div className="componentBox">
+            <div className="componentBoxHeader">
+              <h1>Register</h1>
+              <p>Let's Sign Up first</p>
             </div>
-            <div className="registerPostcode">
+
+            <div className="registerNames">
               <TextField
-                fullWidth
                 required
-                label="Town/City"
+                autoFocus
+                fullWidth
+                label="First Name"
                 margin="dense"
                 type="string"
                 size="small"
               />
-
               <TextField
-                fullWidth
                 required
-                label="Postcode"
+                fullWidth
+                label="Last Name"
                 margin="dense"
                 type="string"
                 size="small"
               />
             </div>
 
+            <div className="registerNumber">
+              <p>+44</p>
+              <TextField
+                fullWidth
+                required
+                label="Phone Number"
+                margin="dense"
+                type="string"
+                size="small"
+              />
+            </div>
+
+            <div className="registerEmail">
+              <TextField
+                fullWidth
+                required
+                label="Email"
+                margin="dense"
+                type="string"
+                size="small"
+              />
+            </div>
+
+            <div className="registerDob">
+              <LocalizationProvider dateAdapter={AdapterDayjs}>
+                <DateField
+                  required
+                  disableFuture
+                  fullWidth
+                  margin="dense"
+                  maxDate={formattedDate}
+                  label="Date of Birth"
+                  format="DD/MM/YYYY"
+                  size="small"
+                />
+              </LocalizationProvider>
+            </div>
+
+            <div className="registerAddress">
+              <div className="registerStreet">
+                <TextField
+                  fullWidth
+                  required
+                  label="Street Address"
+                  margin="dense"
+                  type="string"
+                  size="small"
+                />
+              </div>
+              <div className="registerPostcode">
+                <TextField
+                  fullWidth
+                  required
+                  label="Town/City"
+                  margin="dense"
+                  type="string"
+                  size="small"
+                />
+
+                <TextField
+                  fullWidth
+                  required
+                  label="Postcode"
+                  margin="dense"
+                  type="string"
+                  size="small"
+                />
+              </div>
+            </div>
             <div className="registerPassword">
               <TextField
                 fullWidth

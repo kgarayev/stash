@@ -36,6 +36,28 @@ html:focus-within {
   scroll-behavior: smooth;
 }
 
+/* Scrollbar only */
+
+/* Width */
+body ::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+/* Track */
+body ::-webkit-scrollbar-track {
+  border-radius: 50rem;
+  height: 5rem;
+}
+
+/* Handle */
+body ::-webkit-scrollbar-thumb {
+  border-radius: 50rem;
+  background: rgb(231, 231, 231);
+  width: 5rem;
+}
+
+/* responsive elements  */
+
 *,
 *::before,
 *::after {
