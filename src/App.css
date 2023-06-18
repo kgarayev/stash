@@ -1,9 +1,9 @@
-.buttonOne {
-  background-color: #00e800;
-  color: rgb(0, 0, 0);
-  border: 0.15rem solid #000000;
+/* .buttonOne {
+  background-color: #37ab2f;
+  color: rgb(255, 255, 255);
+  border: none;
   border-radius: 5rem;
-  box-shadow: #868686 2px 2px 0 0;
+  box-shadow: #000000 2px 2px 0 0;
   cursor: pointer;
   display: inline-block;
   font-weight: 500;
@@ -34,4 +34,72 @@
     min-width: 120px;
     padding: 0 25px;
   }
+} */
+
+/* CSS */
+.button {
+  appearance: none;
+  color: white;
+  background-color: #37ab2f;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 5rem;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
+    rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 600;
+  font-size: 1.6rem;
+  line-height: 1.5;
+
+  list-style: none;
+  padding: 0.25rem 0.5rem;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+  margin: 0.25rem;
+  width: 10rem;
+}
+
+.buttonAltOne {
+  background-color: white;
+  color: black;
+}
+
+.button:hover {
+  background-color: #f3f4f6;
+  color: black;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+.button:disabled {
+  background-color: #fafbfc;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959da5;
+  cursor: default;
+}
+
+.button:active {
+  background-color: #edeff2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+.button:focus {
+  outline: 1px transparent;
+}
+
+.button:before {
+  display: none;
+}
+
+.button:-webkit-details-marker {
+  display: none;
 }

@@ -11,8 +11,8 @@ const Welcome = () => {
         <Name></Name>
         <Logo></Logo>
 
-        <button className="buttonOne">register</button>
-        <button className="buttonOne">login</button>
+        <button className="button">register</button>
+        <button className="button">login</button>
       </div>
     </>
   );
