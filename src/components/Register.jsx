@@ -1,21 +1,20 @@
-import React, { useEffect, useState } from "react";
+// importing react, components and libraries
+import React from "react";
+import { Link } from "react-router-dom";
+import { useForm, Controller } from "react-hook-form";
 import Name from "./Name";
-import Logo from "./Logo";
+import Button from "./Button";
+
+// importing mui stuff
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import InputLabel from "@mui/material/InputLabel";
-import InputAdornment from "@mui/material/InputAdornment";
-import FormControl from "@mui/material/FormControl";
-import OutlinedInput from "@mui/material/OutlinedInput";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { DatePicker } from "@mui/x-date-pickers/DatePicker";
-import { DemoContainer } from "@mui/x-date-pickers/internals/demo";
 import { DateField } from "@mui/x-date-pickers/DateField";
 import Checkbox from "@mui/material/Checkbox";
-import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import Input from "@mui/material/Input";
+
+// importing stylesheets
 import logo from "../assets/logos/Logo7.svg";
 import "../stylesheets/Register.css";
 
@@ -31,17 +30,21 @@ const Register = () => {
     <>
       <div className="component">
         <div className="componentHeader">
-          <div className="componentLogoContainer">
-            <div className="componentLogo">
-              <img src={logo} alt="logo" className="logo" />
+          <Link to="/">
+            <div className="componentLogoContainer">
+              <div className="componentLogo">
+                <img src={logo} alt="logo" className="logo" />
+              </div>
+              <Name></Name>
             </div>
-            <Name></Name>
-          </div>
+          </Link>
 
           <div>
-            <IconButton sx={{ color: "white", padding: "0.75rem" }}>
-              <CloseIcon />
-            </IconButton>
+            <Link to="/">
+              <IconButton sx={{ color: "white", padding: "0.75rem" }}>
+                <CloseIcon />
+              </IconButton>
+            </Link>
           </div>
         </div>
 
@@ -79,7 +82,7 @@ const Register = () => {
                 required
                 label="Phone Number"
                 margin="dense"
-                type="string"
+                type="number"
                 size="small"
               />
             </div>
@@ -164,6 +167,10 @@ const Register = () => {
             <div className="registerAgreement">
               <Checkbox sx={{ padding: "0rem" }} />
               <p>I agree to Stash's Cookie and Privacy Policy</p>
+            </div>
+
+            <div className="registerButton">
+              <Button type="register" />
             </div>
           </div>
         </div>

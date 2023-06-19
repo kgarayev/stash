@@ -18,13 +18,15 @@ const Welcome = () => {
           <Logo></Logo>
         </div>
 
-        <Link to="/register">
-          <Button type={"register"} />
-        </Link>
+        <div className="welcomeControls">
+          <Link to="/register">
+            <Button type={"register"} />
+          </Link>
 
-        <Link to="/login">
-          <Button type={"login"} />
-        </Link>
+          <Link to="/login">
+            <Button type={"login"} />
+          </Link>
+        </div>
       </div>
     </>
   );

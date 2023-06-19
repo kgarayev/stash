@@ -26,3 +26,14 @@
   gap: 1rem;
   margin-top: 1rem;
 }
+
+.registerButton {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  max-width: 20rem;
+  margin-top: 1rem;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
