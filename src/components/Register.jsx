@@ -19,7 +19,22 @@ import logo from "../assets/logos/Logo7.svg";
 import "../stylesheets/Register.css";
 
 const Register = () => {
-  const onSubmit = () => console.log("form submitted");
+  const onSubmit = (e) => {
+    e.preventDefault();
+    console.log("form submitted");
+
+    // Read the form data
+    const form = e.target;
+    const formData = new FormData(form);
+
+    for (let pair of formData.entries()) {
+      console.log(pair[0], pair[1]);
+    }
+
+    // Or you can work with it as a plain object:
+    // const formJson = Object.fromEntries(formData.entries());
+    // console.log(formJson);
+  };
 
   // making sure there is a limit on the age
   const currentDate = new Date();
@@ -60,16 +75,21 @@ const Register = () => {
 
             <form onSubmit={onSubmit}>
               <div className="registerNames">
-                <Input label="first name" type="string"></Input>
+                <Input
+                  label="first name"
+                  type="string"
+                  autoFocus={true}
+                  name="firstName"
+                ></Input>
 
-                <Input label="last name" type="string"></Input>
+                <Input label="last name" type="string" name="lastName"></Input>
               </div>
               <div className="registerNumber">
                 <p>+44</p>
-                <Input label="phone number" type="number"></Input>
+                <Input label="phone number" type="number" name="number"></Input>
               </div>
               <div className="registerEmail">
-                <Input label="email" type="email"></Input>
+                <Input label="email" type="email" name="email"></Input>
               </div>
               <div className="registerDob">
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
@@ -83,29 +103,40 @@ const Register = () => {
                     label="date of birth"
                     format="DD/MM/YYYY"
                     size="small"
+                    name="dob"
                   />
                 </LocalizationProvider>
               </div>
               <div className="registerAddress">
                 <div className="registerStreet">
-                  <Input label="street address" type="string"></Input>
+                  <Input
+                    label="street address"
+                    type="string"
+                    name="street"
+                  ></Input>
                 </div>
 
                 <div className="registerPostcode">
-                  <Input label="town/city" type="string"></Input>
+                  <Input label="town/city" type="string" name="city"></Input>
 
-                  <Input label="postcode" type="string"></Input>
+                  <Input label="postcode" type="string" name="postcode"></Input>
                 </div>
               </div>
               <div className="registerPassword">
-                <Input label="password" type="string"></Input>
+                <Input label="password" type="string" name="password"></Input>
 
-                <Input label="confirm password" type="string"></Input>
+                <Input
+                  label="confirm password"
+                  type="string"
+                  name="repeatPassword"
+                ></Input>
               </div>
+
               <div className="registerAgreement">
-                <Checkbox sx={{ padding: "0rem" }} />
+                <Checkbox sx={{ padding: "0rem" }} name="checkbox" />
                 <p>I agree to stash's cookie and privacy policy</p>
               </div>
+
               <div className="registerButton">
                 <Button text="register" type="submit" />
               </div>

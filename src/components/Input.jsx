@@ -5,12 +5,15 @@ import React from "react";
 import TextField from "@mui/material/TextField";
 
 const Input = (props) => {
+  const { label, type, name, autoFocus } = props;
+
   return (
     <>
       <TextField
+        name={name}
         InputProps={{ sx: { borderRadius: "5rem" } }}
         required
-        autoFocus
+        autoFocus={autoFocus}
         fullWidth
         label={props.label}
         margin="dense"
