@@ -162,6 +162,11 @@ select {
   font: inherit;
 }
 
+/* 
+.MuiOutlinedInput-notchedOutline {
+  border-radius: 5rem !important;
+} */
+
 /*****************************
   * ACCESSIBILITY
   ******************************/

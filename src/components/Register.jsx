@@ -1,9 +1,9 @@
 // importing react, components and libraries
 import React from "react";
 import { Link } from "react-router-dom";
-import { useForm, Controller } from "react-hook-form";
 import Name from "./Name";
 import Button from "./Button";
+import Input from "./Input";
 
 // importing mui stuff
 import IconButton from "@mui/material/IconButton";
@@ -19,9 +19,12 @@ import logo from "../assets/logos/Logo7.svg";
 import "../stylesheets/Register.css";
 
 const Register = () => {
+  const onSubmit = () => console.log("form submitted");
+
+  // making sure there is a limit on the age
   const currentDate = new Date();
   const year = currentDate.getFullYear() - 18;
-  const month = currentDate.getMonth() + 1; // Adding 1 to adjust month index (0-11 to 1-12)
+  const month = currentDate.getMonth() + 1;
   const day = currentDate.getDate();
 
   const formattedDate = `${day}/${month}/${year}`;
@@ -52,126 +55,61 @@ const Register = () => {
           <div className="componentBox">
             <div className="componentBoxHeader">
               <h1>Register</h1>
-              <p>Let's Sign Up first</p>
+              <p>let's sign up first</p>
             </div>
 
-            <div className="registerNames">
-              <TextField
-                required
-                autoFocus
-                fullWidth
-                label="First Name"
-                margin="dense"
-                type="string"
-                size="small"
-              />
-              <TextField
-                required
-                fullWidth
-                label="Last Name"
-                margin="dense"
-                type="string"
-                size="small"
-              />
-            </div>
+            <form onSubmit={onSubmit}>
+              <div className="registerNames">
+                <Input label="first name" type="string"></Input>
 
-            <div className="registerNumber">
-              <p>+44</p>
-              <TextField
-                fullWidth
-                required
-                label="Phone Number"
-                margin="dense"
-                type="number"
-                size="small"
-              />
-            </div>
-
-            <div className="registerEmail">
-              <TextField
-                fullWidth
-                required
-                label="Email"
-                margin="dense"
-                type="string"
-                size="small"
-              />
-            </div>
-
-            <div className="registerDob">
-              <LocalizationProvider dateAdapter={AdapterDayjs}>
-                <DateField
-                  required
-                  disableFuture
-                  fullWidth
-                  margin="dense"
-                  maxDate={formattedDate}
-                  label="Date of Birth"
-                  format="DD/MM/YYYY"
-                  size="small"
-                />
-              </LocalizationProvider>
-            </div>
-
-            <div className="registerAddress">
-              <div className="registerStreet">
-                <TextField
-                  fullWidth
-                  required
-                  label="Street Address"
-                  margin="dense"
-                  type="string"
-                  size="small"
-                />
+                <Input label="last name" type="string"></Input>
               </div>
-              <div className="registerPostcode">
-                <TextField
-                  fullWidth
-                  required
-                  label="Town/City"
-                  margin="dense"
-                  type="string"
-                  size="small"
-                />
-
-                <TextField
-                  fullWidth
-                  required
-                  label="Postcode"
-                  margin="dense"
-                  type="string"
-                  size="small"
-                />
+              <div className="registerNumber">
+                <p>+44</p>
+                <Input label="phone number" type="number"></Input>
               </div>
-            </div>
-            <div className="registerPassword">
-              <TextField
-                fullWidth
-                required
-                label="Password"
-                margin="dense"
-                type="string"
-                size="small"
-              />
+              <div className="registerEmail">
+                <Input label="email" type="email"></Input>
+              </div>
+              <div className="registerDob">
+                <LocalizationProvider dateAdapter={AdapterDayjs}>
+                  <DateField
+                    InputProps={{ sx: { borderRadius: "5rem" } }}
+                    required
+                    disableFuture
+                    fullWidth
+                    margin="dense"
+                    maxDate={formattedDate}
+                    label="date of birth"
+                    format="DD/MM/YYYY"
+                    size="small"
+                  />
+                </LocalizationProvider>
+              </div>
+              <div className="registerAddress">
+                <div className="registerStreet">
+                  <Input label="street address" type="string"></Input>
+                </div>
 
-              <TextField
-                fullWidth
-                required
-                label="Confirm Password"
-                margin="dense"
-                type="string"
-                size="small"
-              />
-            </div>
+                <div className="registerPostcode">
+                  <Input label="town/city" type="string"></Input>
 
-            <div className="registerAgreement">
-              <Checkbox sx={{ padding: "0rem" }} />
-              <p>I agree to Stash's Cookie and Privacy Policy</p>
-            </div>
+                  <Input label="postcode" type="string"></Input>
+                </div>
+              </div>
+              <div className="registerPassword">
+                <Input label="password" type="string"></Input>
 
-            <div className="registerButton">
-              <Button type="register" />
-            </div>
+                <Input label="confirm password" type="string"></Input>
+              </div>
+              <div className="registerAgreement">
+                <Checkbox sx={{ padding: "0rem" }} />
+                <p>I agree to stash's cookie and privacy policy</p>
+              </div>
+              <div className="registerButton">
+                <Button text="register" type="submit" />
+              </div>
+            </form>
           </div>
         </div>
       </div>
