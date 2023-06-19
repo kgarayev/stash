@@ -13,6 +13,8 @@
   display: flex;
   justify-content: space-between;
   padding: 1rem;
+  padding-left: 3rem;
+  padding-right: 2rem;
   width: 100%;
 }
 
@@ -35,6 +37,7 @@
   border-radius: 2rem;
   border: none;
   padding: 1rem;
+  max-width: 50rem;
 }
 
 .componentBox {

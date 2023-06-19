@@ -3,6 +3,7 @@
   justify-content: space-around;
   margin-top: 1rem;
   gap: 1rem;
+  border-radius: 5rem;
 }
 
 .registerNumber {
@@ -15,4 +16,13 @@
   display: flex;
   justify-content: space-around;
   gap: 1rem;
+}
+
+.registerAgreement {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 1.4rem;
+  gap: 1rem;
+  margin-top: 1rem;
 }

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "../stylesheets/Welcome.css";
 import Logo from "./Logo";
 import Name from "./Name";
+import Button from "./Button";
 
 const Welcome = () => {
   return (
@@ -18,10 +19,11 @@ const Welcome = () => {
         </div>
 
         <Link to="/register">
-          <button className="button">register</button>
+          <Button type={"register"} />
         </Link>
+
         <Link to="/login">
-          <button className="button">login</button>
+          <Button type={"login"} />
         </Link>
       </div>
     </>
