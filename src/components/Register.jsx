@@ -1,9 +1,10 @@
 // importing react, components and libraries
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Name from "./Name";
 import Button from "./Button";
 import Input from "./Input";
+import { validate } from "../validation";
 
 // importing mui stuff
 import IconButton from "@mui/material/IconButton";
@@ -11,14 +12,35 @@ import CloseIcon from "@mui/icons-material/Close";
 import { LocalizationProvider } from "@mui/x-date-pickers";
 import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
 import { DateField } from "@mui/x-date-pickers/DateField";
-import Checkbox from "@mui/material/Checkbox";
-import TextField from "@mui/material/TextField";
 
 // importing stylesheets
 import logo from "../assets/logos/Logo7.svg";
 import "../stylesheets/Register.css";
 
 const Register = () => {
+  // temporary state - to be changed to redux tookit
+  const [input, setInput] = useState({
+    firstName: "",
+    lastName: "",
+    number: "",
+    email: "",
+    dob: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const [errors, setErrors] = useState(null);
+
+  const onInput = async (e) => {
+    const result = { ...input, [e.target.name]: e.target.value };
+    console.log(e.target.value);
+
+    // validate
+    setErrors(await validate(result, "register"));
+
+    setInput(result);
+  };
+
   const onSubmit = (e) => {
     e.preventDefault();
     console.log("form submitted");
@@ -76,13 +98,16 @@ const Register = () => {
                   type="string"
                   autoFocus={true}
                   name="firstName"
+                  onInput={onInput}
                 ></Input>
+
+                <p>{errors && errors.firstName}</p>
 
                 <Input label="last name" type="string" name="lastName"></Input>
               </div>
 
               <div className="registerNumber">
-                <Input label="phone number" type="number" name="number"></Input>
+                <Input label="phone number" type="string" name="number"></Input>
               </div>
 
               <div className="registerEmail">

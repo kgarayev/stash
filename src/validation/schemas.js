@@ -12,7 +12,6 @@ export const register = {
     .normalize()
     .lowercase()
     .messages({
-      "string.base": "First name must be a string.",
       "string.empty": "First name is required.",
       "string.min": "First name should have a minimum length of 1.",
       "string.max": "First name should have a maximum length of 50.",
@@ -30,11 +29,11 @@ export const register = {
     .normalize()
     .lowercase()
     .messages({
-      "string.empty": "First name is required.",
-      "string.min": "First name should have a minimum length of 1.",
-      "string.max": "First name should have a maximum length of 50.",
+      "string.empty": "Last name is required.",
+      "string.min": "Last name should have a minimum length of 1.",
+      "string.max": "Last name should have a maximum length of 50.",
       "string.pattern.base":
-        "First name can only contain letters, spaces, hyphens, and apostrophes.",
+        "Last name can only contain letters, spaces, hyphens, and apostrophes.",
     }),
 
   number: joi

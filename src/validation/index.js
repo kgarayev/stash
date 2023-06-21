@@ -1,7 +1,8 @@
-import Joi from "joi";
+import joi from "joi";
 import { register, login } from "./schemas";
 
 export const validate = async (payload, type) => {
+  console.log(payload);
   let option;
 
   switch (type) {
