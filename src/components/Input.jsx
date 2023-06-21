@@ -10,7 +10,6 @@ const Input = (props) => {
   return (
     <>
       <TextField
-        id={id}
         name={name}
         InputProps={{ sx: { borderRadius: "1rem" } }}
         required
