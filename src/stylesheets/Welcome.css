@@ -17,5 +17,9 @@
 }
 
 .welcomeControls {
-  width: 20rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 30rem;
+  gap: 0.5rem;
 }

@@ -157,15 +157,12 @@ const Register = () => {
                 ></Input>
               </div>
 
-              <div className="registerAgreement">
-                {/* <Checkbox sx={{ padding: "0rem" }} name="checkbox" /> */}
-                <p>
-                  By clicking "register" I agree to stash's cookie and privacy
-                  policy
-                </p>
-              </div>
-
               <div className="registerButton">
+                <div className="registerAgreement">
+                  <p>
+                    by clicking "register" I agree to stash's privacy policy
+                  </p>
+                </div>
                 <Button text="register" type="submit" />
               </div>
             </form>
