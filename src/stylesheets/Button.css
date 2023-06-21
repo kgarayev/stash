@@ -1,4 +1,5 @@
 /* BUTTON STUFF */
+/* main button  */
 .button {
   appearance: none;
   color: white;
@@ -14,6 +15,7 @@
   font-weight: 600;
   font-size: 1.6rem;
   line-height: 2;
+  height: 3.6rem;
 
   list-style: none;
   padding: 0.25rem 0.5rem;
@@ -30,8 +32,7 @@
 }
 
 .button:hover {
-  background-color: var(--primary-sub-color);
-  color: black;
+  background-color: var(--tertiary-color);
   text-decoration: none;
   transition-duration: 0.1s;
 }
@@ -59,4 +60,19 @@
 
 .button:-webkit-details-marker {
   display: none;
+}
+
+/* secondary button  */
+
+.secondary {
+  background-color: var(--background-color);
+  color: var(--primary-color);
+  /* border: 0.15rem solid var(--primary-sub-color); */
+}
+
+.secondary:hover {
+  background-color: var(--primary-sub-color);
+  color: white;
+  text-decoration: none;
+  transition-duration: 0.1s;
 }

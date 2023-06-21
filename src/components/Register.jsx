@@ -27,13 +27,9 @@ const Register = () => {
     const form = e.target;
     const formData = new FormData(form);
 
-    for (let pair of formData.entries()) {
-      console.log(pair[0], pair[1]);
-    }
-
     // Or you can work with it as a plain object:
-    // const formJson = Object.fromEntries(formData.entries());
-    // console.log(formJson);
+    const formJson = Object.fromEntries(formData.entries());
+    console.log(formJson);
   };
 
   // making sure there is a limit on the age
@@ -84,17 +80,20 @@ const Register = () => {
 
                 <Input label="last name" type="string" name="lastName"></Input>
               </div>
+
               <div className="registerNumber">
                 <p>+44</p>
                 <Input label="phone number" type="number" name="number"></Input>
               </div>
+
               <div className="registerEmail">
                 <Input label="email" type="email" name="email"></Input>
               </div>
+
               <div className="registerDob">
                 <LocalizationProvider dateAdapter={AdapterDayjs}>
                   <DateField
-                    InputProps={{ sx: { borderRadius: "5rem" } }}
+                    InputProps={{ sx: { borderRadius: "1rem" } }}
                     required
                     disableFuture
                     fullWidth
@@ -107,7 +106,8 @@ const Register = () => {
                   />
                 </LocalizationProvider>
               </div>
-              <div className="registerAddress">
+
+              {/* <div className="registerAddress">
                 <div className="registerStreet">
                   <Input
                     label="street address"
@@ -121,7 +121,8 @@ const Register = () => {
 
                   <Input label="postcode" type="string" name="postcode"></Input>
                 </div>
-              </div>
+              </div> */}
+
               <div className="registerPassword">
                 <Input label="password" type="string" name="password"></Input>
 
@@ -133,8 +134,11 @@ const Register = () => {
               </div>
 
               <div className="registerAgreement">
-                <Checkbox sx={{ padding: "0rem" }} name="checkbox" />
-                <p>I agree to stash's cookie and privacy policy</p>
+                {/* <Checkbox sx={{ padding: "0rem" }} name="checkbox" /> */}
+                <p>
+                  By clicking "register" I agree to stash's cookie and privacy
+                  policy
+                </p>
               </div>
 
               <div className="registerButton">

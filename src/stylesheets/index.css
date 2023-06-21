@@ -26,10 +26,13 @@ html {
   font-synthesis: none;
   text-rendering: optimizeLegibility;
 
-  --primary-color: #37ab2f;
-  --primary-sub-color: #9fd49a;
-  --secondary-color: #83259d;
+  --primary-color: #00a88f;
+  --primary-sub-color: #7bccbc;
+  --secondary-color: #bb5ec6;
+  --tertiary-color: #007b60;
   --background-color: #f7f7f7;
+  --border-radius-1: 5rem;
+  --border-radius-2: 2rem;
 }
 
 html:focus-within {

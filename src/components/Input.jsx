@@ -11,7 +11,7 @@ const Input = (props) => {
     <>
       <TextField
         name={name}
-        InputProps={{ sx: { borderRadius: "5rem" } }}
+        InputProps={{ sx: { borderRadius: "1rem" } }}
         required
         autoFocus={autoFocus}
         fullWidth

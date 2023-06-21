@@ -24,7 +24,7 @@ const Welcome = () => {
           </Link>
 
           <Link to="/login">
-            <Button text={"login"} />
+            <Button text={"login"} type={"secondary"} />
           </Link>
         </div>
       </div>
