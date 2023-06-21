@@ -82,7 +82,6 @@ const Register = () => {
               </div>
 
               <div className="registerNumber">
-                <p>+44</p>
                 <Input label="phone number" type="number" name="number"></Input>
               </div>
 
