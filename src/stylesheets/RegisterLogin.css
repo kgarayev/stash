@@ -40,3 +40,15 @@
   margin-bottom: 0;
   padding-bottom: 0;
 }
+
+.errorMessage {
+  font-size: 1.2rem;
+  margin-left: 0.5rem;
+  color: var(--secondary-color);
+  font-weight: 500;
+  margin-bottom: 0.05rem;
+}
+
+.inputContainer {
+  display: block;
+}

@@ -15,7 +15,7 @@ import { DateField } from "@mui/x-date-pickers/DateField";
 
 // importing stylesheets
 import logo from "../assets/logos/Logo7.svg";
-import "../stylesheets/Register.css";
+import "../stylesheets/RegisterLogin.css";
 
 const Register = () => {
   // local state - to be changed to redux tookit
@@ -29,7 +29,7 @@ const Register = () => {
     confirmPassword: "",
   });
 
-  const [errors, setErrors] = useState(null);
+  const [errors, setErrors] = useState({});
 
   const onInput = async (e) => {
     const result = { ...input, [e.target.name]: e.target.value };
@@ -94,50 +94,62 @@ const Register = () => {
 
               <form onSubmit={onSubmit}>
                 <div className="registerNames">
-                  <Input
-                    label="first name"
-                    type="string"
-                    autoFocus={true}
-                    name="firstName"
-                    onInput={onInput}
-                  ></Input>
+                  <div className="inputContainer">
+                    <Input
+                      label="first name"
+                      type="string"
+                      autoFocus={true}
+                      name="firstName"
+                      placeholder="Rick"
+                      onInput={onInput}
+                    ></Input>
+                    <p className="errorMessage">{errors.firstName}</p>
+                  </div>
 
-                  <p>{errors && errors.firstName}</p>
-
-                  <Input
-                    label="last name"
-                    type="string"
-                    name="lastName"
-                  ></Input>
+                  <div>
+                    <Input
+                      label="last name"
+                      type="string"
+                      name="lastName"
+                      placeholder="07123456789"
+                      onInput={onInput}
+                    ></Input>
+                    <p className="errorMessage">{errors.lastName}</p>
+                  </div>
                 </div>
 
-                <div className="registerNumber">
+                <div className="registerNumber inputContainer">
                   <Input
                     label="phone number"
                     type="string"
                     name="number"
+                    placeholder="07123456789"
+                    onInput={onInput}
                   ></Input>
+                  <p className="errorMessage">{errors.number}</p>
                 </div>
 
-                <div className="registerEmail">
-                  <Input label="email" type="email" name="email"></Input>
+                <div className="registerEmail inputContainer">
+                  <Input
+                    label="email"
+                    type="email"
+                    name="email"
+                    placeholder="rick@sanchez.com"
+                    onInput={onInput}
+                  ></Input>
+                  <p className="errorMessage">{errors.email}</p>
                 </div>
 
-                <div className="registerDob">
-                  <LocalizationProvider dateAdapter={AdapterDayjs}>
-                    <DateField
-                      InputProps={{ sx: { borderRadius: "1rem" } }}
-                      required
-                      disableFuture
-                      fullWidth
-                      margin="dense"
-                      maxDate={formattedDate}
-                      label="date of birth"
-                      format="DD/MM/YYYY"
-                      size="small"
-                      name="dob"
-                    />
-                  </LocalizationProvider>
+                <div className="registerDob inputContainer">
+                  <Input
+                    label="date of birth"
+                    type="string"
+                    name="dob"
+                    placeholder="dd/mm/yyyy"
+                    onInput={onInput}
+                  ></Input>
+
+                  <p className="errorMessage">{errors.dob}</p>
                 </div>
 
                 {/* <div className="registerAddress">
@@ -157,13 +169,25 @@ const Register = () => {
               </div> */}
 
                 <div className="registerPassword">
-                  <Input label="password" type="string" name="password"></Input>
+                  <div className="inputContainer">
+                    <Input
+                      label="password"
+                      type="string"
+                      name="password"
+                      onInput={onInput}
+                    ></Input>
+                    <p className="errorMessage">{errors.password}</p>
+                  </div>
 
-                  <Input
-                    label="confirm password"
-                    type="string"
-                    name="repeatPassword"
-                  ></Input>
+                  <div className="inputContainer">
+                    <Input
+                      label="confirm password"
+                      type="string"
+                      name="repeatPassword"
+                      onInput={onInput}
+                    ></Input>
+                    <p className="errorMessage">{errors.confirmPassword}</p>
+                  </div>
                 </div>
 
                 <div className="registerButton">

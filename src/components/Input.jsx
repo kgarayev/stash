@@ -5,7 +5,7 @@ import React from "react";
 import TextField from "@mui/material/TextField";
 
 const Input = (props) => {
-  const { label, type, name, autoFocus, onInput, id } = props;
+  const { label, type, name, autoFocus, onInput, id, placeholder } = props;
 
   return (
     <>
@@ -20,6 +20,7 @@ const Input = (props) => {
         type={type}
         size="small"
         onInput={onInput}
+        placeholder={placeholder}
       />
     </>
   );

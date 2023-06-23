@@ -13,8 +13,8 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem;
-  padding-bottom: 0;
+  padding: 1.4rem;
+  padding-bottom: 1.4rem;
 
   width: 100%;
 }
