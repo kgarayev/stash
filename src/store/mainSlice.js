@@ -12,6 +12,10 @@ const initialState = {
     confirmPassword: "",
   },
   errors: null,
+  loginInput: {
+    email: "",
+    password: "",
+  },
 };
 
 // export the rducer functions
@@ -29,14 +33,20 @@ export const mainSlice = createSlice({
     setErrors: (state, action) => {
       state.errors = action.payload;
     },
+
+    // save the registration input values
+    setLoginInput: (state, action) => {
+      state.loginInput = action.payload;
+    },
   },
 });
 
 // exporting the reducer functions
-export const { setRegisterInput, setErrors } = mainSlice.actions;
+export const { setRegisterInput, setErrors, setLoginInput } = mainSlice.actions;
 
 // exporting the selectors
 export const selectRegisterInput = (state) => state.main.registerInput;
 export const selectErrors = (state) => state.main.errors;
+export const selectLoginInput = (state) => state.main.loginInput;
 
 export default mainSlice.reducer;

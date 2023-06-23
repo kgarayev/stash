@@ -48,6 +48,13 @@ const Register = () => {
       return;
     }
 
+    for (let key in input) {
+      if (input[key] === "") {
+        console.log("Form NOT submitted.");
+        return;
+      }
+    }
+
     // we can display some success toast here
     console.log("Form submitted.");
 
@@ -96,7 +103,7 @@ const Register = () => {
                 <div className="registerNames">
                   <div className="inputContainer">
                     <Input
-                      label="first name"
+                      label="first name *"
                       type="string"
                       autoFocus={true}
                       name="firstName"
@@ -108,7 +115,7 @@ const Register = () => {
 
                   <div className="inputContainer">
                     <Input
-                      label="last name"
+                      label="last name *"
                       type="string"
                       name="lastName"
                       placeholder="07123456789"
@@ -120,7 +127,7 @@ const Register = () => {
 
                 <div className="registerNumber inputContainer">
                   <Input
-                    label="phone number"
+                    label="phone number *"
                     type="string"
                     name="number"
                     placeholder="07123456789"
@@ -131,8 +138,8 @@ const Register = () => {
 
                 <div className="registerEmail inputContainer">
                   <Input
-                    label="email"
-                    type="email"
+                    label="email *"
+                    type="string"
                     name="email"
                     placeholder="rick@sanchez.com"
                     onInput={onInput}
@@ -142,7 +149,7 @@ const Register = () => {
 
                 <div className="registerDob inputContainer">
                   <Input
-                    label="date of birth"
+                    label="date of birth *"
                     type="string"
                     name="dob"
                     placeholder="dd/mm/yyyy"
@@ -171,7 +178,7 @@ const Register = () => {
                 <div className="registerPassword">
                   <div className="inputContainer">
                     <Input
-                      label="password"
+                      label="password *"
                       type="string"
                       name="password"
                       onInput={onInput}
@@ -181,7 +188,7 @@ const Register = () => {
 
                   <div className="inputContainer">
                     <Input
-                      label="confirm password"
+                      label="confirm password *"
                       type="string"
                       name="confirmPassword"
                       onInput={onInput}
