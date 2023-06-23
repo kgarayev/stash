@@ -12,9 +12,10 @@
 .componentHeader {
   display: flex;
   justify-content: space-between;
-  padding: 1rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
+  align-items: center;
+  padding: 2rem;
+  padding-bottom: 0;
+
   width: 100%;
 }
 
@@ -30,10 +31,17 @@
   width: 1.6rem;
 }
 
+.subComponent {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
 .boxWrapper {
   background-color: var(--background-color);
   width: 95%;
-  height: 85%;
+  /* height: 85%; */
   border-radius: var(--border-radius-2);
   border: none;
   padding: 1rem;
@@ -52,4 +60,8 @@
 .componentBoxHeader {
   font-size: 1.2rem;
   text-align: center;
+}
+
+.logoLink {
+  padding-left: 0.5rem;
 }

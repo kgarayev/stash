@@ -18,7 +18,7 @@ import logo from "../assets/logos/Logo7.svg";
 import "../stylesheets/Register.css";
 
 const Register = () => {
-  // temporary state - to be changed to redux tookit
+  // local state - to be changed to redux tookit
   const [input, setInput] = useState({
     firstName: "",
     lastName: "",
@@ -66,7 +66,7 @@ const Register = () => {
     <>
       <div className="component">
         <div className="componentHeader">
-          <Link to="/">
+          <Link to="/" className="logoLink">
             <div className="componentLogoContainer">
               <div className="componentLogo">
                 <img src={logo} alt="logo" className="logo" />
@@ -75,63 +75,72 @@ const Register = () => {
             </div>
           </Link>
 
-          <div>
+          <div className="closeButton">
             <Link to="/">
-              <IconButton sx={{ color: "white", padding: "0.75rem" }}>
+              <IconButton sx={{ color: "white", padding: "0.5rem" }}>
                 <CloseIcon />
               </IconButton>
             </Link>
           </div>
         </div>
 
-        <div className="boxWrapper">
-          <div className="componentBox">
-            <div className="componentBoxHeader">
-              <h1>Register</h1>
-              <p>let's sign up first</p>
-            </div>
-
-            <form onSubmit={onSubmit}>
-              <div className="registerNames">
-                <Input
-                  label="first name"
-                  type="string"
-                  autoFocus={true}
-                  name="firstName"
-                  onInput={onInput}
-                ></Input>
-
-                <p>{errors && errors.firstName}</p>
-
-                <Input label="last name" type="string" name="lastName"></Input>
+        <div className="subComponent">
+          <div className="boxWrapper">
+            <div className="componentBox">
+              <div className="componentBoxHeader">
+                <h1>Register</h1>
+                <p>let's sign up first</p>
               </div>
 
-              <div className="registerNumber">
-                <Input label="phone number" type="string" name="number"></Input>
-              </div>
+              <form onSubmit={onSubmit}>
+                <div className="registerNames">
+                  <Input
+                    label="first name"
+                    type="string"
+                    autoFocus={true}
+                    name="firstName"
+                    onInput={onInput}
+                  ></Input>
 
-              <div className="registerEmail">
-                <Input label="email" type="email" name="email"></Input>
-              </div>
+                  <p>{errors && errors.firstName}</p>
 
-              <div className="registerDob">
-                <LocalizationProvider dateAdapter={AdapterDayjs}>
-                  <DateField
-                    InputProps={{ sx: { borderRadius: "1rem" } }}
-                    required
-                    disableFuture
-                    fullWidth
-                    margin="dense"
-                    maxDate={formattedDate}
-                    label="date of birth"
-                    format="DD/MM/YYYY"
-                    size="small"
-                    name="dob"
-                  />
-                </LocalizationProvider>
-              </div>
+                  <Input
+                    label="last name"
+                    type="string"
+                    name="lastName"
+                  ></Input>
+                </div>
 
-              {/* <div className="registerAddress">
+                <div className="registerNumber">
+                  <Input
+                    label="phone number"
+                    type="string"
+                    name="number"
+                  ></Input>
+                </div>
+
+                <div className="registerEmail">
+                  <Input label="email" type="email" name="email"></Input>
+                </div>
+
+                <div className="registerDob">
+                  <LocalizationProvider dateAdapter={AdapterDayjs}>
+                    <DateField
+                      InputProps={{ sx: { borderRadius: "1rem" } }}
+                      required
+                      disableFuture
+                      fullWidth
+                      margin="dense"
+                      maxDate={formattedDate}
+                      label="date of birth"
+                      format="DD/MM/YYYY"
+                      size="small"
+                      name="dob"
+                    />
+                  </LocalizationProvider>
+                </div>
+
+                {/* <div className="registerAddress">
                 <div className="registerStreet">
                   <Input
                     label="street address"
@@ -147,25 +156,26 @@ const Register = () => {
                 </div>
               </div> */}
 
-              <div className="registerPassword">
-                <Input label="password" type="string" name="password"></Input>
+                <div className="registerPassword">
+                  <Input label="password" type="string" name="password"></Input>
 
-                <Input
-                  label="confirm password"
-                  type="string"
-                  name="repeatPassword"
-                ></Input>
-              </div>
-
-              <div className="registerButton">
-                <div className="registerAgreement">
-                  <p>
-                    by clicking "register" I agree to stash's privacy policy
-                  </p>
+                  <Input
+                    label="confirm password"
+                    type="string"
+                    name="repeatPassword"
+                  ></Input>
                 </div>
-                <Button text="register" type="submit" />
-              </div>
-            </form>
+
+                <div className="registerButton">
+                  <div className="registerAgreement">
+                    <p>
+                      by clicking "register" I agree to stash's privacy policy
+                    </p>
+                  </div>
+                  <Button text="register" type="submit" />
+                </div>
+              </form>
+            </div>
           </div>
         </div>
       </div>
