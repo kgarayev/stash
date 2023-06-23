@@ -24,6 +24,7 @@ export const validate = async (payload, type) => {
     const results = await option.validateAsync(payload, { aboutEarly: false });
     return null;
   } catch (errors) {
+    console.log(payload);
     console.log(errors);
 
     const errorsModified = {};

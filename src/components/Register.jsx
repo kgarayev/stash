@@ -29,7 +29,7 @@ const Register = () => {
     confirmPassword: "",
   });
 
-  const [errors, setErrors] = useState({});
+  const [errors, setErrors] = useState(null);
 
   const onInput = async (e) => {
     const result = { ...input, [e.target.name]: e.target.value };
@@ -43,24 +43,26 @@ const Register = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    console.log("form submitted");
+
+    console.log(errors);
+
+    if (errors) {
+      // we can display some toast error here
+      console.log("Form NOT submitted.");
+      return;
+    }
+
+    // we can display some success toast here
+    console.log("Form submitted.");
 
     // Read the form data
     const form = e.target;
     const formData = new FormData(form);
 
     // Or you can work with it as a plain object:
-    const formJson = Object.fromEntries(formData.entries());
-    console.log(formJson);
+    const registerJson = Object.fromEntries(formData.entries());
+    console.log(registerJson);
   };
-
-  // making sure there is a limit on the age
-  const currentDate = new Date();
-  const year = currentDate.getFullYear() - 18;
-  const month = currentDate.getMonth() + 1;
-  const day = currentDate.getDate();
-
-  const formattedDate = `${day}/${month}/${year}`;
 
   return (
     <>
@@ -103,7 +105,7 @@ const Register = () => {
                       placeholder="Rick"
                       onInput={onInput}
                     ></Input>
-                    <p className="errorMessage">{errors.firstName}</p>
+                    <p className="errorMessage">{errors && errors.firstName}</p>
                   </div>
 
                   <div>
@@ -114,7 +116,7 @@ const Register = () => {
                       placeholder="07123456789"
                       onInput={onInput}
                     ></Input>
-                    <p className="errorMessage">{errors.lastName}</p>
+                    <p className="errorMessage">{errors && errors.lastName}</p>
                   </div>
                 </div>
 
@@ -126,7 +128,7 @@ const Register = () => {
                     placeholder="07123456789"
                     onInput={onInput}
                   ></Input>
-                  <p className="errorMessage">{errors.number}</p>
+                  <p className="errorMessage">{errors && errors.number}</p>
                 </div>
 
                 <div className="registerEmail inputContainer">
@@ -137,7 +139,7 @@ const Register = () => {
                     placeholder="rick@sanchez.com"
                     onInput={onInput}
                   ></Input>
-                  <p className="errorMessage">{errors.email}</p>
+                  <p className="errorMessage">{errors && errors.email}</p>
                 </div>
 
                 <div className="registerDob inputContainer">
@@ -149,7 +151,7 @@ const Register = () => {
                     onInput={onInput}
                   ></Input>
 
-                  <p className="errorMessage">{errors.dob}</p>
+                  <p className="errorMessage">{errors && errors.dob}</p>
                 </div>
 
                 {/* <div className="registerAddress">
@@ -176,17 +178,19 @@ const Register = () => {
                       name="password"
                       onInput={onInput}
                     ></Input>
-                    <p className="errorMessage">{errors.password}</p>
+                    <p className="errorMessage">{errors && errors.password}</p>
                   </div>
 
                   <div className="inputContainer">
                     <Input
                       label="confirm password"
                       type="string"
-                      name="repeatPassword"
+                      name="confirmPassword"
                       onInput={onInput}
                     ></Input>
-                    <p className="errorMessage">{errors.confirmPassword}</p>
+                    <p className="errorMessage">
+                      {errors && errors.confirmPassword}
+                    </p>
                   </div>
                 </div>
 
