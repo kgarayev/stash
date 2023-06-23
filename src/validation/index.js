@@ -2,7 +2,6 @@ import joi from "joi";
 import { register, login } from "./schemas";
 
 export const validate = async (payload, type) => {
-  console.log(payload);
   let option;
 
   switch (type) {
@@ -21,12 +20,9 @@ export const validate = async (payload, type) => {
   }
 
   try {
-    const results = await option.validateAsync(payload, { aboutEarly: false });
+    const results = await option.validateAsync(payload, { abortEarly: false });
     return null;
   } catch (errors) {
-    console.log(payload);
-    console.log(errors);
-
     const errorsModified = {};
     errors.details.forEach((error) => {
       errorsModified[error.context.key] = error.message;

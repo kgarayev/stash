@@ -6,6 +6,10 @@
   border-radius: 5rem;
 }
 
+.registerNames .inputContainer {
+  width: 50%;
+}
+
 .registerNumber {
   display: flex;
   align-items: baseline;
@@ -42,7 +46,7 @@
 }
 
 .errorMessage {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   margin-left: 0.5rem;
   color: var(--secondary-color);
   font-weight: 500;

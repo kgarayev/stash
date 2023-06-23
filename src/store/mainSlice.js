@@ -1,14 +1,42 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {};
+// create initial state
+const initialState = {
+  registerInput: {
+    firstName: "",
+    lastName: "",
+    number: "",
+    email: "",
+    dob: "",
+    password: "",
+    confirmPassword: "",
+  },
+  errors: null,
+};
 
+// export the rducer functions
 export const mainSlice = createSlice({
   name: "main",
   initialState,
 
-  reducers: {},
+  reducers: {
+    // save the registration input values
+    setRegisterInput: (state, action) => {
+      state.registerInput = action.payload;
+    },
+
+    // record the joi validation errors
+    setErrors: (state, action) => {
+      state.errors = action.payload;
+    },
+  },
 });
 
-export const {} = mainSlice.actions;
+// exporting the reducer functions
+export const { setRegisterInput, setErrors } = mainSlice.actions;
+
+// exporting the selectors
+export const selectRegisterInput = (state) => state.main.registerInput;
+export const selectErrors = (state) => state.main.errors;
 
 export default mainSlice.reducer;

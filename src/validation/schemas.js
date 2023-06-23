@@ -12,11 +12,11 @@ export const register = {
     .normalize()
     .lowercase()
     .messages({
-      "string.empty": "First name is required.",
-      "string.min": "First name should have a minimum length of 1.",
-      "string.max": "First name should have a maximum length of 50.",
+      "string.empty": "first name is required",
+      "string.min": "first name should have a minimum length of 1",
+      "string.max": "first name should have a maximum length of 50",
       "string.pattern.base":
-        "First name can only contain letters, spaces, hyphens, and apostrophes.",
+        "first name can only contain letters, spaces, hyphens, and apostrophes",
     }),
 
   lastName: joi
@@ -29,11 +29,11 @@ export const register = {
     .normalize()
     .lowercase()
     .messages({
-      "string.empty": "Last name is required.",
-      "string.min": "Last name should have a minimum length of 1.",
-      "string.max": "Last name should have a maximum length of 50.",
+      "string.empty": "last name is required",
+      "string.min": "last name should have a minimum length of 1",
+      "string.max": "last name should have a maximum length of 50",
       "string.pattern.base":
-        "Last name can only contain letters, spaces, hyphens, and apostrophes.",
+        "last name can only contain letters, spaces, hyphens, and apostrophes",
     }),
 
   number: joi
@@ -43,8 +43,8 @@ export const register = {
     )
     .required()
     .messages({
-      "string.empty": "Phone number is required.",
-      "string.pattern.base": "Phone number must be a valid UK phone number.",
+      "string.empty": "phone number is required",
+      "string.pattern.base": "phone number must be a valid UK phone number",
     }),
 
   email: joi
@@ -52,8 +52,8 @@ export const register = {
     .required()
     .email({ tlds: { allow: false } })
     .messages({
-      "string.empty": "Email is required.",
-      "string.email": "Email must be a valid email address.",
+      "string.empty": "email is required",
+      "string.email": "email must be a valid email address",
     }),
 
   dob: joi
@@ -74,29 +74,30 @@ export const register = {
       return value;
     })
     .messages({
-      "string.empty": "Date of birth is required.",
-      "string.pattern.base": "Date of birth must be in the format dd/mm/yyyy.",
-      "any.custom": "Age must be at least 18 years old.",
+      "string.empty": "date of birth is required",
+      "string.pattern.base": "date of birth must be in the format dd/mm/yyyy",
+      "any.custom": "age must be at least 18 years old",
     }),
 
   password: joi
     .string()
     .min(8)
-    .max(20)
+    .max(32)
     .trim()
     .pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).*/)
     .messages({
-      "string.empty": "Password is required.",
+      "string.empty": "password is required",
       "string.min":
-        "Password must have a minimum length of {#limit} characters.",
+        "password must have a minimum length of {#limit} characters",
       "string.max":
-        "Password must have a maximum length of {#limit} characters.",
+        "password must have a maximum length of {#limit} characters",
       "string.pattern.base":
-        "Password must contain an uppercase letter, a lowercase letter, and a number.",
+        "password must contain an uppercase letter, a lowercase letter, and a number",
     }),
 
   confirmPassword: joi.string().valid(joi.ref("password")).messages({
-    "any.only": "Passwords do not match.",
+    "any.only": "passwords do not match",
+    "string.empty": "is not allowed to be empty",
   }),
 };
 
@@ -106,13 +107,13 @@ export const login = {
     .required()
     .email({ tlds: { allow: false } })
     .messages({
-      "string.empty": "Email is required.",
-      "string.email": "Email must be a valid email address.",
+      "string.empty": "email is required",
+      "string.email": "email must be a valid email address",
     }),
 
   password: joi.string().min(8).max(20).trim().messages({
-    "string.empty": "Password is required.",
-    "string.min": "Password must have a minimum length of {#limit} characters.",
-    "string.max": "Password must have a maximum length of {#limit} characters.",
+    "string.empty": "password is required",
+    "string.min": "password must have a minimum length of {#limit} characters",
+    "string.max": "password must have a maximum length of {#limit} characters",
   }),
 };

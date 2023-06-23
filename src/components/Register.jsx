@@ -5,46 +5,42 @@ import Name from "./Name";
 import Button from "./Button";
 import Input from "./Input";
 import { validate } from "../validation";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  setRegisterInput,
+  setErrors,
+  selectRegisterInput,
+  selectErrors,
+} from "../store/mainSlice";
 
 // importing mui stuff
 import IconButton from "@mui/material/IconButton";
 import CloseIcon from "@mui/icons-material/Close";
-import { LocalizationProvider } from "@mui/x-date-pickers";
-import { AdapterDayjs } from "@mui/x-date-pickers/AdapterDayjs";
-import { DateField } from "@mui/x-date-pickers/DateField";
 
 // importing stylesheets
 import logo from "../assets/logos/Logo7.svg";
 import "../stylesheets/RegisterLogin.css";
 
 const Register = () => {
-  // local state - to be changed to redux tookit
-  const [input, setInput] = useState({
-    firstName: "",
-    lastName: "",
-    number: "",
-    email: "",
-    dob: "",
-    password: "",
-    confirmPassword: "",
-  });
+  const dispatch = useDispatch();
 
-  const [errors, setErrors] = useState(null);
+  const errors = useSelector(selectErrors);
+  const input = useSelector(selectRegisterInput);
+
+  let localErrors = null;
 
   const onInput = async (e) => {
     const result = { ...input, [e.target.name]: e.target.value };
-    console.log(e.target.value);
 
     // validate
-    setErrors(await validate(result, "register"));
+    localErrors = await validate(result, "register");
 
-    setInput(result);
+    dispatch(setErrors(localErrors));
+    dispatch(setRegisterInput(result));
   };
 
   const onSubmit = (e) => {
     e.preventDefault();
-
-    console.log(errors);
 
     if (errors) {
       // we can display some toast error here
@@ -61,7 +57,9 @@ const Register = () => {
 
     // Or you can work with it as a plain object:
     const registerJson = Object.fromEntries(formData.entries());
+
     console.log(registerJson);
+    dispatch(setRegisterInput(registerJson));
   };
 
   return (
@@ -108,7 +106,7 @@ const Register = () => {
                     <p className="errorMessage">{errors && errors.firstName}</p>
                   </div>
 
-                  <div>
+                  <div className="inputContainer">
                     <Input
                       label="last name"
                       type="string"
