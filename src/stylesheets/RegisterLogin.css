@@ -56,3 +56,15 @@
 .inputContainer {
   display: block;
 }
+
+.altRouteText {
+  cursor: pointer;
+  font-size: 1.4rem;
+  margin-top: 0.75rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+.altRouteText:hover {
+  text-decoration: underline;
+}

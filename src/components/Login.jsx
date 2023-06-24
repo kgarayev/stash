@@ -96,6 +96,10 @@ const Login = () => {
               <div className="componentBoxHeader">
                 <h1>Log In</h1>
                 <p>enter your credentials</p>
+
+                <Link to="/register">
+                  <h2 className="altRouteText">or register</h2>
+                </Link>
               </div>
 
               <form onSubmit={onSubmit}>
