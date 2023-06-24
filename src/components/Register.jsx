@@ -1,8 +1,9 @@
 // importing react, components and libraries
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import Input from "./Input";
+import Template from "./Template";
 
 import { validate } from "../validation";
 import { useSelector, useDispatch } from "react-redux";
@@ -17,8 +18,10 @@ import {
 
 // importing stylesheets
 import "../stylesheets/RegisterLogin.css";
+import Success from "./Success";
 
 const Register = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const errors = useSelector(selectErrors);
   const input = useSelector(selectRegisterInput);
@@ -65,113 +68,108 @@ const Register = () => {
     console.log(registerJson);
     dispatch(setRegisterInput(registerJson));
     dispatch(setScreenMode(1));
-
-    setTimeout(() => {
-      dispatch(setScreenMode(0));
-    }, 2000);
+    navigate("/success");
   };
 
   return (
     <>
-      <>
-        <div className="componentBoxHeader">
-          <h1>Register</h1>
-          <p>let's sign up first</p>
+      <div className="componentBoxHeader">
+        <h1>Register</h1>
+        <p>let's sign up first</p>
 
-          <Link to="/login">
-            <h2 className="altRouteText">or log In</h2>
-          </Link>
-        </div>
-        <form onSubmit={onSubmit}>
-          <div className="registerNames">
-            <div className="inputContainer">
-              <Input
-                label="first name *"
-                type="string"
-                autoFocus={true}
-                name="firstName"
-                placeholder="Rick"
-                onInput={onInput}
-              ></Input>
-              <p className="errorMessage">{errors && errors.firstName}</p>
-            </div>
-
-            <div className="inputContainer">
-              <Input
-                label="last name *"
-                type="string"
-                name="lastName"
-                placeholder="07123456789"
-                onInput={onInput}
-              ></Input>
-              <p className="errorMessage">{errors && errors.lastName}</p>
-            </div>
+        <Link to="/login">
+          <h2 className="altRouteText">or log In</h2>
+        </Link>
+      </div>
+      <form onSubmit={onSubmit}>
+        <div className="registerNames">
+          <div className="inputContainer">
+            <Input
+              label="first name *"
+              type="string"
+              autoFocus={true}
+              name="firstName"
+              placeholder="Rick"
+              onInput={onInput}
+            ></Input>
+            <p className="errorMessage">{errors && errors.firstName}</p>
           </div>
 
-          <div className="registerNumber inputContainer">
+          <div className="inputContainer">
             <Input
-              label="phone number *"
+              label="last name *"
               type="string"
-              name="number"
+              name="lastName"
               placeholder="07123456789"
               onInput={onInput}
             ></Input>
-            <p className="errorMessage">{errors && errors.number}</p>
+            <p className="errorMessage">{errors && errors.lastName}</p>
           </div>
+        </div>
 
-          <div className="registerEmail inputContainer">
+        <div className="registerNumber inputContainer">
+          <Input
+            label="phone number *"
+            type="string"
+            name="number"
+            placeholder="07123456789"
+            onInput={onInput}
+          ></Input>
+          <p className="errorMessage">{errors && errors.number}</p>
+        </div>
+
+        <div className="registerEmail inputContainer">
+          <Input
+            label="email *"
+            type="string"
+            name="email"
+            placeholder="rick@sanchez.com"
+            onInput={onInput}
+          ></Input>
+          <p className="errorMessage">{errors && errors.email}</p>
+        </div>
+
+        <div className="registerDob inputContainer">
+          <Input
+            label="date of birth *"
+            type="string"
+            name="dob"
+            placeholder="dd/mm/yyyy"
+            onInput={onInput}
+          ></Input>
+
+          <p className="errorMessage">{errors && errors.dob}</p>
+        </div>
+
+        <div className="registerPassword">
+          <div className="inputContainer">
             <Input
-              label="email *"
+              label="password *"
               type="string"
-              name="email"
-              placeholder="rick@sanchez.com"
+              name="password"
               onInput={onInput}
             ></Input>
-            <p className="errorMessage">{errors && errors.email}</p>
+            <p className="errorMessage">{errors && errors.password}</p>
           </div>
 
-          <div className="registerDob inputContainer">
+          <div className="inputContainer">
             <Input
-              label="date of birth *"
+              label="confirm password *"
               type="string"
-              name="dob"
-              placeholder="dd/mm/yyyy"
+              name="confirmPassword"
               onInput={onInput}
             ></Input>
-
-            <p className="errorMessage">{errors && errors.dob}</p>
+            <p className="errorMessage">{errors && errors.confirmPassword}</p>
           </div>
+        </div>
 
-          <div className="registerPassword">
-            <div className="inputContainer">
-              <Input
-                label="password *"
-                type="string"
-                name="password"
-                onInput={onInput}
-              ></Input>
-              <p className="errorMessage">{errors && errors.password}</p>
-            </div>
-
-            <div className="inputContainer">
-              <Input
-                label="confirm password *"
-                type="string"
-                name="confirmPassword"
-                onInput={onInput}
-              ></Input>
-              <p className="errorMessage">{errors && errors.confirmPassword}</p>
-            </div>
+        <div className="registerButton">
+          <div className="registerAgreement">
+            <p>by clicking "register" I agree to stash's privacy policy</p>
           </div>
-
-          <div className="registerButton">
-            <div className="registerAgreement">
-              <p>by clicking "register" I agree to stash's privacy policy</p>
-            </div>
-            <Button text="register" type="submit" />
-          </div>
-        </form>
-      </>
+          <Button text="register" type="submit" />
+        </div>
+      </form>
     </>
   );
 };

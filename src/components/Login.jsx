@@ -1,6 +1,6 @@
 // importing react, components and libraries
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import Input from "./Input";
 import { validate } from "../validation";
@@ -17,6 +17,7 @@ import "../stylesheets/RegisterLogin.css";
 
 const Login = () => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const errors = useSelector(selectErrors);
   const input = useSelector(selectLoginInput);
   let localErrors = null;
@@ -58,6 +59,9 @@ const Login = () => {
 
     console.log(loginJson);
     dispatch(setLoginInput(loginJson));
+
+    // Change the route to "/main"
+    navigate("/main");
   };
 
   return (

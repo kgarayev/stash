@@ -20,11 +20,11 @@ const Welcome = () => {
 
         <div className="welcomeControls">
           <Link to="/register">
-            <Button text={"register"} />
+            <Button text={"register"} mode={0} />
           </Link>
 
           <Link to="/login">
-            <Button text={"login"} type={"secondary"} />
+            <Button text={"login"} type={"secondary"} mode={0} />
           </Link>
         </div>
       </div>

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const Success = () => {
   return (
@@ -10,5 +11,8 @@ const Success = () => {
 
 export default Success;
 <>
-  <h1>Success!</h1>
+  <div>
+    <h1>Success!</h1>
+    <p>go to main page</p>
+  </div>
 </>;
