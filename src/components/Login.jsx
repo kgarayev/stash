@@ -1,7 +1,6 @@
 // importing react, components and libraries
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
-import Name from "./Name";
 import Button from "./Button";
 import Input from "./Input";
 import { validate } from "../validation";
@@ -13,20 +12,13 @@ import {
   selectErrors,
 } from "../store/mainSlice";
 
-// importing mui stuff
-import IconButton from "@mui/material/IconButton";
-import CloseIcon from "@mui/icons-material/Close";
-
 // importing stylesheets
-import logo from "../assets/logos/Logo7.svg";
 import "../stylesheets/RegisterLogin.css";
 
 const Login = () => {
   const dispatch = useDispatch();
-
   const errors = useSelector(selectErrors);
   const input = useSelector(selectLoginInput);
-
   let localErrors = null;
 
   const onInput = async (e) => {
@@ -70,70 +62,43 @@ const Login = () => {
 
   return (
     <>
-      <div className="component">
-        <div className="componentHeader">
-          <Link to="/" className="logoLink">
-            <div className="componentLogoContainer">
-              <div className="componentLogo">
-                <img src={logo} alt="logo" className="logo" />
-              </div>
-              <Name></Name>
-            </div>
-          </Link>
+      <div className="componentBoxHeader">
+        <h1>Log In</h1>
+        <p>enter your credentials</p>
 
-          <div className="closeButton">
-            <Link to="/">
-              <IconButton sx={{ color: "white", padding: "0.5rem" }}>
-                <CloseIcon />
-              </IconButton>
-            </Link>
-          </div>
-        </div>
-
-        <div className="subComponent">
-          <div className="boxWrapper">
-            <div className="componentBox">
-              <div className="componentBoxHeader">
-                <h1>Log In</h1>
-                <p>enter your credentials</p>
-
-                <Link to="/register">
-                  <h2 className="altRouteText">or register</h2>
-                </Link>
-              </div>
-
-              <form onSubmit={onSubmit}>
-                <div className="registerEmail inputContainer">
-                  <Input
-                    label="email *"
-                    type="string"
-                    name="email"
-                    placeholder="rick@sanchez.com"
-                    onInput={onInput}
-                  ></Input>
-                  <p className="errorMessage">{errors && errors.email}</p>
-                </div>
-
-                <div className="registerPassword">
-                  <div className="inputContainer">
-                    <Input
-                      label="password *"
-                      type="password"
-                      name="password"
-                      onInput={onInput}
-                    ></Input>
-                    <p className="errorMessage">{errors && errors.password}</p>
-                  </div>
-                </div>
-
-                <div className="registerButton">
-                  <Button text="login" type="submit" />
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
+        <Link to="/register">
+          <h2 className="altRouteText">or register</h2>
+        </Link>
       </div>
+
+      <form onSubmit={onSubmit}>
+        <div className="registerEmail inputContainer">
+          <Input
+            label="email *"
+            type="string"
+            name="email"
+            placeholder="rick@sanchez.com"
+            onInput={onInput}
+          ></Input>
+          <p className="errorMessage">{errors && errors.email}</p>
+        </div>
+
+        <div className="registerPassword">
+          <div className="inputContainer">
+            <Input
+              label="password *"
+              type="password"
+              name="password"
+              onInput={onInput}
+            ></Input>
+            <p className="errorMessage">{errors && errors.password}</p>
+          </div>
+        </div>
+
+        <div className="registerButton">
+          <Button text="login" type="submit" />
+        </div>
+      </form>
     </>
   );
 };

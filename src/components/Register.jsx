@@ -1,13 +1,8 @@
 // importing react, components and libraries
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
 import Input from "./Input";
-import Name from "./Name";
-
-// importing mui stuff
-import IconButton from "@mui/material/IconButton";
-import CloseIcon from "@mui/icons-material/Close";
 
 import { validate } from "../validation";
 import { useSelector, useDispatch } from "react-redux";
@@ -16,16 +11,18 @@ import {
   setErrors,
   selectRegisterInput,
   selectErrors,
+  setScreenMode,
+  selectScreenMode,
 } from "../store/mainSlice";
 
 // importing stylesheets
-import logo from "../assets/logos/Logo7.svg";
 import "../stylesheets/RegisterLogin.css";
 
 const Register = () => {
   const dispatch = useDispatch();
   const errors = useSelector(selectErrors);
   const input = useSelector(selectRegisterInput);
+  const screenMode = useSelector(selectScreenMode);
 
   let localErrors = null;
 
@@ -67,139 +64,114 @@ const Register = () => {
 
     console.log(registerJson);
     dispatch(setRegisterInput(registerJson));
+    dispatch(setScreenMode(1));
+
+    setTimeout(() => {
+      dispatch(setScreenMode(0));
+    }, 2000);
   };
 
   return (
     <>
-      <div className="component">
-        <div className="componentHeader">
-          <Link to="/" className="logoLink">
-            <div className="componentLogoContainer">
-              <div className="componentLogo">
-                <img src={logo} alt="logo" className="logo" />
-              </div>
-              <Name></Name>
-            </div>
+      <>
+        <div className="componentBoxHeader">
+          <h1>Register</h1>
+          <p>let's sign up first</p>
+
+          <Link to="/login">
+            <h2 className="altRouteText">or log In</h2>
           </Link>
-
-          <div className="closeButton">
-            <Link to="/">
-              <IconButton sx={{ color: "white", padding: "0.5rem" }}>
-                <CloseIcon />
-              </IconButton>
-            </Link>
-          </div>
         </div>
+        <form onSubmit={onSubmit}>
+          <div className="registerNames">
+            <div className="inputContainer">
+              <Input
+                label="first name *"
+                type="string"
+                autoFocus={true}
+                name="firstName"
+                placeholder="Rick"
+                onInput={onInput}
+              ></Input>
+              <p className="errorMessage">{errors && errors.firstName}</p>
+            </div>
 
-        <div className="subComponent">
-          <div className="boxWrapper">
-            <div className="componentBox">
-              <div className="componentBoxHeader">
-                <h1>Register</h1>
-                <p>let's sign up first</p>
-
-                <Link to="/login">
-                  <h2 className="altRouteText">or log In</h2>
-                </Link>
-              </div>
-
-              <form onSubmit={onSubmit}>
-                <div className="registerNames">
-                  <div className="inputContainer">
-                    <Input
-                      label="first name *"
-                      type="string"
-                      autoFocus={true}
-                      name="firstName"
-                      placeholder="Rick"
-                      onInput={onInput}
-                    ></Input>
-                    <p className="errorMessage">{errors && errors.firstName}</p>
-                  </div>
-
-                  <div className="inputContainer">
-                    <Input
-                      label="last name *"
-                      type="string"
-                      name="lastName"
-                      placeholder="07123456789"
-                      onInput={onInput}
-                    ></Input>
-                    <p className="errorMessage">{errors && errors.lastName}</p>
-                  </div>
-                </div>
-
-                <div className="registerNumber inputContainer">
-                  <Input
-                    label="phone number *"
-                    type="string"
-                    name="number"
-                    placeholder="07123456789"
-                    onInput={onInput}
-                  ></Input>
-                  <p className="errorMessage">{errors && errors.number}</p>
-                </div>
-
-                <div className="registerEmail inputContainer">
-                  <Input
-                    label="email *"
-                    type="string"
-                    name="email"
-                    placeholder="rick@sanchez.com"
-                    onInput={onInput}
-                  ></Input>
-                  <p className="errorMessage">{errors && errors.email}</p>
-                </div>
-
-                <div className="registerDob inputContainer">
-                  <Input
-                    label="date of birth *"
-                    type="string"
-                    name="dob"
-                    placeholder="dd/mm/yyyy"
-                    onInput={onInput}
-                  ></Input>
-
-                  <p className="errorMessage">{errors && errors.dob}</p>
-                </div>
-
-                <div className="registerPassword">
-                  <div className="inputContainer">
-                    <Input
-                      label="password *"
-                      type="string"
-                      name="password"
-                      onInput={onInput}
-                    ></Input>
-                    <p className="errorMessage">{errors && errors.password}</p>
-                  </div>
-
-                  <div className="inputContainer">
-                    <Input
-                      label="confirm password *"
-                      type="string"
-                      name="confirmPassword"
-                      onInput={onInput}
-                    ></Input>
-                    <p className="errorMessage">
-                      {errors && errors.confirmPassword}
-                    </p>
-                  </div>
-                </div>
-
-                <div className="registerButton">
-                  <div className="registerAgreement">
-                    <p>
-                      by clicking "register" I agree to stash's privacy policy
-                    </p>
-                  </div>
-                  <Button text="register" type="submit" />
-                </div>
-              </form>
+            <div className="inputContainer">
+              <Input
+                label="last name *"
+                type="string"
+                name="lastName"
+                placeholder="07123456789"
+                onInput={onInput}
+              ></Input>
+              <p className="errorMessage">{errors && errors.lastName}</p>
             </div>
           </div>
-        </div>
-      </div>
+
+          <div className="registerNumber inputContainer">
+            <Input
+              label="phone number *"
+              type="string"
+              name="number"
+              placeholder="07123456789"
+              onInput={onInput}
+            ></Input>
+            <p className="errorMessage">{errors && errors.number}</p>
+          </div>
+
+          <div className="registerEmail inputContainer">
+            <Input
+              label="email *"
+              type="string"
+              name="email"
+              placeholder="rick@sanchez.com"
+              onInput={onInput}
+            ></Input>
+            <p className="errorMessage">{errors && errors.email}</p>
+          </div>
+
+          <div className="registerDob inputContainer">
+            <Input
+              label="date of birth *"
+              type="string"
+              name="dob"
+              placeholder="dd/mm/yyyy"
+              onInput={onInput}
+            ></Input>
+
+            <p className="errorMessage">{errors && errors.dob}</p>
+          </div>
+
+          <div className="registerPassword">
+            <div className="inputContainer">
+              <Input
+                label="password *"
+                type="string"
+                name="password"
+                onInput={onInput}
+              ></Input>
+              <p className="errorMessage">{errors && errors.password}</p>
+            </div>
+
+            <div className="inputContainer">
+              <Input
+                label="confirm password *"
+                type="string"
+                name="confirmPassword"
+                onInput={onInput}
+              ></Input>
+              <p className="errorMessage">{errors && errors.confirmPassword}</p>
+            </div>
+          </div>
+
+          <div className="registerButton">
+            <div className="registerAgreement">
+              <p>by clicking "register" I agree to stash's privacy policy</p>
+            </div>
+            <Button text="register" type="submit" />
+          </div>
+        </form>
+      </>
     </>
   );
 };

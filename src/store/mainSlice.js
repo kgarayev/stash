@@ -48,11 +48,13 @@ export const mainSlice = createSlice({
 });
 
 // exporting the reducer functions
-export const { setRegisterInput, setErrors, setLoginInput } = mainSlice.actions;
+export const { setRegisterInput, setErrors, setLoginInput, setScreenMode } =
+  mainSlice.actions;
 
 // exporting the selectors
 export const selectRegisterInput = (state) => state.main.registerInput;
 export const selectErrors = (state) => state.main.errors;
 export const selectLoginInput = (state) => state.main.loginInput;
+export const selectScreenMode = (state) => state.main.screenMode;
 
 export default mainSlice.reducer;
