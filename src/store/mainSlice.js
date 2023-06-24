@@ -16,6 +16,7 @@ const initialState = {
     email: "",
     password: "",
   },
+  screenMode: 0,
 };
 
 // export the rducer functions
@@ -37,6 +38,11 @@ export const mainSlice = createSlice({
     // save the registration input values
     setLoginInput: (state, action) => {
       state.loginInput = action.payload;
+    },
+
+    // set screen mode
+    setScreenMode: (state, action) => {
+      state.screenMode = action.payload;
     },
   },
 });

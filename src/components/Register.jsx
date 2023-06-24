@@ -1,9 +1,14 @@
 // importing react, components and libraries
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Name from "./Name";
 import Button from "./Button";
 import Input from "./Input";
+import Name from "./Name";
+
+// importing mui stuff
+import IconButton from "@mui/material/IconButton";
+import CloseIcon from "@mui/icons-material/Close";
+
 import { validate } from "../validation";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -13,17 +18,12 @@ import {
   selectErrors,
 } from "../store/mainSlice";
 
-// importing mui stuff
-import IconButton from "@mui/material/IconButton";
-import CloseIcon from "@mui/icons-material/Close";
-
 // importing stylesheets
 import logo from "../assets/logos/Logo7.svg";
 import "../stylesheets/RegisterLogin.css";
 
 const Register = () => {
   const dispatch = useDispatch();
-
   const errors = useSelector(selectErrors);
   const input = useSelector(selectRegisterInput);
 
@@ -162,22 +162,6 @@ const Register = () => {
 
                   <p className="errorMessage">{errors && errors.dob}</p>
                 </div>
-
-                {/* <div className="registerAddress">
-                <div className="registerStreet">
-                  <Input
-                    label="street address"
-                    type="string"
-                    name="street"
-                  ></Input>
-                </div>
-
-                <div className="registerPostcode">
-                  <Input label="town/city" type="string" name="city"></Input>
-
-                  <Input label="postcode" type="string" name="postcode"></Input>
-                </div>
-              </div> */}
 
                 <div className="registerPassword">
                   <div className="inputContainer">
