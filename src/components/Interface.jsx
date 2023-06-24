@@ -4,7 +4,6 @@ import Welcome from "./Welcome";
 import Register from "./Register";
 import Login from "./Login";
 import Error404 from "./Error404";
-import LandingTemplate from "./LandingTemplate";
 
 const Interface = () => {
   return (
