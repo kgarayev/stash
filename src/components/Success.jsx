@@ -4,15 +4,9 @@ import { Link } from "react-router-dom";
 const Success = () => {
   return (
     <>
-      <h1>Success!</h1>
+      <h1>registration success</h1>
     </>
   );
 };
 
 export default Success;
-<>
-  <div>
-    <h1>Success!</h1>
-    <p>go to main page</p>
-  </div>
-</>;
