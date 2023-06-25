@@ -134,7 +134,7 @@ video {
 
   height: auto;
   /* 'auto' is the initial value for height BUT for images (and other elements which have an intrinic height) that is not the case. To make an image responsive you set one dimension (usually width) to [max-]width: 100%; and the other to 'auto' to ensure it keeps aspect ratio. 'auto' basically tells the browser to decide. */
-  vertical-align: middle;
+  /* vertical-align: middle; */
   /* minor vertical centering. Works for images IF there is a baseline (i.e. they are displayed inline or inline-block) */
 }
 

@@ -88,7 +88,6 @@ const Register = () => {
         <p>let's sign up first</p>
 
         <div className="altRoute">
-          {" "}
           <Link to="/login">
             <h2 className="altRouteText">or log In</h2>
           </Link>

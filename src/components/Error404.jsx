@@ -3,7 +3,7 @@ import React from "react";
 const Error404 = () => {
   return (
     <>
-      <h1>Page Note Found</h1>
+      <h1>page does not exist</h1>
     </>
   );
 };
