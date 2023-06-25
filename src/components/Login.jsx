@@ -11,6 +11,7 @@ import {
   selectLoginInput,
   selectErrors,
 } from "../store/mainSlice";
+import { toastTrigger } from "../helpers/helpers";
 
 // importing stylesheets
 import "../stylesheets/RegisterLogin.css";
@@ -21,6 +22,11 @@ const Login = () => {
   const errors = useSelector(selectErrors);
   const input = useSelector(selectLoginInput);
   let localErrors = null;
+
+  const errorMessage = {
+    message: "incorrect email or password",
+    progressColor: "red",
+  };
 
   const onInput = async (e) => {
     const result = { ...input, [e.target.name]: e.target.value };
@@ -38,12 +44,14 @@ const Login = () => {
     if (errors) {
       // we can display some toast error here
       console.log("Form NOT submitted.");
+      toastTrigger(errorMessage);
       return;
     }
 
     if (input.email === "" || input.password === "") {
       // we can display some toast error here
       console.log("Form NOT submitted.");
+      toastTrigger(errorMessage);
       return;
     }
 
