@@ -1,0 +1,29 @@
+.loader {
+  transform: translateZ(1px);
+}
+.loader:after {
+  content: "£";
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 40px;
+  font-size: 32px;
+  font-weight: bold;
+  background: var(--primary-color);
+  color: var(--background-color);
+  border: 4px double;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.1);
+  animation: coin-flip 1s linear infinite;
+}
+
+@keyframes coin-flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
