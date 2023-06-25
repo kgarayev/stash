@@ -3,7 +3,7 @@ import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import Input from "./Input";
-import Template from "./Template";
+import { toastTrigger } from "../helpers/helpers";
 
 import { validate } from "../validation";
 import { useSelector, useDispatch } from "react-redux";
@@ -27,6 +27,11 @@ const Register = () => {
   const input = useSelector(selectRegisterInput);
   const screenMode = useSelector(selectScreenMode);
 
+  const errorMessage = {
+    message: "ensure data is entered correctly",
+    progressColor: "red",
+  };
+
   // console.log(screenMode);
 
   let localErrors = null;
@@ -47,12 +52,14 @@ const Register = () => {
     if (errors) {
       // we can display some toast error here
       console.log("Form NOT submitted.");
+      toastTrigger(errorMessage);
       return;
     }
 
     for (let key in input) {
       if (input[key] === "") {
         console.log("Form NOT submitted.");
+        toastTrigger(errorMessage);
         return;
       }
     }

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { ToastContainer, toast } from "react-toastify";
+import { ToastContainer, toast, Slide } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 import { useSelector, useDispatch } from "react-redux";
@@ -28,6 +28,7 @@ const Toast = () => {
         draggable: true,
         progress: undefined,
         theme: "light",
+        slide: "slide",
       });
 
       dispatch(setToast({ ...selectedToast, message: "" }));
@@ -43,16 +44,19 @@ const Toast = () => {
         background: "#f7f7f7",
         color: "black",
         fontFamily: `"Quicksand", sans-serif`,
-        fontWeight: "500",
-        margin: "0.5rem",
+        fontWeight: "400",
         borderRadius: "1rem",
-        fontSize: "1.6rem",
+        margin: "0.5rem",
+        fontSize: "1.4rem",
         height: "4rem", // Adjust the height as per your requirement
+        paddingBottom: "1rem",
+        boxShadow: "0rem 0rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3)", // Add box shadow for a more defined shadow effect
       }}
       progressStyle={{
         // Customize the progress bar style
         background: progressColor,
       }}
+      transition={Slide}
     />
   );
 };
