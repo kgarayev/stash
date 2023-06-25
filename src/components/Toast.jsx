@@ -2,19 +2,24 @@ import React, { useEffect } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-import { useSelector } from "react-redux";
-import { selectToast } from "../store/mainSlice";
+import { useSelector, useDispatch } from "react-redux";
+import { selectToast, setToast } from "../store/mainSlice";
 
 const Toast = () => {
+  const dispatch = useDispatch();
   const selectedToast = useSelector(selectToast);
+
+  const toastMessage =
+    selectedToast && selectedToast.message ? selectedToast.message : "";
+
   const progressColor =
     selectedToast && selectedToast.progressColor
       ? selectedToast.progressColor
       : "grey";
 
   useEffect(() => {
-    if (selectedToast) {
-      toast(selectedToast.message, {
+    if (toastMessage) {
+      toast(toastMessage, {
         position: "bottom-left",
         autoClose: 3000,
         hideProgressBar: false,
@@ -24,6 +29,8 @@ const Toast = () => {
         progress: undefined,
         theme: "light",
       });
+
+      dispatch(setToast({ ...selectedToast, message: "" }));
     }
   }, [selectedToast]);
 
