@@ -87,9 +87,12 @@ const Register = () => {
         <h1>Register</h1>
         <p>let's sign up first</p>
 
-        <Link to="/login">
-          <h2 className="altRouteText">or log In</h2>
-        </Link>
+        <div className="altRoute">
+          {" "}
+          <Link to="/login">
+            <h2 className="altRouteText">or log In</h2>
+          </Link>
+        </div>
       </div>
       <form onSubmit={onSubmit}>
         <div className="registerNames">

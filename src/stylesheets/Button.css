@@ -70,7 +70,7 @@
 }
 
 .secondary:hover {
-  background-color: var(--primary-sub-color);
+  background-color: var(--tertiary-color);
   color: white;
   text-decoration: none;
   transition-duration: 0.1s;

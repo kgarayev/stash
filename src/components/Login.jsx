@@ -70,9 +70,11 @@ const Login = () => {
         <h1>Log In</h1>
         <p>enter your credentials</p>
 
-        <Link to="/register">
-          <h2 className="altRouteText">or register</h2>
-        </Link>
+        <div className="altRoute">
+          <Link to="/register">
+            <h2 className="altRouteText">or register</h2>
+          </Link>
+        </div>
       </div>
 
       <form onSubmit={onSubmit}>
