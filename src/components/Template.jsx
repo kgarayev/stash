@@ -41,6 +41,8 @@ const Template = (props) => {
             <div className="componentBox">{component}</div>
           </div>
         </div>
+
+        <div className="placeholder"></div>
       </div>
     </>
   );

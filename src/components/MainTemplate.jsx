@@ -92,6 +92,7 @@ const MainTemplate = (props) => {
           <div className="mainBoxWrapper">
             <div className="mainComponentBox">{component}</div>
           </div>
+          <div className="placeholder"></div>
         </div>
 
         <div className="mainComponentFooter">

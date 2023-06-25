@@ -1,3 +1,11 @@
+.mainHomeContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow-y: none;
+  margin-bottom: 7.5rem;
+}
+
 .homeHeader {
   font-size: 1.2rem;
   /* text-align: center; */
@@ -40,6 +48,39 @@
 .homeIcons:hover {
   cursor: pointer;
   color: var(--tertiary-color);
+}
+
+.transactionElement {
+  margin-top: 0.5rem;
+  /* background-color: aquamarine; */
+  border-radius: var(--border-radius-3);
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.transactionElement:hover {
+  margin-top: 0.5rem;
+  background-color: var(--background-color);
+  border-radius: var(--border-radius-3);
+  padding: 0.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.transactionExtra {
+  display: flex;
+  gap: 1rem;
+}
+
+.elementSection {
+  padding: 0.5rem;
+}
+
+.elementsCentre {
+  flex-grow: 1;
 }
 
 /* 
