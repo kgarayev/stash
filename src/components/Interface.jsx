@@ -14,12 +14,15 @@ import { setScreenMode, selectScreenMode } from "../store/mainSlice";
 const Interface = () => {
   const dispatch = useDispatch();
   const screenMode = useSelector(selectScreenMode);
-  // const registerComponent = screenMode === 0 ? <Register /> : <Success />;
+  const registerComponent = screenMode === 0 ? <Register /> : <Success />;
 
   return (
     <Routes>
       <Route path="/" element={<Welcome />} />
-      <Route path="/register" element={<Template component={<Register />} />} />
+      <Route
+        path="/register"
+        element={<Template component={registerComponent} />}
+      />
       <Route path="/login" element={<Template component={<Login />} />} />
       <Route path="/success" element={<Template component={<Success />} />} />
       <Route path="/main" element={<MainTemplate component={<Home />} />} />

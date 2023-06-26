@@ -42,6 +42,7 @@ export const mainSlice = createSlice({
 
     // set screen mode
     setScreenMode: (state, action) => {
+      console.log(action);
       state.screenMode = action.payload;
     },
 

@@ -78,14 +78,14 @@ const Register = () => {
 
     dispatch(setRegisterInput(registerJson));
 
-    // dispatch(setScreenMode("1"));
-    // console.log(screenMode);
+    dispatch(setScreenMode("1"));
+    console.log(screenMode);
 
-    navigate("/success");
+    // navigate("/success");
 
-    setTimeout(() => {
-      navigate("/main");
-    }, 1000);
+    // setTimeout(() => {
+    //   navigate("/main");
+    // }, 1000);
   };
 
   return (
