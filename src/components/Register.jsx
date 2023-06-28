@@ -74,18 +74,15 @@ const Register = () => {
     // Or you can work with it as a plain object:
     const registerJson = Object.fromEntries(formData.entries());
 
-    // console.log(registerJson);
-
     dispatch(setRegisterInput(registerJson));
 
     dispatch(setScreenMode("1"));
     console.log(screenMode);
 
-    // navigate("/success");
-
-    // setTimeout(() => {
-    //   navigate("/main");
-    // }, 1000);
+    setTimeout(() => {
+      dispatch(setScreenMode(0));
+      navigate("/main");
+    }, 1000);
   };
 
   return (

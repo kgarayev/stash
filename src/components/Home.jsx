@@ -234,7 +234,7 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="homeContainer">
+        {/* <div className="homeContainer">
           <div className="transactionsHeader">
             <div>
               <h2>Analytics</h2>
@@ -248,7 +248,7 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );
