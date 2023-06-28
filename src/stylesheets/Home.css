@@ -23,7 +23,7 @@
   width: 3rem;
 }
 
-.transactionsHeader {
+.accountHeader {
   display: flex;
   align-items: start;
   justify-content: space-between;
@@ -43,6 +43,8 @@
 .homeIcons {
   cursor: pointer;
   color: var(--primary-color);
+  display: flex;
+  justify-content: center;
 }
 
 .homeIcons:hover {
@@ -81,6 +83,17 @@
 
 .elementsCentre {
   flex-grow: 1;
+}
+
+.hidden {
+  display: none;
+}
+
+.expandContainer {
+  /* width: 100%; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 /* 
