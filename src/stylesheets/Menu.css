@@ -1,0 +1,73 @@
+.menuContainer {
+  /* border: 0.1rem solid black; */
+  background-color: var(--background-color);
+  z-index: 2;
+  position: fixed;
+
+  margin: auto;
+  transform: translateX(300%);
+  display: flex;
+  justify-content: center;
+
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.visibleMenu {
+  transform: translateX(0%);
+  transition: transform 0.3s ease-out;
+}
+
+.backArrow {
+  height: 3.5rem;
+  width: 3.5rem;
+  border-radius: 5rem;
+  padding: 0;
+  padding-top: 0.15rem;
+  padding-left: 0.1rem;
+  cursor: pointer;
+}
+
+.backArrow:hover {
+  background-color: var(--hover-color);
+}
+
+.menuBody {
+  margin-top: 4rem;
+  margin-left: 2rem;
+  font-size: 1.5rem;
+}
+
+.menuOption h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+
+.menuOption {
+  display: flex;
+  color: rgb(94, 94, 94);
+  gap: 1.2rem;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.menuOption:hover {
+  color: black;
+}
+
+.menuOption:hover h3 {
+  color: black;
+  font-weight: 600;
+}
+
+.menuSelect {
+  margin-top: 2rem;
+}

@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
 import Name from "./Name";
+import Menu from "./Menu";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setToast, setScreenMode, selectScreenMode } from "../store/mainSlice";
@@ -19,6 +20,8 @@ import SwapVerticalCircleIcon from "@mui/icons-material/SwapVerticalCircle";
 import IconButton from "@mui/material/IconButton";
 
 const MainTemplate = (props) => {
+  const [menuVisibility, setMenuVisibility] = useState(false);
+
   const { component } = props;
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -26,6 +29,10 @@ const MainTemplate = (props) => {
   const toast = {
     message: "Hello from Main",
     progressColor: "var(--primary-color)",
+  };
+
+  const onMenuClick = () => {
+    setMenuVisibility(!menuVisibility);
   };
 
   const onClick = (e) => {
@@ -76,7 +83,7 @@ const MainTemplate = (props) => {
               </button>
             </div> */}
 
-            <div onClick={onClick} id="profile">
+            <div onClick={onMenuClick} id="profile">
               <button className="mainControlsButton">
                 <AccountCircleRoundedIcon
                   sx={{
@@ -91,6 +98,8 @@ const MainTemplate = (props) => {
               </button>
             </div>
           </div>
+
+          <Menu visibility={menuVisibility} onClick={onMenuClick} />
         </div>
 
         {/* main component rendering  */}
