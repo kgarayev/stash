@@ -12,6 +12,8 @@ import Transfer from "./Transfer";
 import Hub from "./Hub";
 import Profile from "./Profile";
 import Help from "./Help";
+import Settings from "./Settings";
+import AltTemplate from "./AltTemplate";
 import { useSelector } from "react-redux";
 import { selectScreenMode } from "../store/mainSlice";
 
@@ -70,6 +72,18 @@ const Interface = () => {
         path="/main"
         element={<MainTemplate component={mainComponent} />}
       />
+
+      <Route path="/help" element={<AltTemplate component={<Help />} />} />
+
+      <Route
+        path="/settings"
+        element={<AltTemplate component={<Settings />} />}
+      />
+      <Route
+        path="/profile"
+        element={<AltTemplate component={<Profile />} />}
+      />
+
       <Route path="*" element={<Error404 />} />
     </Routes>
   );

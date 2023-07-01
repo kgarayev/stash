@@ -65,7 +65,6 @@ const Login = () => {
     // Or you can work with it as a plain object:
     const loginJson = Object.fromEntries(formData.entries());
 
-    console.log(loginJson);
     dispatch(setLoginInput(loginJson));
 
     // Change the route to "/main"

@@ -24,26 +24,32 @@ const Menu = (props) => {
           </div>
 
           <div className="menuSelect">
-            <div className="menuOption">
-              <div>
-                <PermIdentityIcon />
+            <Link to="/profile">
+              <div className="menuOption" onClick={onClick}>
+                <div>
+                  <PermIdentityIcon />
+                </div>
+                <h3>your details</h3>
               </div>
-              <h3>your details</h3>
-            </div>
+            </Link>
 
-            <div className="menuOption">
-              <div>
-                <SettingsOutlinedIcon />
+            <Link to="/settings">
+              <div className="menuOption" onClick={onClick}>
+                <div>
+                  <SettingsOutlinedIcon />
+                </div>
+                <h3>settings</h3>
               </div>
-              <h3>settings</h3>
-            </div>
+            </Link>
 
-            <div className="menuOption">
-              <div>
-                <HelpOutlineOutlinedIcon />
+            <Link to="/help">
+              <div className="menuOption" onClick={onClick}>
+                <div>
+                  <HelpOutlineOutlinedIcon />
+                </div>
+                <h3>help</h3>
               </div>
-              <h3>help</h3>
-            </div>
+            </Link>
 
             <div
               className="menuOption"
