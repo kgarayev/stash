@@ -39,22 +39,24 @@ const Transfer = () => {
               >
                 <Tab
                   id="pay"
-                  icon={<ArrowCircleUpRoundedIcon />}
                   label="pay"
                   sx={{
                     textTransform: "lowercase",
                     width: "50%",
                     fontWeight: "600",
+                    fontSize: "1.6rem",
+                    borderRadius: "2rem 2rem 0 0",
                   }}
                 />
                 <Tab
                   id="receive"
-                  icon={<ArrowCircleDownRoundedIcon />}
                   label="receive"
                   sx={{
                     textTransform: "lowercase",
                     width: "50%",
                     fontWeight: "600",
+                    fontSize: "1.6rem",
+                    borderRadius: "2rem 2rem 0 0",
                   }}
                 />
               </Tabs>
