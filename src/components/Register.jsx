@@ -1,5 +1,5 @@
 // importing react, components and libraries
-import React from "react";
+import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import Input from "./Input";
@@ -76,13 +76,13 @@ const Register = () => {
 
     dispatch(setRegisterInput(registerJson));
 
-    dispatch(setScreenMode("1"));
+    dispatch(setScreenMode(1));
     console.log(screenMode);
 
     setTimeout(() => {
       dispatch(setScreenMode(0));
       navigate("/main");
-    }, 1000);
+    }, 1500);
   };
 
   return (

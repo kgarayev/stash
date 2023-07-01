@@ -29,7 +29,7 @@ const Interface = () => {
       break;
 
     case 1:
-      registerComponent = <StatusUpdate />;
+      registerComponent = <StatusUpdate message={"registration complete"} />;
       break;
 
     case "home":

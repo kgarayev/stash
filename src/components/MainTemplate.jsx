@@ -61,7 +61,7 @@ const MainTemplate = (props) => {
               </button>
             </div> */}
 
-            <div onClick={onClick} id="help">
+            {/* <div onClick={onClick} id="help">
               <button className="mainControlsButton">
                 <HelpRoundedIcon
                   sx={{
@@ -74,7 +74,7 @@ const MainTemplate = (props) => {
                   fontSize="large"
                 ></HelpRoundedIcon>
               </button>
-            </div>
+            </div> */}
 
             <div onClick={onClick} id="profile">
               <button className="mainControlsButton">
