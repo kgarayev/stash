@@ -156,4 +156,14 @@ export const pay = {
       "string.empty": "bank account number is required",
       "string.pattern.base": "bank account number must be 8 digits",
     }),
+
+  paymentAmount: joi
+    .string()
+    .required()
+    .pattern(/^\d+(\.\d{1,2})?$/) // Allows positive decimal numbers with up to 2 decimal places
+    .messages({
+      "string.empty": "amount is required",
+      "string.pattern.base":
+        "amount must be a valid decimal number with up to 2 decimal places",
+    }),
 };

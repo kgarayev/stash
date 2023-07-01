@@ -43,6 +43,10 @@ export const mainSlice = createSlice({
       // transaction: 5000,
     },
 
+    setBalance: (state, action) => {
+      state.account.balance = action.payload;
+    },
+
     setTransactions: (state, action) => {
       // using stack data structure - LIFO
       state.account.transactions.unshift(action.payload);
@@ -73,6 +77,7 @@ export const {
   setTransactions,
   setAccount,
   setPayInput,
+  setBalance,
 } = mainSlice.actions;
 
 // exporting the selectors

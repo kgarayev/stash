@@ -20,6 +20,7 @@ export const initialState = {
     payeeName: "",
     sortCode: "",
     accountNumber: "",
+    paymentAmount: "",
   },
 
   account: {

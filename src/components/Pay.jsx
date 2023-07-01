@@ -10,9 +10,11 @@ import {
   setErrors,
   selectRegisterInput,
   selectErrors,
+  selectAccount,
   setTransactions,
   selectPayInput,
   setPayInput,
+  setBalance,
 } from "../store/mainSlice";
 
 // importing stylesheets
@@ -24,11 +26,20 @@ const Pay = () => {
   const dispatch = useDispatch();
   const errors = useSelector(selectErrors);
   const payInput = useSelector(selectPayInput);
+  const accountBalance = useSelector(selectAccount).balance;
 
   const errorMessage = {
     message: "ensure the entered data is correct",
     progressColor: "red",
   };
+
+  let amountCheck;
+
+  if (accountBalance - payInput.paymentAmount < 0) {
+    amountCheck = "amount exceeds balance";
+  } else {
+    amountCheck = "";
+  }
 
   let localErrors = null;
 
@@ -46,7 +57,6 @@ const Pay = () => {
     e.preventDefault();
 
     if (errors) {
-      // we can display some toast error here
       console.log("Form NOT submitted.");
       toastTrigger(errorMessage);
       return;
@@ -60,17 +70,32 @@ const Pay = () => {
       }
     }
 
-    // we can display some success toast here
+    if (amountCheck !== "") {
+      console.log("Form NOT submitted.");
+      toastTrigger(errorMessage);
+      return;
+    }
+
     console.log("Form submitted.");
 
     // Read the form data
     const form = e.target;
+
     const formData = new FormData(form);
 
     // Or you can work with it as a plain object:
     const registerJson = Object.fromEntries(formData.entries());
 
     dispatch(setPayInput(registerJson));
+    dispatch(setBalance(accountBalance - registerJson.paymentAmount));
+    dispatch(
+      setTransactions({
+        type: "sent",
+        details: registerJson.payeeName,
+        date: "today",
+        amount: registerJson.paymentAmount,
+      })
+    );
 
     setLocalScreenMode(1);
 
@@ -115,6 +140,20 @@ const Pay = () => {
                 onInput={onInput}
               ></Input>
               <p className="errorMessage">{errors && errors.accountNumber}</p>
+            </div>
+
+            <div className="inputContainer">
+              <Input
+                label="amount *"
+                type="string"
+                name="paymentAmount"
+                placeholder="£99.99"
+                onInput={onInput}
+              ></Input>
+              <p className="errorMessage">
+                {errors && errors.paymentAmount}
+                {amountCheck}
+              </p>
             </div>
 
             <div className="payButton">
