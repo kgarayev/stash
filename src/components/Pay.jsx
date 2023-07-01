@@ -86,14 +86,36 @@ const Pay = () => {
     // Or you can work with it as a plain object:
     const registerJson = Object.fromEntries(formData.entries());
 
+    const paymentAmount = registerJson.paymentAmount;
+    const transactionDetails = registerJson.payeeName;
+
+    let formattedPaymentAmount = parseFloat(paymentAmount).toFixed(2);
+    const decimalPlaces = formattedPaymentAmount.split(".")[1];
+
+    if (decimalPlaces && decimalPlaces.length === 1) {
+      formattedPaymentAmount += "0";
+    }
+
+    console.log(formattedPaymentAmount);
+
+    const today = new Date();
+    const month = today.getMonth() + 1; // Get the current month (0-based index, so add 1)
+    const day = today.getDate(); // Get the current day of the month
+    const year = today.getFullYear(); // Get the current year
+
+    // Format the date as "MM/DD/YYYY"
+    const transactionDate = `${day.toString().padStart(2, "0")}/${month
+      .toString()
+      .padStart(2, "0")}/${year}`;
+
     dispatch(setPayInput(registerJson));
-    dispatch(setBalance(accountBalance - registerJson.paymentAmount));
+    dispatch(setBalance(accountBalance - paymentAmount));
     dispatch(
       setTransactions({
         type: "sent",
-        details: registerJson.payeeName,
-        date: "today",
-        amount: registerJson.paymentAmount,
+        details: transactionDetails,
+        date: transactionDate,
+        amount: formattedPaymentAmount,
       })
     );
 
