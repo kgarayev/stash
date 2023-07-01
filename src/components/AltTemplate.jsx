@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Name from "./Name";
 import Menu from "./Menu";
-import { Link, useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setToast, setScreenMode, selectScreenMode } from "../store/mainSlice";
 import { toastTrigger } from "../helpers/helpers";
@@ -9,6 +9,7 @@ import { toastTrigger } from "../helpers/helpers";
 // importing stylesheets
 import logo from "../assets/logos/Logo7.svg";
 import "../stylesheets/MainTemplate.css";
+import "../stylesheets/AltTemplate.css";
 
 // mui stuff import
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
@@ -18,7 +19,6 @@ const AltTemplate = (props) => {
 
   const { component } = props;
   const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   const toast = {
     message: "Hello from Main",
