@@ -1,8 +1,8 @@
 import React from "react";
 import Name from "./Name";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setToast } from "../store/mainSlice";
+import { setToast, setScreenMode, selectScreenMode } from "../store/mainSlice";
 import { toastTrigger } from "../helpers/helpers";
 
 // importing stylesheets
@@ -21,27 +21,59 @@ import IconButton from "@mui/material/IconButton";
 const MainTemplate = (props) => {
   const { component } = props;
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const toast = {
     message: "Hello from Main",
     progressColor: "var(--primary-color)",
   };
 
+  const onClick = (e) => {
+    switch (e.currentTarget.id) {
+      case "home":
+        dispatch(setScreenMode(2));
+        break;
+
+      case "transfer":
+        dispatch(setScreenMode(3));
+        break;
+
+      case "hub":
+        dispatch(setScreenMode(4));
+        break;
+
+      case "profile":
+        dispatch(setScreenMode(5));
+        break;
+
+      case "help":
+        dispatch(setScreenMode(6));
+        break;
+
+      case "notifications":
+        dispatch(setScreenMode(7));
+        break;
+
+      default:
+        break;
+    }
+  };
+
   return (
     <>
       <div className="mainComponent">
         <div className="mainComponentHeader">
-          <Link to="/" className="mainLogoLink">
+          <Link to="/main" className="mainLogoLink">
             <div className="mainComponentLogoContainer">
               <div className="mainComponentLogo">
                 <img src={logo} alt="logo" className="logo" />
               </div>
-              <Name></Name>
+              <Name />
             </div>
           </Link>
 
           <div className="mainControls">
-            <div>
+            {/* <div onClick={onClick} id="notifications">
               <button className="mainControlsButton">
                 <CircleNotificationsRoundedIcon
                   sx={{
@@ -52,11 +84,11 @@ const MainTemplate = (props) => {
                   }}
                   color="primary"
                   fontSize="large"
-                ></CircleNotificationsRoundedIcon>
+                />
               </button>
-            </div>
+            </div> */}
 
-            <div>
+            <div onClick={onClick} id="help">
               <button className="mainControlsButton">
                 <HelpRoundedIcon
                   sx={{
@@ -71,7 +103,7 @@ const MainTemplate = (props) => {
               </button>
             </div>
 
-            <div>
+            <div onClick={onClick} id="profile">
               <button className="mainControlsButton">
                 <AccountCircleRoundedIcon
                   sx={{
@@ -96,7 +128,7 @@ const MainTemplate = (props) => {
         </div>
 
         <div className="mainComponentFooter">
-          <div className="section">
+          <div className="section" onClick={onClick} id="home">
             <HomeOutlinedIcon
               sx={{
                 padding: "0rem",
@@ -105,12 +137,12 @@ const MainTemplate = (props) => {
                 height: "2.5rem",
               }}
               fontSize="large"
-            ></HomeOutlinedIcon>
+            />
 
             <p className="sectionText">home</p>
           </div>
 
-          <div className="section central">
+          <div className="section central" onClick={onClick} id="transfer">
             <SwapVerticalCircleIcon
               sx={{
                 padding: "0rem",
@@ -119,12 +151,12 @@ const MainTemplate = (props) => {
                 height: "4rem",
               }}
               fontSize="large"
-            ></SwapVerticalCircleIcon>
+            />
 
             <p className="sectionText">transfer</p>
           </div>
 
-          <div className="section">
+          <div className="section" id="hub" onClick={onClick}>
             <DashboardOutlinedIcon
               sx={{
                 padding: "0rem",
@@ -133,7 +165,7 @@ const MainTemplate = (props) => {
                 height: "2.5rem",
               }}
               fontSize="large"
-            ></DashboardOutlinedIcon>
+            />
 
             <p className="sectionText">hub</p>
           </div>

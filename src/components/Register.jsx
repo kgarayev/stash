@@ -116,7 +116,7 @@ const Register = () => {
               label="last name *"
               type="string"
               name="lastName"
-              placeholder="07123456789"
+              placeholder="Sanchez"
               onInput={onInput}
             ></Input>
             <p className="errorMessage">{errors && errors.lastName}</p>
