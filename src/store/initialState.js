@@ -16,6 +16,12 @@ export const initialState = {
   },
   screenMode: 0,
 
+  payInput: {
+    payeeName: "",
+    sortCode: "",
+    accountNumber: "",
+  },
+
   account: {
     name: "current account",
     currencyCode: "gbp",

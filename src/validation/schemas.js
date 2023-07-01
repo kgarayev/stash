@@ -117,3 +117,43 @@ export const login = {
     "string.max": "password must have a maximum length of {#limit} characters",
   }),
 };
+
+export const pay = {
+  payeeName: joi
+    .string()
+    .required()
+    .min(1)
+    .max(70)
+    .pattern(/^[A-Za-z\s'-]+$/)
+    .trim()
+    .normalize()
+    .lowercase()
+    .messages({
+      "string.empty": "payee name is required",
+      "string.min": "payee name should have a minimum length of 1",
+      "string.max": "payee n1ame should have a maximum length of 70",
+      "string.pattern.base":
+        "payee name can only contain letters, spaces, hyphens, and apostrophes",
+    }),
+
+  sortCode: joi
+    .string()
+    .pattern(/^(\d{2}-?)?(\d{2}-?)?\d{2}$/)
+    .required()
+    .min(6)
+    .max(8)
+    .messages({
+      "string.empty": "sort code is required",
+      "string.pattern.base": "sort code must be a valid UK sort code",
+    }),
+
+  accountNumber: joi
+    .string()
+    .pattern(/^\d{8}$/)
+    .required()
+    .length(8)
+    .messages({
+      "string.empty": "bank account number is required",
+      "string.pattern.base": "bank account number must be 8 digits",
+    }),
+};
