@@ -8,6 +8,10 @@ import Template from "./Template";
 import Success from "./Success";
 import MainTemplate from "./MainTemplate";
 import Home from "./Home";
+import Transfer from "./Transfer";
+import Hub from "./Hub";
+import Profile from "./Profile";
+import Help from "./Help";
 import { useSelector } from "react-redux";
 import { selectScreenMode } from "../store/mainSlice";
 
@@ -28,12 +32,30 @@ const Interface = () => {
       registerComponent = <Success />;
       break;
 
-    case 2:
+    case "home":
       mainComponent = <Home />;
+      break;
+
+    case "transfer":
+      mainComponent = <Transfer />;
+      break;
+
+    case "hub":
+      mainComponent = <Hub />;
+      break;
+
+    case "profile":
+      mainComponent = <Profile />;
+      break;
+
+    case "help":
+      mainComponent = <Help />;
+      break;
 
     default:
       break;
   }
+  // console.log(mainComponent.type.name);
 
   return (
     // various routes

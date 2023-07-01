@@ -29,41 +29,14 @@ const MainTemplate = (props) => {
   };
 
   const onClick = (e) => {
-    switch (e.currentTarget.id) {
-      case "home":
-        dispatch(setScreenMode(2));
-        break;
-
-      case "transfer":
-        dispatch(setScreenMode(3));
-        break;
-
-      case "hub":
-        dispatch(setScreenMode(4));
-        break;
-
-      case "profile":
-        dispatch(setScreenMode(5));
-        break;
-
-      case "help":
-        dispatch(setScreenMode(6));
-        break;
-
-      case "notifications":
-        dispatch(setScreenMode(7));
-        break;
-
-      default:
-        break;
-    }
+    dispatch(setScreenMode(e.currentTarget.id));
   };
 
   return (
     <>
       <div className="mainComponent">
         <div className="mainComponentHeader">
-          <Link to="/main" className="mainLogoLink">
+          <Link to="/main" className="mainLogoLink" id="home" onClick={onClick}>
             <div className="mainComponentLogoContainer">
               <div className="mainComponentLogo">
                 <img src={logo} alt="logo" className="logo" />
@@ -120,6 +93,7 @@ const MainTemplate = (props) => {
           </div>
         </div>
 
+        {/* main component rendering  */}
         <div className="mainSubComponent">
           <div className="mainBoxWrapper">
             <div className="mainComponentBox">{component}</div>

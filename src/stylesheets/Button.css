@@ -75,3 +75,19 @@
   text-decoration: none;
   transition-duration: 0.1s;
 }
+
+/* secondary button  */
+
+.tertiary {
+  background-color: inherit;
+  color: var(--primary-color);
+  border: 0.15rem solid var(--primary-sub-color);
+  padding-top: 0;
+}
+
+.tertiary:hover {
+  background-color: var(--background-color);
+  /* color: white; */
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
