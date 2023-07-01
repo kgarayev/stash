@@ -2,11 +2,14 @@
   display: flex;
   width: 100%;
   justify-content: center;
-  gap: 5rem;
 }
 
 .transferControlButton {
   /* display: flex; */
   /* min-width: 100%; */
   width: 100%;
+}
+
+.payButton {
+  margin-top: 1rem;
 }

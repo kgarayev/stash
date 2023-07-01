@@ -1,15 +1,14 @@
 import React, { useState } from "react";
-import Button from "./Button";
+
 import "../stylesheets/Home.css";
 import "../stylesheets/Transfer.css";
 import "../stylesheets/Button.css";
-import { useDispatch, useSelector } from "react-redux";
-import { setScreenMode, selectScreenMode } from "../store/mainSlice";
 
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import ArrowCircleUpRoundedIcon from "@mui/icons-material/ArrowCircleUpRounded";
-import ArrowCircleDownRoundedIcon from "@mui/icons-material/ArrowCircleDownRounded";
+
+import Pay from "./Pay";
+import Receive from "./Receive";
 
 const Transfer = () => {
   const [value, setValue] = useState(0);
@@ -35,6 +34,7 @@ const Transfer = () => {
                 onChange={handleChange}
                 sx={{
                   width: "100%",
+                  height: "5rem",
                 }}
               >
                 <Tab
@@ -62,7 +62,7 @@ const Transfer = () => {
               </Tabs>
             </div>
           </div>
-          {value === 0 ? "pay" : "receive"}
+          {value === 0 ? <Pay /> : <Receive />}
         </div>
       </div>
     </>

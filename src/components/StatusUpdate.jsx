@@ -1,12 +1,13 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import Logo from "./Logo";
 
-const Success = () => {
+const Success = (props) => {
+  const { message } = props;
+
   return (
     <>
       <div className="statusContainer">
-        <h1 className="statusMessage">registration success</h1>
+        <h1 className="statusMessage">{message}</h1>
         <div className="statusLogo">
           <Logo></Logo>
         </div>

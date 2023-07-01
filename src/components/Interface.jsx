@@ -5,7 +5,7 @@ import Register from "./Register";
 import Login from "./Login";
 import Error404 from "./Error404";
 import Template from "./Template";
-import Success from "./Success";
+import StatusUpdate from "./StatusUpdate";
 import MainTemplate from "./MainTemplate";
 import Home from "./Home";
 import Transfer from "./Transfer";
@@ -29,7 +29,7 @@ const Interface = () => {
       break;
 
     case 1:
-      registerComponent = <Success />;
+      registerComponent = <StatusUpdate />;
       break;
 
     case "home":
@@ -66,7 +66,6 @@ const Interface = () => {
         element={<Template component={registerComponent} />}
       />
       <Route path="/login" element={<Template component={<Login />} />} />
-      <Route path="/success" element={<Template component={<Success />} />} />
       <Route
         path="/main"
         element={<MainTemplate component={mainComponent} />}

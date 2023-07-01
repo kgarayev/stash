@@ -18,7 +18,7 @@ import {
 
 // importing stylesheets
 import "../stylesheets/RegisterLogin.css";
-import Success from "./Success";
+import StatusUpdate from "./StatusUpdate";
 
 const Register = () => {
   const navigate = useNavigate();
