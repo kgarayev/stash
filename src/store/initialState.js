@@ -31,7 +31,11 @@ export const initialState = {
 
   account: {
     holderName: "Rick Sanchez",
+    firstName: "Richard",
+    lastName: "Sanchez",
     name: "current account",
+    dob: "01/01/1901",
+    phoneNumber: "+441234567890",
     accountNumber: 12345678,
     sortCode: 123456,
     currencyCode: "gbp",

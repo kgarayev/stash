@@ -80,7 +80,6 @@ const Register = () => {
     console.log(screenMode);
 
     setTimeout(() => {
-      dispatch(setScreenMode(0));
       navigate("/main");
     }, 1500);
   };

@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectRegisterInput, selectAccount } from "../store/mainSlice";
 import "../stylesheets/Menu.css";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
 import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import HelpOutlineOutlinedIcon from "@mui/icons-material/HelpOutlineOutlined";
 import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 
 const Menu = (props) => {
   const { visibility, onClick } = props;
   const navigate = useNavigate();
+  const account = useSelector(selectAccount);
 
   return (
     <>
@@ -20,10 +25,19 @@ const Menu = (props) => {
 
         <div className="menuBody">
           <div>
-            <h2>Kanan Garayev</h2>
+            <h2>{account.holderName}</h2>
           </div>
 
           <div className="menuSelect">
+            <Link to="/main">
+              <div className="menuOption" onClick={onClick}>
+                <div>
+                  <HomeOutlinedIcon />
+                </div>
+                <h3>home</h3>
+              </div>
+            </Link>
+
             <Link to="/profile">
               <div className="menuOption" onClick={onClick}>
                 <div>
