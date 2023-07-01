@@ -23,9 +23,17 @@ export const initialState = {
     paymentAmount: "",
   },
 
+  debitInput: {
+    cardNumber: "",
+    expiryDate: "",
+    CVV: "",
+  },
+
   account: {
     holderName: "Rick Sanchez",
     name: "current account",
+    accountNumber: 12345678,
+    sortCode: 123456,
     currencyCode: "gbp",
     currencyName: "british pound",
     currencySymbol: "£",

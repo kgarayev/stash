@@ -3,7 +3,11 @@ import React from "react";
 const Hub = () => {
   return (
     <>
-      <div>hub</div>
+      <div className="mainHomeContainer">
+        <div className="homeHeader">
+          <h1>Hub</h1>
+        </div>
+      </div>
     </>
   );
 };

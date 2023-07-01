@@ -64,6 +64,10 @@ export const mainSlice = createSlice({
     setPayInput: (state, action) => {
       state.payInput = action.payload;
     },
+
+    setDebitInput: (state, action) => {
+      state.debitInput = action.payload;
+    },
   },
 });
 
@@ -78,6 +82,7 @@ export const {
   setAccount,
   setPayInput,
   setBalance,
+  setDebitInput,
 } = mainSlice.actions;
 
 // exporting the selectors
@@ -89,5 +94,6 @@ export const selectToast = (state) => state.main.toast;
 export const selectAccount = (state) => state.main.account;
 export const selectTransactions = (state) => state.main.account.transactions;
 export const selectPayInput = (state) => state.main.payInput;
+export const selectDebitInput = (state) => state.main.debitInput;
 
 export default mainSlice.reducer;

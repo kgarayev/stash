@@ -13,3 +13,39 @@
 .payButton {
   margin-top: 1rem;
 }
+
+.receiveBox {
+  /* display: flex; */
+}
+
+.receiveControls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.bankTransferBox {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-size: 1.2rem;
+}
+
+.transferDetails {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.clipboardCopy {
+  align-self: center;
+  font-weight: 400;
+  color: grey;
+  cursor: pointer;
+}
+
+.clipboardCopy:hover {
+  font-weight: 600;
+  color: var(--primary-color);
+}

@@ -1,5 +1,5 @@
 import joi from "joi";
-import { register, login, pay } from "./schemas";
+import { register, login, pay, debit } from "./schemas";
 
 export const validate = async (payload, type) => {
   let option;
@@ -18,6 +18,11 @@ export const validate = async (payload, type) => {
     case "pay":
       // call joi
       option = joi.object(pay);
+      break;
+
+    case "debit":
+      // call joi
+      option = joi.object(debit);
       break;
 
     default:

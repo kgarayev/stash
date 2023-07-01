@@ -4,9 +4,18 @@ import { useDispatch } from "react-redux";
 import { setScreenMode } from "../store/mainSlice";
 
 const Button = (props) => {
-  const { text, type } = props;
+  const { text, type, textSize, onClick, id } = props;
 
-  return <button className={`button ` + type}>{text}</button>;
+  return (
+    <button
+      className={`button ${type}`}
+      style={{ fontSize: textSize }}
+      onClick={onClick}
+      id={id}
+    >
+      {text}
+    </button>
+  );
 };
 
 export default Button;
