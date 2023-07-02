@@ -111,7 +111,7 @@ export const login = {
       "string.email": "email must be a valid email address",
     }),
 
-  password: joi.string().min(8).max(20).trim().messages({
+  password: joi.string().min(8).max(32).trim().messages({
     "string.empty": "password is required",
     "string.min": "password must have a minimum length of {#limit} characters",
     "string.max": "password must have a maximum length of {#limit} characters",
@@ -192,4 +192,33 @@ export const debit = {
       "string.empty": "debit card CVV is required",
       "string.pattern.base": "debit card CVV must be a 3-digit number",
     }),
+};
+
+export const passwordChange = {
+  currentPassword: joi.string().min(8).max(32).trim().messages({
+    "string.empty": "password is required",
+    "string.min": "password must have a minimum length of {#limit} characters",
+    "string.max": "password must have a maximum length of {#limit} characters",
+  }),
+
+  newPassword: joi
+    .string()
+    .min(8)
+    .max(32)
+    .trim()
+    .pattern(/^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).*/)
+    .messages({
+      "string.empty": "password is required",
+      "string.min":
+        "password must have a minimum length of {#limit} characters",
+      "string.max":
+        "password must have a maximum length of {#limit} characters",
+      "string.pattern.base":
+        "password must contain an uppercase letter, a lowercase letter, and a number",
+    }),
+
+  confirmNewPassword: joi.string().valid(joi.ref("newPassword")).messages({
+    "any.only": "passwords do not match",
+    "string.empty": "is not allowed to be empty",
+  }),
 };

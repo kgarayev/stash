@@ -41,7 +41,7 @@ const Toast = () => {
       style={{ width: "20rem" }}
       toastStyle={{
         // Customize the toast style
-        background: "#f7f7f7",
+        background: "#f5f5f5",
         color: "black",
         fontFamily: `"Quicksand", sans-serif`,
         fontWeight: "400",
@@ -50,7 +50,7 @@ const Toast = () => {
         fontSize: "1.4rem",
         height: "4rem", // Adjust the height as per your requirement
         paddingBottom: "1rem",
-        boxShadow: "0rem 0rem 0.5rem 0.5rem rgba(0, 0, 0, 0.3)", // Add box shadow for a more defined shadow effect
+        boxShadow: "0rem 0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1)", // Add box shadow for a more defined shadow effect
       }}
       progressStyle={{
         // Customize the progress bar style

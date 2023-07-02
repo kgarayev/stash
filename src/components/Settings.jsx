@@ -1,10 +1,10 @@
 import React from "react";
 import "../stylesheets/Home.css";
 import "../stylesheets/AltTemplate.css";
-import HttpsOutlinedIcon from "@mui/icons-material/HttpsOutlined";
-import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
-import DeleteOutlinedIcon from "@mui/icons-material/DeleteOutlined";
-import HighlightOffOutlinedIcon from "@mui/icons-material/HighlightOffOutlined";
+
+import Notifications from "./Notifications";
+import PasswordChange from "./PasswordChange";
+import DeleteAccount from "./DeleteAccount";
 
 const Settings = () => {
   return (
@@ -21,18 +21,18 @@ const Settings = () => {
             </div>
           </div>
 
-          <div className="helpBody">
-            <div className="helpSection">
-              <div></div>
-              <div>
-                <p></p>
+          <div className="settingsBody">
+            <div className="accordionContainer">
+              <div className="accordionBox">
+                <Notifications />
               </div>
-            </div>
 
-            <div className="helpSection">
-              <div></div>
-              <div>
-                <p></p>
+              <div className="accordionBox">
+                <PasswordChange />
+              </div>
+
+              <div className="accordionBox">
+                <DeleteAccount />
               </div>
             </div>
           </div>

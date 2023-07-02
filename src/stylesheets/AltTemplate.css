@@ -59,3 +59,54 @@
   font-weight: 600;
   margin-top: 0.25rem;
 }
+
+.accordionContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.settingsBody {
+  width: 100%;
+}
+
+.accordionTitle {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.3rem;
+}
+
+.accordionBody {
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.accordionBody p {
+  margin-top: 1rem;
+}
+
+.empty {
+  height: 3rem;
+}
+
+.errorMessage {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.accordionBody form {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.accordionBody form div {
+  margin-top: 0rem;
+}
+
+.accordionBody form p {
+  /* padding-bottom: 1rem; */
+}

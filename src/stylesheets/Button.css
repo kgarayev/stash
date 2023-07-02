@@ -86,12 +86,17 @@
 }
 
 .tertiary:hover {
-  background-color: var(--background-color);
-  /* color: white; */
+  background-color: var(--primary-color);
+  color: white;
   text-decoration: none;
   transition-duration: 0.1s;
 }
 
 .selectedReceiveOption {
+  margin-top: 2rem;
+}
+
+.notificationsButton {
+  margin: 1rem;
   margin-top: 2rem;
 }

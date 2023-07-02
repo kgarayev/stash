@@ -23,6 +23,12 @@ export const initialState = {
     paymentAmount: "",
   },
 
+  passwordChange: {
+    currentPassword: "",
+    newPassword: "",
+    confirmNewPassword: "",
+  },
+
   debitInput: {
     cardNumber: "",
     expiryDate: "",
@@ -37,6 +43,7 @@ export const initialState = {
     dob: "01/01/1901",
     phoneNumber: "+441234567890",
     accountNumber: 12345678,
+    password: "Keller123",
     sortCode: 123456,
     currencyCode: "gbp",
     currencyName: "british pound",
