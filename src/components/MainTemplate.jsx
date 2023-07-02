@@ -30,6 +30,7 @@ const MainTemplate = (props) => {
   };
 
   const onMenuClick = () => {
+    dispatch(setScreenMode(0));
     setMenuVisibility(!menuVisibility);
   };
 

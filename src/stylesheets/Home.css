@@ -100,6 +100,10 @@
   align-items: center;
 }
 
+form {
+  z-index: 0;
+}
+
 /* 
 .homeNames {
   display: flex;

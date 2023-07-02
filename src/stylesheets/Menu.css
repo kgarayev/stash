@@ -1,7 +1,6 @@
 .menuContainer {
   /* border: 0.1rem solid black; */
   background-color: var(--background-color);
-  background-color: red;
   z-index: 5;
   position: fixed;
 
@@ -24,7 +23,7 @@
 
 .visibleMenu {
   transform: translateX(0%);
-  transition: transform 0.3s ease-out;
+  transition: transform 0s ease-out;
 }
 
 .backArrow {
