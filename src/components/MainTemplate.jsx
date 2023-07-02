@@ -12,8 +12,6 @@ import "../stylesheets/MainTemplate.css";
 
 // mui stuff import
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
-import CircleNotificationsRoundedIcon from "@mui/icons-material/CircleNotificationsRounded";
-import HelpRoundedIcon from "@mui/icons-material/HelpRounded";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import SwapVerticalCircleIcon from "@mui/icons-material/SwapVerticalCircle";

@@ -13,7 +13,7 @@
 }
 
 .homeContainer {
-  background-color: white;
+  background-color: #f5f5f5;
   border-radius: var(--border-radius-2);
   font-size: 1.1rem;
   margin-top: 1rem;

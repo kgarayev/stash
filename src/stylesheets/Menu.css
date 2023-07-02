@@ -1,7 +1,8 @@
 .menuContainer {
   /* border: 0.1rem solid black; */
   background-color: var(--background-color);
-  z-index: 2;
+  background-color: red;
+  z-index: 5;
   position: fixed;
 
   margin: auto;

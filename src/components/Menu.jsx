@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
-import { selectRegisterInput, selectAccount } from "../store/mainSlice";
+import { useSelector, useDispatch } from "react-redux";
+import {
+  selectRegisterInput,
+  selectAccount,
+  setScreenMode,
+} from "../store/mainSlice";
 import "../stylesheets/Menu.css";
 import ArrowBackRoundedIcon from "@mui/icons-material/ArrowBackRounded";
 import PermIdentityIcon from "@mui/icons-material/PermIdentity";
@@ -14,6 +18,7 @@ import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNone
 const Menu = (props) => {
   const { visibility, onClick } = props;
   const navigate = useNavigate();
+  const dispatch = useDispatch();
   const account = useSelector(selectAccount);
 
   return (
@@ -68,6 +73,7 @@ const Menu = (props) => {
             <div
               className="menuOption"
               onClick={() => {
+                dispatch(setScreenMode(0));
                 navigate("/");
               }}
             >

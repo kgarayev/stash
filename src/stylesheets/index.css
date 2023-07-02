@@ -20,7 +20,7 @@ html {
 
   color-scheme: light only;
   color: rgb(0, 0, 0);
-  background-color: #f5f5f5;
+  background-color: #ffffff;
   letter-spacing: -0.05rem;
 
   font-synthesis: none;
@@ -31,7 +31,7 @@ html {
   --secondary-color: #9d00ad;
   --secondary-sub-color: #cf8dd6;
   --tertiary-color: #007b60;
-  --background-color: #f5f5f5;
+  --background-color: #ffffff;
   --hover-color: #e0e0e0;
   --sub-color: rgb(150, 150, 150);
   --border-radius-1: 5rem;
