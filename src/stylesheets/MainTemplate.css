@@ -48,7 +48,7 @@
   margin-top: 5.5rem;
   /* height: 80rem; */
   overflow-y: auto;
-  margin-bottom: 7rem;
+  /* margin-bottom: 7rem; */
   /* padding-bottom: 20rem; */
 }
 
@@ -72,7 +72,7 @@
   height: 100%;
   border: none;
   padding: 1rem;
-  /* margin-bottom: 12rem; */
+  margin-bottom: 20rem;
   /* overflow-y: auto; */
 }
 
@@ -157,7 +157,18 @@
   height: 20rem;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 950px) {
   .mainComponentFooter {
+    /* width: 100%; */
+    height: 100%;
+    width: 10%;
+    flex-direction: column;
+    align-items: baseline;
+    justify-content: center;
+    gap: 2rem;
+    padding: 0.5rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
   }
 }
