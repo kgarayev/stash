@@ -215,3 +215,29 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+/* respnsive elements  */
+
+@media screen and (min-width: 500px) {
+  html {
+    font-size: 11.75px;
+  }
+}
+
+@media screen and (min-width: 750px) {
+  html {
+    font-size: 12.25px;
+  }
+}
+
+@media screen and (min-width: 1125px) {
+  html {
+    font-size: 12.75px;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  html {
+    font-size: 13.25px;
+  }
+}
