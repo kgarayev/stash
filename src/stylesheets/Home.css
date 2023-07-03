@@ -1,5 +1,6 @@
 .mainHomeContainer {
   display: flex;
+  align-items: center;
   flex-direction: column;
   height: 100%;
   overflow-y: none;
@@ -9,7 +10,10 @@
 
 .homeHeader {
   font-size: 1.1rem;
-  /* text-align: center; */
+
+  width: 100%;
+  max-width: 750px;
+  align-self: center;
 }
 
 .homeContainer {

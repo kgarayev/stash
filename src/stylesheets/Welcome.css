@@ -4,6 +4,9 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .welcomeName {
@@ -20,6 +23,9 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 30rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
+  width: 100%;
+  max-width: 40rem;
   gap: 0.5rem;
 }

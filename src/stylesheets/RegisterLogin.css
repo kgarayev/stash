@@ -39,7 +39,9 @@
   margin: auto;
   justify-content: center;
   align-items: center;
-  max-width: 30rem;
+
+  width: 100%;
+  /* max-width: 35rem; */
   margin-top: 1rem;
   margin-bottom: 0;
   padding-bottom: 0;
