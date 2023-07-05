@@ -35,7 +35,7 @@ const Menu = (props) => {
 
           <div className="menuSelect">
             <Link to="/main">
-              <div className="menuOption" onClick={onClick}>
+              <div className="menuOption homeOption" onClick={onClick}>
                 <div>
                   <HomeOutlinedIcon fontSize="large" />
                 </div>

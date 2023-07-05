@@ -9,8 +9,6 @@
   display: flex;
   justify-content: center;
 
-  top: 0;
-  left: 0;
   height: 100%;
   width: 100%;
 
@@ -22,6 +20,8 @@
 }
 
 .visibleMenu {
+  top: 0;
+  left: 0;
   transform: translateX(0%);
   transition: transform 0s ease-out;
 }
@@ -47,7 +47,7 @@
 }
 
 .menuOption h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 400;
   margin-bottom: 0.75rem;
 }
@@ -72,4 +72,66 @@
 
 .menuSelect {
   margin-top: 2rem;
+}
+
+@media screen and (min-width: 1100px) {
+  .menuContainer {
+    /* width: 100%; */
+    max-width: 14rem;
+    height: 100%;
+    position: fixed;
+    /* border: 0.1rem solid grey; */
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    transform: none;
+  }
+
+  .menuBody > div > h2 {
+    display: none;
+  }
+
+  .backArrow {
+    display: none;
+  }
+
+  .menuBody {
+    /* margin-top: 15rem; */
+    margin-left: 0;
+    font-size: 1.3rem;
+  }
+
+  .homeOption {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .menuContainer {
+    max-width: 16rem;
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .menuContainer {
+    max-width: 18rem;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .menuContainer {
+    max-width: 20rem;
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .menuContainer {
+    max-width: 22rem;
+  }
 }

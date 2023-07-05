@@ -26,6 +26,7 @@
   left: 0;
 
   border-radius: 0 0 2rem 2rem;
+  position: relative;
 }
 
 .mainComponentLogoContainer {
@@ -45,7 +46,7 @@
   align-items: center;
   height: 100%;
   width: 100%;
-  margin-top: 5.5rem;
+  /* margin-top: 5.5rem; */
   /* height: 80rem; */
   overflow-y: auto;
   /* margin-bottom: 7rem; */
@@ -88,6 +89,7 @@
 .mainControls {
   display: flex;
   gap: 0.5rem;
+  /* position: relative; */
 }
 
 .mainControlsButton {
@@ -102,6 +104,7 @@
   align-items: center;
   justify-content: center;
   margin: 0;
+  position: relative;
 }
 
 .mainControlsButton:hover {
@@ -178,7 +181,7 @@
     flex-direction: column;
     align-items: baseline;
     justify-content: center;
-    gap: 2rem;
+    gap: 1rem;
     padding: 1rem;
     position: fixed;
     bottom: 0;
@@ -196,5 +199,13 @@
 
   .section div p {
     font-size: 1.4rem;
+  }
+
+  .mainControlsButton {
+    display: none;
+  }
+
+  .mainSubComponent {
+    margin-top: 0;
   }
 }

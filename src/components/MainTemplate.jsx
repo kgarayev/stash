@@ -97,7 +97,6 @@ const MainTemplate = (props) => {
               </button>
             </div>
           </div>
-
           <Menu visibility={menuVisibility} onClick={onMenuClick} />
         </div>
 
