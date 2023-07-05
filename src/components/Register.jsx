@@ -160,7 +160,7 @@ const Register = () => {
           <div className="inputContainer">
             <Input
               label="password *"
-              type="string"
+              type="password"
               name="password"
               onInput={onInput}
             ></Input>
@@ -170,7 +170,7 @@ const Register = () => {
           <div className="inputContainer">
             <Input
               label="confirm password *"
-              type="string"
+              type="password"
               name="confirmPassword"
               onInput={onInput}
             ></Input>
