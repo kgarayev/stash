@@ -12,7 +12,12 @@ const Input = (props) => {
       <TextField
         name={name}
         InputProps={{
-          sx: { borderRadius: "1rem", backgroundColor: "white", zIndex: "0" },
+          sx: {
+            borderRadius: "1rem",
+            backgroundColor: "white",
+            zIndex: "0",
+            height: "4rem",
+          },
         }}
         // required
         autoFocus={autoFocus}
