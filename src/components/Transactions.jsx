@@ -6,9 +6,6 @@ import { selectAccount, selectTransactions } from "../store/mainSlice";
 
 import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
 import ExpandLessOutlinedIcon from "@mui/icons-material/ExpandLessOutlined";
-import ArrowCircleUpOutlinedIcon from "@mui/icons-material/ArrowCircleUpOutlined";
-import ArrowCircleDownOutlinedIcon from "@mui/icons-material/ArrowCircleDownOutlined";
-import SwapHorizontalCircleOutlinedIcon from "@mui/icons-material/SwapHorizontalCircleOutlined";
 
 const Transactions = (props) => {
   const { currencySymbol } = props;
@@ -44,12 +41,6 @@ const Transactions = (props) => {
       <div className="transactionsMain">
         <div className="transactionsMainHeader">
           <h2>Transactions</h2>
-
-          <div className="expandContainer">
-            <div className="homeIcons" onClick={onClick}>
-              {expanded[1]}
-            </div>
-          </div>
         </div>
 
         {recentTransactions.map((element) => {
@@ -76,6 +67,12 @@ const Transactions = (props) => {
               />
             );
           })}
+        </div>
+
+        <div className="expandContainer">
+          <div className="homeIcons" onClick={onClick}>
+            {expanded[1]}
+          </div>
         </div>
       </div>
     </>

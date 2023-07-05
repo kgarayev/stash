@@ -23,13 +23,13 @@ const BankTransfer = () => {
       await navigator.clipboard.writeText(text);
       toastTrigger({
         message: "copied to clipboard",
-        progressColor: "green",
+        progressColor: "var(--primary-color)",
       });
     } catch (error) {
       console.error("Error copying text to clipboard: ", error);
       toastTrigger({
         message: "error copying text to clipboard",
-        progressColor: "red",
+        progressColor: "#5d0000",
       });
     }
   };

@@ -29,7 +29,7 @@ const Register = () => {
 
   const errorMessage = {
     message: "ensure data is entered correctly",
-    progressColor: "red",
+    progressColor: "#5d0000",
   };
 
   // console.log(screenMode);

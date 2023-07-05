@@ -37,7 +37,7 @@ const Menu = (props) => {
             <Link to="/main">
               <div className="menuOption" onClick={onClick}>
                 <div>
-                  <HomeOutlinedIcon />
+                  <HomeOutlinedIcon fontSize="large" />
                 </div>
                 <h3>home</h3>
               </div>
@@ -46,7 +46,7 @@ const Menu = (props) => {
             <Link to="/profile">
               <div className="menuOption" onClick={onClick}>
                 <div>
-                  <PermIdentityIcon />
+                  <PermIdentityIcon fontSize="large" />
                 </div>
                 <h3>your details</h3>
               </div>
@@ -55,7 +55,7 @@ const Menu = (props) => {
             <Link to="/settings">
               <div className="menuOption" onClick={onClick}>
                 <div>
-                  <SettingsOutlinedIcon />
+                  <SettingsOutlinedIcon fontSize="large" />
                 </div>
                 <h3>settings</h3>
               </div>
@@ -64,7 +64,7 @@ const Menu = (props) => {
             <Link to="/help">
               <div className="menuOption" onClick={onClick}>
                 <div>
-                  <HelpOutlineOutlinedIcon />
+                  <HelpOutlineOutlinedIcon fontSize="large" />
                 </div>
                 <h3>help</h3>
               </div>
@@ -78,7 +78,7 @@ const Menu = (props) => {
               }}
             >
               <div>
-                <ExitToAppOutlinedIcon />
+                <ExitToAppOutlinedIcon fontSize="large" />
               </div>
               <h3>log out</h3>
             </div>

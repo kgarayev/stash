@@ -25,7 +25,7 @@ const Login = () => {
 
   const errorMessage = {
     message: "incorrect email or password",
-    progressColor: "red",
+    progressColor: "#5d0000",
   };
 
   const onInput = async (e) => {

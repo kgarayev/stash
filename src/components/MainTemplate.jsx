@@ -111,45 +111,56 @@ const MainTemplate = (props) => {
 
         <div className="mainComponentFooter">
           <div className="section" onClick={onClick} id="home">
-            <HomeOutlinedIcon
-              sx={{
-                padding: "0rem",
-                margin: "0",
-                width: "2.5rem",
-                height: "2.5rem",
-              }}
-              fontSize="large"
-            />
-
-            <p className="sectionText">home</p>
+            <div className="sectionIcon">
+              <HomeOutlinedIcon
+                sx={{
+                  padding: "0rem",
+                  margin: "0",
+                  width: "3rem",
+                  height: "3rem",
+                }}
+                fontSize="large"
+              />
+            </div>
+            <div>
+              <p className="sectionText">home</p>
+            </div>
           </div>
 
           <div className="section central" onClick={onClick} id="transfer">
-            <SwapVerticalCircleIcon
-              sx={{
-                padding: "0rem",
-                margin: "0",
-                width: "4rem",
-                height: "4rem",
-              }}
-              fontSize="large"
-            />
+            <div className="sectionIcon">
+              <SwapVerticalCircleIcon
+                sx={{
+                  padding: "0rem",
+                  margin: "0",
+                  width: "4rem",
+                  height: "4rem",
+                }}
+                fontSize="large"
+              />
+            </div>
 
-            <p className="sectionText">transfer</p>
+            <div>
+              <p className="sectionText">transfer</p>
+            </div>
           </div>
 
           <div className="section" id="hub" onClick={onClick}>
-            <DashboardOutlinedIcon
-              sx={{
-                padding: "0rem",
-                margin: "0",
-                width: "2.5rem",
-                height: "2.5rem",
-              }}
-              fontSize="large"
-            />
+            <div className="sectionIcon">
+              <DashboardOutlinedIcon
+                sx={{
+                  padding: "0rem",
+                  margin: "0",
+                  width: "3rem",
+                  height: "3rem",
+                }}
+                fontSize="large"
+              />
+            </div>
 
-            <p className="sectionText">hub</p>
+            <div>
+              <p className="sectionText">hub</p>
+            </div>
           </div>
         </div>
       </div>
