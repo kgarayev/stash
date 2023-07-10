@@ -27,10 +27,12 @@ export const mainSlice = createSlice({
       state.screenMode = action.payload;
     },
 
+    // set the toast message
     setToast: (state, action) => {
       state.toast = action.payload;
     },
 
+    // set up account
     setAccount: (state, action) => {
       state.account = action.payload;
 
@@ -43,10 +45,12 @@ export const mainSlice = createSlice({
       // transaction: 5000,
     },
 
+    // set account balance
     setBalance: (state, action) => {
       state.account.balance = action.payload;
     },
 
+    // set transactions
     setTransactions: (state, action) => {
       // using stack data structure - LIFO
       state.account.transactions.unshift(action.payload);
@@ -61,14 +65,17 @@ export const mainSlice = createSlice({
       // }
     },
 
+    // pay input
     setPayInput: (state, action) => {
       state.payInput = action.payload;
     },
 
+    // debit card input
     setDebitInput: (state, action) => {
       state.debitInput = action.payload;
     },
 
+    // change password
     changePassword: (state, action) => {
       state.passwordChange = action.payload;
     },

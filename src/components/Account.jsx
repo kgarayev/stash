@@ -1,8 +1,10 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { selectAccount, selectTransactions } from "../store/mainSlice";
+import { useSelector } from "react-redux";
+import { selectAccount } from "../store/mainSlice";
 import ukIcon from "../assets/icons/uk.svg";
 import Transactions from "./Transactions";
+
+// the account component
 
 const Account = () => {
   const account = useSelector(selectAccount);

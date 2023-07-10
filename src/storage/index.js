@@ -1,3 +1,5 @@
+// for local storage
+
 export const storeState = (key, data) => {
   localStorage.setItem(key, JSON.stringify(data));
 };

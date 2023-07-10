@@ -3,7 +3,7 @@ import Name from "./Name";
 import Menu from "./Menu";
 import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
-import { setToast, setScreenMode, selectScreenMode } from "../store/mainSlice";
+import { setToast, setScreenMode } from "../store/mainSlice";
 import { toastTrigger } from "../helpers/helpers";
 
 // importing stylesheets
@@ -15,21 +15,26 @@ import "../stylesheets/AltTemplate.css";
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
 import Footer from "./Footer";
 
-const AltTemplate = (props) => {
-  const [menuVisibility, setMenuVisibility] = useState(false);
+// alternative template for different menu items
 
+const AltTemplate = (props) => {
+  // local state
+  const [menuVisibility, setMenuVisibility] = useState(false);
   const { component } = props;
   const dispatch = useDispatch();
 
+  // trigger toast
   const toast = {
     message: "Hello from Main",
     progressColor: "var(--primary-color)",
   };
 
+  // if menu is clicked
   const onMenuClick = () => {
     setMenuVisibility(!menuVisibility);
   };
 
+  // if other items are clicked
   const onClick = (e) => {
     dispatch(setScreenMode(e.currentTarget.id));
   };
@@ -37,6 +42,7 @@ const AltTemplate = (props) => {
   return (
     <>
       <div className="mainComponent">
+        {/* showing header  */}
         <div className="mainComponentHeader">
           <Link to="/main" className="mainLogoLink" id="home" onClick={onClick}>
             <div className="mainComponentLogoContainer">
@@ -75,6 +81,7 @@ const AltTemplate = (props) => {
           <div className="placeholder"></div>
         </div>
 
+        {/* showing footer condiitonally  */}
         <Footer footerVisibility={false} />
       </div>
     </>
