@@ -48,7 +48,7 @@
   width: 100%;
   /* margin-top: 5.5rem; */
   /* height: 80rem; */
-  overflow-y: auto;
+  /* overflow-y: auto; */
   /* margin-bottom: 7rem; */
   /* padding-bottom: 20rem; */
 }
@@ -186,6 +186,11 @@
     position: fixed;
     bottom: 0;
     left: 0;
+    z-index: 3;
+  }
+
+  .mainComponentHeader {
+    /* position: relative; */
   }
 
   .section {

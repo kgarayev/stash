@@ -23,7 +23,13 @@ const Menu = (props) => {
 
   return (
     <>
-      <div className={`menuContainer ` + `${visibility ? "visibleMenu" : ""}`}>
+      <div
+        className={
+          `menuContainer ` +
+          `largeScreen ` +
+          `${visibility ? "visibleMenu" : ""}`
+        }
+      >
         <div onClick={onClick} className="backArrow">
           <ArrowBackRoundedIcon fontSize="large" />
         </div>

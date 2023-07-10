@@ -77,19 +77,24 @@
 @media screen and (min-width: 1100px) {
   .menuContainer {
     /* width: 100%; */
-    max-width: 14rem;
+    width: 14rem;
     height: 100%;
-    position: fixed;
+    z-index: 10;
     /* border: 0.1rem solid grey; */
     top: 0;
     right: 0;
     margin: 0;
     padding: 0rem;
-
-    display: flex;
+    position: fixed;
     flex-direction: column;
+    transform: none;
     justify-content: center;
+  }
 
+  .visibleMenu {
+    top: 0;
+    right: 0;
+    left: auto;
     transform: none;
   }
 
@@ -104,11 +109,30 @@
   .menuBody {
     /* margin-top: 15rem; */
     margin-left: 0;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
+  }
+
+  .menuOption {
+    display: flex;
+    align-items: center;
+  }
+
+  .menuOption div {
+    order: 2; /* Set a higher order value to move it to the right */
+  }
+
+  .menuOption h3 {
+    order: 1; /* Set a lower order value to move it to the left */
+  }
+
+  .menuSelect {
+    display: flex;
+    flex-direction: column;
+    align-items: end;
   }
 }
 
-@media screen and (min-width: 1200px) {
+/* @media screen and (min-width: 1200px) {
   .menuContainer {
     max-width: 16rem;
   }
@@ -130,4 +154,4 @@
   .menuContainer {
     max-width: 22rem;
   }
-}
+} */
