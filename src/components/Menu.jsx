@@ -40,7 +40,7 @@ const Menu = (props) => {
           </div>
 
           <div className="menuSelect">
-            <div className="menuOptionBox">
+            <div className="menuOptionBox homeOff">
               <Link to="/main">
                 <div className="menuOption homeOption" onClick={onClick}>
                   <div>
