@@ -63,11 +63,13 @@ const Interface = () => {
     // various routes
     <Routes>
       <Route path="/" element={<Welcome />} />
+
       <Route
         path="/register"
         element={<Template component={registerComponent} />}
       />
       <Route path="/login" element={<Template component={<Login />} />} />
+
       <Route
         path="/main"
         element={<MainTemplate component={mainComponent} />}
@@ -79,6 +81,7 @@ const Interface = () => {
         path="/settings"
         element={<AltTemplate component={<Settings />} />}
       />
+
       <Route
         path="/profile"
         element={<AltTemplate component={<Profile />} />}

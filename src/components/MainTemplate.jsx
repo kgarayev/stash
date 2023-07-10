@@ -16,6 +16,7 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import SwapVerticalCircleIcon from "@mui/icons-material/SwapVerticalCircle";
 import IconButton from "@mui/material/IconButton";
+import Footer from "./Footer";
 
 const MainTemplate = (props) => {
   const [menuVisibility, setMenuVisibility] = useState(false);
@@ -108,7 +109,9 @@ const MainTemplate = (props) => {
           <div className="placeholder"></div>
         </div>
 
-        <div className="mainComponentFooter">
+        <Footer footerVisibility={true} />
+
+        {/* <div className="mainComponentFooter">
           <div className="section" onClick={onClick} id="home">
             <div className="sectionIcon">
               <HomeOutlinedIcon
@@ -161,7 +164,7 @@ const MainTemplate = (props) => {
               <p className="sectionText">hub</p>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </>
   );

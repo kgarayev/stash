@@ -13,6 +13,7 @@ import "../stylesheets/AltTemplate.css";
 
 // mui stuff import
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
+import Footer from "./Footer";
 
 const AltTemplate = (props) => {
   const [menuVisibility, setMenuVisibility] = useState(false);
@@ -73,6 +74,8 @@ const AltTemplate = (props) => {
           </div>
           <div className="placeholder"></div>
         </div>
+
+        <Footer footerVisibility={false} />
       </div>
     </>
   );
