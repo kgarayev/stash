@@ -21,6 +21,8 @@ import {
 import StatusUpdate from "./StatusUpdate";
 import PasswordContent from "./PasswordContent";
 
+// change password  settings
+
 const PasswordChange = () => {
   const [localScreenMode, setLocalScreenMode] = useState(0);
 

@@ -8,20 +8,13 @@ import { validate } from "../validation";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setErrors,
-  selectRegisterInput,
   selectErrors,
-  selectAccount,
-  setTransactions,
-  selectPayInput,
-  setPayInput,
-  setBalance,
   setDebitInput,
   selectDebitInput,
 } from "../store/mainSlice";
 
 const DebitCard = () => {
   const [localScreenMode, setLocalScreenMode] = useState(0);
-
   const dispatch = useDispatch();
   const errors = useSelector(selectErrors);
   const debitInput = useSelector(selectDebitInput);

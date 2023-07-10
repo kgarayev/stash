@@ -6,6 +6,8 @@ import Notifications from "./Notifications";
 import PasswordChange from "./PasswordChange";
 import DeleteAccount from "./DeleteAccount";
 
+// settings component
+
 const Settings = () => {
   return (
     <>

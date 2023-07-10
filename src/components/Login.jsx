@@ -16,6 +16,8 @@ import { toastTrigger } from "../helpers/helpers";
 // importing stylesheets
 import "../stylesheets/RegisterLogin.css";
 
+// main login component
+
 const Login = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

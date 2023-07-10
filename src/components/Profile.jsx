@@ -1,12 +1,12 @@
 import React from "react";
 import Button from "./Button";
 import { useSelector } from "react-redux";
-import { selectRegisterInput, selectAccount } from "../store/mainSlice";
+import { selectAccount } from "../store/mainSlice";
 import "../stylesheets/Home.css";
 import "../stylesheets/Transfer.css";
 import "../stylesheets/AltTemplate.css";
-import LocalPhoneRoundedIcon from "@mui/icons-material/LocalPhoneRounded";
-import MailOutlineRoundedIcon from "@mui/icons-material/MailOutlineRounded";
+
+// profile / account page
 
 const Profile = () => {
   const account = useSelector(selectAccount);

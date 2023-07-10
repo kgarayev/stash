@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 import "../stylesheets/Home.css";
 import "../stylesheets/Transfer.css";
 import "../stylesheets/Button.css";
+
+// hub component
 
 const Hub = () => {
   return (

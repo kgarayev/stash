@@ -13,6 +13,8 @@ import CloseIcon from "@mui/icons-material/Close";
 import logo from "../assets/logos/Logo7.svg";
 import "../stylesheets/RegisterLogin.css";
 
+// template component for register and login (different styling and layout to the main templates etc)
+
 const Template = (props) => {
   const dispatch = useDispatch();
 

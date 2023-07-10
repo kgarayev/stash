@@ -7,6 +7,8 @@ import { selectAccount, selectTransactions } from "../store/mainSlice";
 import ExpandMoreOutlinedIcon from "@mui/icons-material/ExpandMoreOutlined";
 import ExpandLessOutlinedIcon from "@mui/icons-material/ExpandLessOutlined";
 
+// summary of transactions
+
 const Transactions = (props) => {
   const { currencySymbol } = props;
 

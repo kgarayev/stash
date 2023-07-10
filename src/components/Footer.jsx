@@ -12,6 +12,8 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
 import SwapVerticalCircleIcon from "@mui/icons-material/SwapVerticalCircle";
 
+// footer component
+
 const Footer = (props) => {
   const { footerVisibility } = props;
 

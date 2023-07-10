@@ -15,6 +15,7 @@ import ExitToAppOutlinedIcon from "@mui/icons-material/ExitToAppOutlined";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import NotificationsNoneOutlinedIcon from "@mui/icons-material/NotificationsNoneOutlined";
 
+// side menu component
 const Menu = (props) => {
   const { visibility, onClick } = props;
   const navigate = useNavigate();

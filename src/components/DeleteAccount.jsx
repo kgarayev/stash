@@ -16,6 +16,7 @@ const DeleteAccount = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  // placeholder function
   const onClick = () => {
     dispatch(setScreenMode(0));
     navigate("/");

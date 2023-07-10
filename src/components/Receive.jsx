@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
 import Button from "./Button";
 import BankTransfer from "./BankTransfer";
 import DebitCard from "./DebitCard";
+
+// receive money component
 
 const Receive = () => {
   const [localScreenMode, setLocalScreenMode] = useState(0);

@@ -6,6 +6,8 @@ import { toastTrigger } from "../helpers/helpers";
 const BankTransfer = () => {
   const account = useSelector(selectAccount);
   const sortCode = account.sortCode.toString();
+
+  // format the sort code
   const formattedSortCode =
     sortCode[0] +
     sortCode[1] +
@@ -18,6 +20,7 @@ const BankTransfer = () => {
 
   let text = `\nBeneficiary: ${account.holderName}\n\nAccount: ${account.accountNumber}\n\nSort Code: ${formattedSortCode}`;
 
+  // copy to clipboard
   const handleCopy = async () => {
     try {
       await navigator.clipboard.writeText(text);

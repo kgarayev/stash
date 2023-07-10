@@ -12,11 +12,9 @@ import "../stylesheets/MainTemplate.css";
 
 // mui stuff import
 import AccountCircleRoundedIcon from "@mui/icons-material/AccountCircleRounded";
-import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
-import DashboardOutlinedIcon from "@mui/icons-material/DashboardOutlined";
-import SwapVerticalCircleIcon from "@mui/icons-material/SwapVerticalCircle";
-import IconButton from "@mui/material/IconButton";
 import Footer from "./Footer";
+
+// main dashboard / home screen component
 
 const MainTemplate = (props) => {
   const [menuVisibility, setMenuVisibility] = useState(false);
@@ -110,61 +108,6 @@ const MainTemplate = (props) => {
         </div>
 
         <Footer footerVisibility={true} />
-
-        {/* <div className="mainComponentFooter">
-          <div className="section" onClick={onClick} id="home">
-            <div className="sectionIcon">
-              <HomeOutlinedIcon
-                sx={{
-                  padding: "0rem",
-                  margin: "0",
-                  width: "3rem",
-                  height: "3rem",
-                }}
-                fontSize="large"
-              />
-            </div>
-            <div>
-              <p className="sectionText">home</p>
-            </div>
-          </div>
-
-          <div className="section central" onClick={onClick} id="transfer">
-            <div className="sectionIcon">
-              <SwapVerticalCircleIcon
-                sx={{
-                  padding: "0rem",
-                  margin: "0",
-                  width: "4rem",
-                  height: "4rem",
-                }}
-                fontSize="large"
-              />
-            </div>
-
-            <div>
-              <p className="sectionText">transfer</p>
-            </div>
-          </div>
-
-          <div className="section" id="hub" onClick={onClick}>
-            <div className="sectionIcon">
-              <DashboardOutlinedIcon
-                sx={{
-                  padding: "0rem",
-                  margin: "0",
-                  width: "3rem",
-                  height: "3rem",
-                }}
-                fontSize="large"
-              />
-            </div>
-
-            <div>
-              <p className="sectionText">hub</p>
-            </div>
-          </div>
-        </div> */}
       </div>
     </>
   );

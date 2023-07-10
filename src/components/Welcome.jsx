@@ -6,6 +6,8 @@ import Logo from "./Logo";
 import Name from "./Name";
 import Button from "./Button";
 
+// main landing page
+
 const Welcome = () => {
   return (
     <>

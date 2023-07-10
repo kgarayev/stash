@@ -1,5 +1,7 @@
 import React from "react";
 
+// error 404 component
+
 const Error404 = () => {
   return (
     <>

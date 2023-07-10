@@ -4,6 +4,8 @@ import "../stylesheets/AltTemplate.css";
 import LocalPhoneRoundedIcon from "@mui/icons-material/LocalPhoneRounded";
 import MailOutlineRoundedIcon from "@mui/icons-material/MailOutlineRounded";
 
+// help or customer support component
+
 const Help = () => {
   return (
     <>

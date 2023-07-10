@@ -1,6 +1,8 @@
 import React from "react";
 import "../stylesheets/Logo.css";
 
+// name near the logo
+
 const Name = () => {
   return (
     <>

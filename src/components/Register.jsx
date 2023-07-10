@@ -1,10 +1,9 @@
 // importing react, components and libraries
-import React, { useState } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import Input from "./Input";
 import { toastTrigger } from "../helpers/helpers";
-
 import { validate } from "../validation";
 import { useSelector, useDispatch } from "react-redux";
 import {
@@ -19,6 +18,8 @@ import {
 // importing stylesheets
 import "../stylesheets/RegisterLogin.css";
 import StatusUpdate from "./StatusUpdate";
+
+// register component
 
 const Register = () => {
   const navigate = useNavigate();

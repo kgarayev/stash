@@ -10,6 +10,8 @@ import Tab from "@mui/material/Tab";
 import Pay from "./Pay";
 import Receive from "./Receive";
 
+// pay and receive money
+
 const Transfer = () => {
   const [value, setValue] = useState(0);
 

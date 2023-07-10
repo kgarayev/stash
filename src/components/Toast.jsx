@@ -5,6 +5,8 @@ import "react-toastify/dist/ReactToastify.css";
 import { useSelector, useDispatch } from "react-redux";
 import { selectToast, setToast } from "../store/mainSlice";
 
+// toastify stuff
+
 const Toast = () => {
   const dispatch = useDispatch();
   const selectedToast = useSelector(selectToast);

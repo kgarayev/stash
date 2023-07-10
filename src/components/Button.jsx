@@ -1,7 +1,7 @@
 import React from "react";
 import "../stylesheets/Button.css";
-import { useDispatch } from "react-redux";
-import { setScreenMode } from "../store/mainSlice";
+
+// custom button component
 
 const Button = (props) => {
   const { text, type, textSize, onClick, id } = props;

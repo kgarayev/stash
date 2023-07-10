@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import Input from "./Input";
 import Button from "./Button";
 import StatusUpdate from "./StatusUpdate";
@@ -8,7 +8,6 @@ import { validate } from "../validation";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setErrors,
-  selectRegisterInput,
   selectErrors,
   selectAccount,
   setTransactions,
@@ -19,6 +18,8 @@ import {
 
 // importing stylesheets
 import "../stylesheets/RegisterLogin.css";
+
+// pay component
 
 const Pay = () => {
   const [localScreenMode, setLocalScreenMode] = useState(0);

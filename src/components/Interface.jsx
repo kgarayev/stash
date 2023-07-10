@@ -25,6 +25,7 @@ const Interface = () => {
   let registerComponent = <Register />;
   let mainComponent = <Home />;
 
+  // return depending on the screenmode
   switch (screenMode) {
     case 0:
       registerComponent = <Register />;
@@ -57,7 +58,6 @@ const Interface = () => {
     default:
       break;
   }
-  // console.log(mainComponent.type.name);
 
   return (
     // various routes

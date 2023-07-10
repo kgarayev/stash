@@ -8,9 +8,10 @@ import AccordionDetails from "@mui/material/AccordionDetails";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
-import Switch from "@mui/material/Switch";
 import Checkbox from "@mui/material/Checkbox";
 import Button from "./Button";
+
+// notifications settings
 
 const Notifications = () => {
   return (
