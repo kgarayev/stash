@@ -1,3 +1,5 @@
+/* register and login components  */
+
 .registerNames {
   display: flex;
   justify-content: space-around;
@@ -41,7 +43,6 @@
   align-items: center;
 
   width: 100%;
-  /* max-width: 35rem; */
   margin-top: 1rem;
   margin-bottom: 0;
   padding-bottom: 0;

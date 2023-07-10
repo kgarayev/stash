@@ -1,3 +1,5 @@
+/* alternative template styling  */
+
 .altFooter {
   display: none;
 }
@@ -13,7 +15,6 @@
 }
 
 .helpContainer {
-  /* height: 90%; */
   padding: 2rem;
 }
 
@@ -114,10 +115,6 @@
 
 .accordionBody form div {
   margin-top: 0rem;
-}
-
-.accordionBody form p {
-  /* padding-bottom: 1rem; */
 }
 
 @media screen and (min-width: 1100px) {

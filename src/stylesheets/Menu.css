@@ -1,19 +1,16 @@
+/* menu component  */
+
 .menuContainer {
-  /* border: 0.1rem solid black; */
   background-color: var(--background-color);
   z-index: 5;
   position: fixed;
-
   margin: auto;
   transform: translateX(300%);
   display: flex;
   justify-content: center;
-
   height: 100%;
   width: 100%;
-
   padding: 2rem;
-
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -76,11 +73,9 @@
 
 @media screen and (min-width: 1100px) {
   .menuContainer {
-    /* width: 100%; */
     width: 15rem;
     height: 100%;
     z-index: 10;
-    /* border: 0.1rem solid grey; */
     top: 0;
     right: 0;
     margin: 0;
@@ -111,7 +106,6 @@
   }
 
   .menuBody {
-    /* margin-top: 15rem; */
     margin-left: 0;
     font-size: 1.2rem;
   }
@@ -127,12 +121,11 @@
   }
 
   .menuOption div {
-    order: 2; /* Set a higher order value to move it to the right */
-    /* flex-grow: 1; */
+    order: 2;
   }
 
   .menuOption h3 {
-    order: 1; /* Set a lower order value to move it to the left */
+    order: 1;
   }
 
   .menuSelect {
@@ -171,15 +164,4 @@
   .menuContainer {
     margin-right: 1.5rem;
   }
-}
-
-@media screen and (min-width: 1300px) {
-  .menuContainer {
-  }
-}
-
-@media screen and (min-width: 1400px) {
-}
-
-@media screen and (min-width: 1500px) {
 }

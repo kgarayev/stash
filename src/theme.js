@@ -1,6 +1,8 @@
 import { createTheme } from "@mui/material/styles";
 import Quicksand from "./assets/fonts/Quicksand-VariableFont_wght.ttf";
 
+// setting a scheme for MUI
+
 const theme = createTheme({
   typography: {
     fontFamily: "Quicksand, Sans",

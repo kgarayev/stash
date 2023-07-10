@@ -15,6 +15,8 @@ const root = createRoot(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
+// setting up Router, theme, provider for store
+
 root.render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>

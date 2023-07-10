@@ -10,6 +10,8 @@ import "react-toastify/dist/ReactToastify.css";
 const App = () => {
   const theme = useTheme();
 
+  // importing and rendering toast and interface components
+
   return (
     <>
       <Toast />

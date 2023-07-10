@@ -1,6 +1,8 @@
 import joi from "joi";
 import { register, login, pay, debit, passwordChange } from "./schemas";
 
+// main joi validagtion functions
+
 export const validate = async (payload, type) => {
   let option;
 

@@ -1,6 +1,9 @@
 import joi from "joi";
 
-// define schema
+// define schema for joi validation
+
+// for register page
+
 export const register = {
   firstName: joi
     .string()
@@ -101,6 +104,8 @@ export const register = {
   }),
 };
 
+// for login page
+
 export const login = {
   email: joi
     .string()
@@ -117,6 +122,8 @@ export const login = {
     "string.max": "password must have a maximum length of {#limit} characters",
   }),
 };
+
+// for payment page
 
 export const pay = {
   payeeName: joi
@@ -168,6 +175,8 @@ export const pay = {
     }),
 };
 
+// for debit card validation
+
 export const debit = {
   cardNumber: joi.string().creditCard().required().messages({
     "string.empty": "debit card number is required",
@@ -193,6 +202,8 @@ export const debit = {
       "string.pattern.base": "debit card CVV must be a 3-digit number",
     }),
 };
+
+// for password change
 
 export const passwordChange = {
   currentPassword: joi.string().min(8).max(32).trim().messages({

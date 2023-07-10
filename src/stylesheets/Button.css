@@ -1,5 +1,7 @@
 /* BUTTON STUFF */
+
 /* main button  */
+
 .button {
   appearance: none;
   color: white;
@@ -9,14 +11,12 @@
   box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0,
     rgba(255, 255, 255, 0.25) 0 1px 0 inset;
   box-sizing: border-box;
-
   cursor: pointer;
   display: inline-block;
   font-weight: 600;
   font-size: 1.6rem;
   line-height: 2;
   height: 4rem;
-
   list-style: none;
   padding: 0.25rem 0.5rem;
   position: relative;
@@ -66,7 +66,6 @@
 .secondary {
   background-color: var(--background-color);
   color: var(--primary-color);
-  /* border: 0.15rem solid var(--primary-sub-color); */
 }
 
 .secondary:hover {

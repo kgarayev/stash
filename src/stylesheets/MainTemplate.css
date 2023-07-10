@@ -7,7 +7,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* overflow-y: auto; */
 }
 
 .mainComponentHeader {
@@ -16,15 +15,12 @@
   align-items: center;
   padding: 1.4rem;
   padding-bottom: 1rem;
-
   width: 100%;
-  /* background-color: aqua; */
   position: fixed;
   z-index: 1;
   background-color: var(--background-color);
   top: 0;
   left: 0;
-
   border-radius: 0 0 2rem 2rem;
   position: relative;
 }
@@ -46,25 +42,15 @@
   align-items: center;
   height: 100%;
   width: 100%;
-  /* margin-top: 5.5rem; */
-  /* height: 80rem; */
-  /* overflow-y: auto; */
-  /* margin-bottom: 7rem; */
-  /* padding-bottom: 20rem; */
 }
 
 .mainBoxWrapper {
   background-color: var(--background-color);
-  /* background-color: rgb(214, 214, 214); */
   width: 100%;
   height: 100%;
-  /* border-radius: var(--border-radius-3); */
   border: none;
-  /* padding: 1rem; */
   padding-left: 1rem;
   padding-right: 1rem;
-  /* margin-bottom: 12rem; */
-  /* overflow-y: auto; */
 }
 
 .mainComponentBox {
@@ -74,7 +60,6 @@
   border: none;
   padding: 1rem;
   margin-bottom: 25rem;
-  /* overflow-y: auto; */
 }
 
 .mainComponentBoxHeader {
@@ -89,7 +74,6 @@
 .mainControls {
   display: flex;
   gap: 0.5rem;
-  /* position: relative; */
 }
 
 .mainControlsButton {
@@ -121,8 +105,6 @@
   bottom: 0;
   left: 0;
   background-color: var(--background-color);
-  /* z-index: 1; */
-
   border-radius: 2rem 2rem 0 0;
 }
 
@@ -142,7 +124,6 @@
 }
 
 .section div {
-  /* border: 0.1rem solid grey; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -175,7 +156,6 @@
 
 @media screen and (min-width: 1100px) {
   .mainComponentFooter {
-    /* width: 100%; */
     height: 100%;
     width: 13rem;
     flex-direction: column;
@@ -191,7 +171,6 @@
   }
 
   .mainComponentHeader {
-    /* position: relative; */
     z-index: 15;
   }
 
