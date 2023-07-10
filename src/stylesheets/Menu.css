@@ -77,7 +77,7 @@
 @media screen and (min-width: 1100px) {
   .menuContainer {
     /* width: 100%; */
-    width: 14rem;
+    width: 15rem;
     height: 100%;
     z-index: 10;
     /* border: 0.1rem solid grey; */
@@ -114,11 +114,17 @@
 
   .menuOption {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
+    justify-content: flex-end;
+    width: 100%;
+    margin-left: 0;
+    padding-left: 0;
+    margin: 0.6rem;
   }
 
   .menuOption div {
     order: 2; /* Set a higher order value to move it to the right */
+    /* flex-grow: 1; */
   }
 
   .menuOption h3 {
@@ -129,29 +135,46 @@
     display: flex;
     flex-direction: column;
     align-items: end;
+    width: 100%;
+    margin-left: 0;
+  }
+
+  .menuOptionBox {
+    margin-right: 1rem;
+    margin-left: 0;
+  }
+
+  .menuOptionBox a {
+    margin-left: 0;
+    padding-left: 0;
+    margin: 0;
+  }
+
+  .menuBody {
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+  .menuContainer {
+    padding-left: 0;
+    margin-left: 0;
+    margin-right: 1rem;
   }
 }
 
-/* @media screen and (min-width: 1200px) {
+@media screen and (min-width: 1200px) {
   .menuContainer {
-    max-width: 16rem;
+    margin-right: 1.5rem;
   }
 }
 
 @media screen and (min-width: 1300px) {
   .menuContainer {
-    max-width: 18rem;
   }
 }
 
 @media screen and (min-width: 1400px) {
-  .menuContainer {
-    max-width: 20rem;
-  }
 }
 
 @media screen and (min-width: 1500px) {
-  .menuContainer {
-    max-width: 22rem;
-  }
-} */
+}

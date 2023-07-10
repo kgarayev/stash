@@ -40,53 +40,63 @@ const Menu = (props) => {
           </div>
 
           <div className="menuSelect">
-            <Link to="/main">
-              <div className="menuOption homeOption" onClick={onClick}>
-                <div>
-                  <HomeOutlinedIcon fontSize="large" />
+            <div className="menuOptionBox">
+              <Link to="/main">
+                <div className="menuOption homeOption" onClick={onClick}>
+                  <div>
+                    <HomeOutlinedIcon fontSize="large" />
+                  </div>
+                  <h3>home</h3>
                 </div>
-                <h3>home</h3>
-              </div>
-            </Link>
+              </Link>
+            </div>
 
-            <Link to="/profile">
-              <div className="menuOption" onClick={onClick}>
-                <div>
-                  <PermIdentityIcon fontSize="large" />
+            <div className="menuOptionBox">
+              <Link to="/profile">
+                <div className="menuOption" onClick={onClick}>
+                  <div>
+                    <PermIdentityIcon fontSize="large" />
+                  </div>
+                  <h3>your details</h3>
                 </div>
-                <h3>your details</h3>
-              </div>
-            </Link>
+              </Link>
+            </div>
 
-            <Link to="/settings">
-              <div className="menuOption" onClick={onClick}>
-                <div>
-                  <SettingsOutlinedIcon fontSize="large" />
+            <div className="menuOptionBox">
+              <Link to="/settings">
+                <div className="menuOption" onClick={onClick}>
+                  <div>
+                    <SettingsOutlinedIcon fontSize="large" />
+                  </div>
+                  <h3>settings</h3>
                 </div>
-                <h3>settings</h3>
-              </div>
-            </Link>
+              </Link>
+            </div>
 
-            <Link to="/help">
-              <div className="menuOption" onClick={onClick}>
-                <div>
-                  <HelpOutlineOutlinedIcon fontSize="large" />
+            <div className="menuOptionBox">
+              <Link to="/help">
+                <div className="menuOption" onClick={onClick}>
+                  <div>
+                    <HelpOutlineOutlinedIcon fontSize="large" />
+                  </div>
+                  <h3>help</h3>
                 </div>
-                <h3>help</h3>
-              </div>
-            </Link>
+              </Link>
+            </div>
 
-            <div
-              className="menuOption"
-              onClick={() => {
-                dispatch(setScreenMode(0));
-                navigate("/");
-              }}
-            >
-              <div>
-                <ExitToAppOutlinedIcon fontSize="large" />
+            <div className="menuOptionBox">
+              <div
+                className="menuOption logOut"
+                onClick={() => {
+                  dispatch(setScreenMode(0));
+                  navigate("/");
+                }}
+              >
+                <div>
+                  <ExitToAppOutlinedIcon fontSize="large" />
+                </div>
+                <h3>log out</h3>
               </div>
-              <h3>log out</h3>
             </div>
           </div>
         </div>
