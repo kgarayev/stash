@@ -83,7 +83,7 @@ const Register = () => {
     dispatch(setRegisterInput(registerJson));
 
     try {
-      const { data } = await axios.post("http://localhost:6001/users", {
+      const { data } = await axios.post("http://localhost:6001/user/register", {
         ...registerJson,
       });
 
