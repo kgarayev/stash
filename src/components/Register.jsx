@@ -88,16 +88,24 @@ const Register = () => {
       });
 
       console.log(data);
+
+      if (data.status === 1) {
+        dispatch(setScreenMode(1));
+        console.log(screenMode);
+
+        setTimeout(() => {
+          navigate("/main");
+        }, 1500);
+
+        return;
+      } else {
+        console.log(data.reason);
+        return;
+      }
     } catch (error) {
       console.log(error);
+      return;
     }
-
-    dispatch(setScreenMode(1));
-    console.log(screenMode);
-
-    setTimeout(() => {
-      navigate("/main");
-    }, 1500);
   };
 
   return (
