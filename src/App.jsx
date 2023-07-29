@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Interface from "./components/Interface";
 import Toast from "./components/Toast";
 import "./stylesheets/App.css";

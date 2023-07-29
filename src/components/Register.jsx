@@ -1,5 +1,6 @@
 // importing react, components and libraries
 import React from "react";
+import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import Input from "./Input";
@@ -47,7 +48,7 @@ const Register = () => {
     dispatch(setRegisterInput(result));
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
     if (errors) {
@@ -75,7 +76,14 @@ const Register = () => {
     // Or you can work with it as a plain object:
     const registerJson = Object.fromEntries(formData.entries());
 
+    delete registerJson.confirmPassword;
+
+    console.log(registerJson);
+
     dispatch(setRegisterInput(registerJson));
+
+    // const apiResult = await axios.get("http://localhost:6001/users");
+    // console.log(apiResult);
 
     dispatch(setScreenMode(1));
     console.log(screenMode);

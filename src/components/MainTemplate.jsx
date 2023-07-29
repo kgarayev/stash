@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Name from "./Name";
 import Menu from "./Menu";
 import { Link, useNavigate } from "react-router-dom";
@@ -18,6 +18,12 @@ import Footer from "./Footer";
 
 const MainTemplate = (props) => {
   const [menuVisibility, setMenuVisibility] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => {
+      dispatch(setScreenMode(0));
+    }, 1500);
+  });
 
   const { component } = props;
   const dispatch = useDispatch();
