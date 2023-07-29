@@ -82,8 +82,15 @@ const Register = () => {
 
     dispatch(setRegisterInput(registerJson));
 
-    // const apiResult = await axios.get("http://localhost:6001/users");
-    // console.log(apiResult);
+    try {
+      const { data } = await axios.post("http://localhost:6001/users", {
+        ...registerJson,
+      });
+
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
 
     dispatch(setScreenMode(1));
     console.log(screenMode);
