@@ -1,5 +1,5 @@
 // importing react, components and libraries
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "./Button";
@@ -23,15 +23,17 @@ import StatusUpdate from "./StatusUpdate";
 // register component
 
 const Register = () => {
+  const [input, setInput] = useState();
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const errors = useSelector(selectErrors);
-  const input = useSelector(selectRegisterInput);
+  // const input = useSelector(selectRegisterInput);
   const screenMode = useSelector(selectScreenMode);
 
   const errorMessage = {
     message: "ensure data is entered correctly",
-    progressColor: "#5d0000",
+    progressColor: "#c90909",
   };
 
   // console.log(screenMode);
@@ -44,8 +46,12 @@ const Register = () => {
     // validate
     localErrors = await validate(result, "register");
 
+    // delete result.password;
+    // delete result.confirmPassword;
+
     dispatch(setErrors(localErrors));
-    dispatch(setRegisterInput(result));
+    setInput(result);
+    // dispatch(setRegisterInput(result));
   };
 
   const onSubmit = async (e) => {
@@ -76,11 +82,12 @@ const Register = () => {
     // Or you can work with it as a plain object:
     const registerJson = Object.fromEntries(formData.entries());
 
+    // Or you can work with it as a plain object:
+    // const registerJsonString = JSON.stringify(registerJson);
+
     delete registerJson.confirmPassword;
-
     console.log(registerJson);
-
-    dispatch(setRegisterInput(registerJson));
+    // dispatch(setRegisterInput(registerJson));
 
     try {
       const { data } = await axios.post("http://localhost:6001/user/register", {
@@ -104,7 +111,7 @@ const Register = () => {
         if (data.reason.toLowerCase().includes("duplicate")) {
           toastTrigger({
             message: "email or phone number already registered",
-            progressColor: "#5d0000",
+            progressColor: "#c90909",
           });
           return;
         }
@@ -117,7 +124,7 @@ const Register = () => {
       console.log(error);
       toastTrigger({
         message: "something has gone wrong",
-        progressColor: "#5d0000",
+        progressColor: "#c90909",
       });
       return;
     }

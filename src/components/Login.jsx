@@ -1,5 +1,6 @@
 // importing react, components and libraries
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import Button from "./Button";
 import Input from "./Input";
@@ -19,15 +20,17 @@ import "../stylesheets/RegisterLogin.css";
 // main login component
 
 const Login = () => {
+  const [input, setInput] = useState();
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const errors = useSelector(selectErrors);
-  const input = useSelector(selectLoginInput);
+  // const input = useSelector(selectLoginInput);
   let localErrors = null;
 
   const errorMessage = {
     message: "incorrect email or password",
-    progressColor: "#5d0000",
+    progressColor: "#c90909",
   };
 
   const onInput = async (e) => {
@@ -37,10 +40,11 @@ const Login = () => {
     localErrors = await validate(result, "login");
 
     dispatch(setErrors(localErrors));
-    dispatch(setLoginInput(result));
+    setInput(result);
+    // dispatch(setLoginInput(result));
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
     if (errors) {
@@ -67,10 +71,42 @@ const Login = () => {
     // Or you can work with it as a plain object:
     const loginJson = Object.fromEntries(formData.entries());
 
-    dispatch(setLoginInput(loginJson));
+    // dispatch(setLoginInput(loginJson));
 
-    // Change the route to "/main"
-    navigate("/main");
+    try {
+      const { data } = await axios.post("http://localhost:6001/user/login", {
+        ...loginJson,
+      });
+
+      console.log(data);
+
+      if (data.status === 1) {
+        toastTrigger({
+          message: "login successful",
+          progressColor: "#007b60",
+        });
+
+        // Change the route to "/main"
+        navigate("/main");
+
+        return;
+      } else {
+        console.log(data.reason);
+
+        toastTrigger({
+          message: data.reason,
+          progressColor: "#c90909",
+        });
+        return;
+      }
+    } catch (error) {
+      console.log(error);
+
+      toastTrigger({
+        message: "something has gone wrong",
+        progressColor: "#c90909",
+      });
+    }
   };
 
   return (
