@@ -50,7 +50,7 @@ const Toast = () => {
         borderRadius: "1rem",
         margin: "0.5rem",
         fontSize: "1.4rem",
-        height: "4rem", // Adjust the height as per your requirement
+        height: "7rem", // Adjust the height as per your requirement
         paddingBottom: "1rem",
         boxShadow: "0rem 0rem 0.2rem 0.2rem rgba(0, 0, 0, 0.1)", // Add box shadow for a more defined shadow effect
       }}

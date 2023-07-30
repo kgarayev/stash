@@ -100,10 +100,25 @@ const Register = () => {
         return;
       } else {
         console.log(data.reason);
+
+        if (data.reason.toLowerCase().includes("duplicate")) {
+          toastTrigger({
+            message: "email or phone number already registered",
+            progressColor: "#5d0000",
+          });
+          return;
+        }
+
+        toastTrigger(errorMessage);
+
         return;
       }
     } catch (error) {
       console.log(error);
+      toastTrigger({
+        message: "something has gone wrong",
+        progressColor: "#5d0000",
+      });
       return;
     }
   };
