@@ -76,3 +76,7 @@
 .altRouteText:hover {
   text-decoration: underline;
 }
+
+.resetLink {
+  text-align: center;
+}

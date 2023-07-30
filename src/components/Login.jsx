@@ -94,7 +94,7 @@ const Login = () => {
         console.log(data.reason);
 
         toastTrigger({
-          message: data.reason,
+          message: "incorrect email or password",
           progressColor: "#c90909",
         });
         return;
@@ -144,6 +144,12 @@ const Login = () => {
             ></Input>
             <p className="errorMessage">{errors && errors.password}</p>
           </div>
+        </div>
+
+        <div className="resetLink">
+          <Link to="/reset">
+            <h2 className="altRouteText">forgotten password?</h2>
+          </Link>
         </div>
 
         <div className="registerButton">
