@@ -88,7 +88,7 @@ const Login = () => {
           progressColor: "#007b60",
         });
 
-        localStorage.setItem("token", data.token);
+        // localStorage.setItem("token", data.token);
 
         // Change the route to "/main"
         navigate("/main");
