@@ -74,7 +74,9 @@ const Login = () => {
     // dispatch(setLoginInput(loginJson));
 
     try {
-      const {data} = await axios.post("http://localhost:6001/user/login", {...loginJson});
+      const {data} = await axios.post("http://localhost:6001/user/login", {...loginJson}, {
+        withCredentials: true
+      });
 
     // const response = await results.json();
 
