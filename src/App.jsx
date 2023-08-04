@@ -10,6 +10,9 @@ import "react-toastify/dist/ReactToastify.css";
 const App = () => {
   const theme = useTheme();
 
+  // possibly a useEffect hook 
+  // has interval to check the token existence 
+
   // importing and rendering toast and interface components
 
   return (

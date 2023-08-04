@@ -15,6 +15,9 @@ const root = createRoot(
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
 );
 
+// add event listener on the container 
+// for any clicks or mouse events 
+
 // setting up Router, theme, provider for store
 
 root.render(

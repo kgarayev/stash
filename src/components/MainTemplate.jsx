@@ -17,17 +17,34 @@ import Footer from "./Footer";
 // main dashboard / home screen component
 
 const MainTemplate = (props) => {
+
+  const navigate = useNavigate();
+
   const [menuVisibility, setMenuVisibility] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
       dispatch(setScreenMode(0));
     }, 1500);
+
+    if (!localStorage.getItem("token")) {
+      console.log(localStorage.getItem("token"));
+      navigate("/login");
+    } else {
+      // render transaction details 
+      // get the data from the backend 
+      // if the toke is there, then check the credentials 
+      // if it doesnt authenticate, then redirect to login 
+      // get all the data necessary then send to store and render to the screen 
+      // important to get the data here and then redirect 
+      // doesnt matter where to get the data 
+      // to destroy the toke is localstorage clear 
+    }
   });
 
   const { component } = props;
   const dispatch = useDispatch();
-  const navigate = useNavigate();
+
 
   const toast = {
     message: "Hello from Main",
