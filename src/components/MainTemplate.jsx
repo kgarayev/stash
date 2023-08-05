@@ -34,31 +34,15 @@ const MainTemplate = (props) => {
         });
         setIsLoading(false);
 
-        console.log(data);
+        // console.log(data);
   
         if (data.status===0) {
           navigate("/login");
-          console.log("doesnt work");
+          // console.log("doesnt work");
           return
         }
-  
         console.log("works fine");
-  
         return
-  
-            // if (!localStorage.getItem("token")) {
-      //   console.log(localStorage.getItem("token"));
-      //   navigate("/login");
-      // } else {
-      //   // render transaction details 
-      //   // get the data from the backend 
-      //   // if the toke is there, then check the credentials 
-      //   // if it doesnt authenticate, then redirect to login 
-      //   // get all the data necessary then send to store and render to the screen 
-      //   // important to get the data here and then redirect 
-      //   // doesnt matter where to get the data 
-      //   // to destroy the toke is localstorage clear 
-      // }
       }
 
      fetchData();
