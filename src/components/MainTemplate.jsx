@@ -3,10 +3,10 @@ import Name from "./Name";
 import Menu from "./Menu";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setToast, setScreenMode, selectScreenMode } from "../store/mainSlice";
-import { toastTrigger } from "../helpers/helpers";
+import { useDispatch, useSelector } from "react-redux";
+import { setToast, setScreenMode, selectScreenMode, setAccount, selectAccount } from "../store/mainSlice";
 import Loading from "./Loading"
+import { toastTrigger } from "../helpers/helpers";
 
 // importing stylesheets
 import logo from "../assets/logos/Logo7.svg";
@@ -23,34 +23,59 @@ const MainTemplate = (props) => {
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [menuVisibility, setMenuVisibility] = useState(false);
+  const account = useSelector(selectAccount);
+
+  const { component } = props;
+  const dispatch = useDispatch();
 
   useEffect(() => {
     setTimeout(() => {
       dispatch(setScreenMode(0));    }, 1500);
 
       const fetchData =async ()=> {
-        const {data} = await axios.get("http://localhost:6001/account/", {
-          withCredentials: true,  // Include credentials
-        });
-        setIsLoading(false);
-
-        // console.log(data);
+        try {
+          const {data} = await axios.get("http://localhost:6001/account/", {
+            withCredentials: true,  // Include credentials
+          });
+          setIsLoading(false);
   
-        if (data.status===0) {
-          navigate("/login");
-          // console.log("doesnt work");
+          console.log(data.result.account_name);
+  
+          const {account_name, account_number, balance, currency_code, currency_country, currency_name, currency_symbol, sort_code } = data.result;
+
+          console.log(account_name);
+
+          const newAccount = {...account, name: account_name, account_name, accountNumber: account_number, balance, currencyCode: currency_code, currencyName: currency_name, currencyCountry: currency_country, currencySymbol: currency_symbol, sortCode: sort_code }
+
+          console.log(newAccount);
+
+          dispatch(setAccount(newAccount));
+
+
+          if (data.status===0) {
+            navigate("/login");
+            // console.log("doesnt work");
+            return
+          }
+          console.log("main template works fine");
           return
+
+        } catch (e) {
+          console.log(e);
+
+          toastTrigger({
+            message: "something has gone wrong",
+            progressColor: "#c90909",
+          });
         }
-        console.log("works fine");
-        return
+       
       }
 
      fetchData();
 
-  });
+  }, []);
 
-  const { component } = props;
-  const dispatch = useDispatch();
+
 
 
   const toast = {
