@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import Name from "./Name";
 import Menu from "./Menu";
+import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { setToast, setScreenMode, selectScreenMode } from "../store/mainSlice";
 import { toastTrigger } from "../helpers/helpers";
+import Loading from "./Loading"
 
 // importing stylesheets
 import logo from "../assets/logos/Logo7.svg";
@@ -19,27 +21,46 @@ import Footer from "./Footer";
 const MainTemplate = (props) => {
 
   const navigate = useNavigate();
-
+  const [isLoading, setIsLoading] = useState(true);
   const [menuVisibility, setMenuVisibility] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
-      dispatch(setScreenMode(0));
-    }, 1500);
+      dispatch(setScreenMode(0));    }, 1500);
 
-    // if (!localStorage.getItem("token")) {
-    //   console.log(localStorage.getItem("token"));
-    //   navigate("/login");
-    // } else {
-    //   // render transaction details 
-    //   // get the data from the backend 
-    //   // if the toke is there, then check the credentials 
-    //   // if it doesnt authenticate, then redirect to login 
-    //   // get all the data necessary then send to store and render to the screen 
-    //   // important to get the data here and then redirect 
-    //   // doesnt matter where to get the data 
-    //   // to destroy the toke is localstorage clear 
-    // }
+      const fetchData =async ()=> {
+        const {data} = await axios.get("http://localhost:6001/account/");
+        setIsLoading(false);
+
+        console.log(data);
+  
+        if (data.status===0) {
+          navigate("/login");
+          console.log("doesnt work");
+          return
+        }
+  
+        console.log("works fine");
+  
+        return
+  
+            // if (!localStorage.getItem("token")) {
+      //   console.log(localStorage.getItem("token"));
+      //   navigate("/login");
+      // } else {
+      //   // render transaction details 
+      //   // get the data from the backend 
+      //   // if the toke is there, then check the credentials 
+      //   // if it doesnt authenticate, then redirect to login 
+      //   // get all the data necessary then send to store and render to the screen 
+      //   // important to get the data here and then redirect 
+      //   // doesnt matter where to get the data 
+      //   // to destroy the toke is localstorage clear 
+      // }
+      }
+
+     fetchData();
+
   });
 
   const { component } = props;
@@ -59,6 +80,10 @@ const MainTemplate = (props) => {
   const onClick = (e) => {
     dispatch(setScreenMode(e.currentTarget.id));
   };
+
+  if(isLoading) {
+    return <Loading/>
+  }
 
   return (
     <>
