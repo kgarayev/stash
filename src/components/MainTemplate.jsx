@@ -37,26 +37,27 @@ const MainTemplate = (props) => {
           const {data} = await axios.get("http://localhost:6001/account/", {
             withCredentials: true,  // Include credentials
           });
+
+          if (data.status === 0) {
+            console.log("Error:", data.reason);
+            navigate("/login");
+            return;
+          }
+
           setIsLoading(false);
   
-          console.log(data.result.account_name);
+          // console.log(data.result.account_name);
   
           const {account_name, account_number, balance, currency_code, currency_country, currency_name, currency_symbol, sort_code } = data.result;
 
-          console.log(account_name);
+          // console.log(account_name);
 
           const newAccount = {...account, name: account_name, account_name, accountNumber: account_number, balance, currencyCode: currency_code, currencyName: currency_name, currencyCountry: currency_country, currencySymbol: currency_symbol, sortCode: sort_code }
 
-          console.log(newAccount);
+          // console.log(newAccount);
 
           dispatch(setAccount(newAccount));
-
-
-          if (data.status===0) {
-            navigate("/login");
-            // console.log("doesnt work");
-            return
-          }
+    
           console.log("main template works fine");
           return
 
