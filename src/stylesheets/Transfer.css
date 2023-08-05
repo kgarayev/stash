@@ -53,3 +53,41 @@
   font-weight: 600;
   color: var(--primary-color);
 }
+
+
+.hubContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.hubContainer h2 {
+  margin-bottom: 3rem;
+}
+
+
+.hubContainer > div {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: center;
+  /* align-items: center; */
+  gap: 2rem;
+}
+
+.macroElement {
+  display: flex;
+  justify-content: space-between;
+}
+
+.macroElement p {
+font-size: 1.25rem;
+}
+
+.loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
