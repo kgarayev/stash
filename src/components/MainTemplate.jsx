@@ -29,7 +29,9 @@ const MainTemplate = (props) => {
       dispatch(setScreenMode(0));    }, 1500);
 
       const fetchData =async ()=> {
-        const {data} = await axios.get("http://localhost:6001/account/");
+        const {data} = await axios.get("http://localhost:6001/account/", {
+          withCredentials: true,  // Include credentials
+        });
         setIsLoading(false);
 
         console.log(data);
