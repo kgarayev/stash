@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import Loading from "./Loading"
+import { toastTrigger } from "../helpers/helpers";
+import { setToast, setScreenMode, selectAccount } from "../store/mainSlice";
 import Name from "./Name";
 import Menu from "./Menu";
-import { Link } from "react-router-dom";
-import { useDispatch } from "react-redux";
-import { setToast, setScreenMode } from "../store/mainSlice";
-import { toastTrigger } from "../helpers/helpers";
+
 
 // importing stylesheets
 import logo from "../assets/logos/Logo7.svg";
@@ -19,9 +22,45 @@ import Footer from "./Footer";
 
 const AltTemplate = (props) => {
   // local state
+  const navigate = useNavigate();
+  const [isLoading, setIsLoading] = useState(true);
   const [menuVisibility, setMenuVisibility] = useState(false);
+
   const { component } = props;
   const dispatch = useDispatch();
+
+  useEffect(() => {
+
+
+      const fetchData =async ()=> {
+        try {
+          const {data} = await axios.get("http://localhost:6001/account/", {
+            withCredentials: true,  // Include credentials
+          });
+          setIsLoading(false);
+  
+          if (data.status===0) {
+            navigate("/login");
+            // console.log("doesnt work");
+            return
+          }
+          console.log("alt template works fine");
+          return
+
+        } catch (e) {
+          console.log(e);
+
+          toastTrigger({
+            message: "something has gone wrong",
+            progressColor: "#c90909",
+          });
+        }
+       
+      }
+
+     fetchData();
+
+  }, []);
 
   // trigger toast
   const toast = {
@@ -38,6 +77,10 @@ const AltTemplate = (props) => {
   const onClick = (e) => {
     dispatch(setScreenMode(e.currentTarget.id));
   };
+
+  if(isLoading) {
+    return <Loading/>
+  }
 
   return (
     <>

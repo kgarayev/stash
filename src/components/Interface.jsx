@@ -1,9 +1,10 @@
-import React from "react";
-import { Routes, Route } from "react-router-dom";
+import React, {useState} from "react";
+import { Routes, Route, useNavigate  } from "react-router-dom";
 import Welcome from "./Welcome";
 import Register from "./Register";
 import Login from "./Login";
 import Error404 from "./Error404";
+
 import Template from "./Template";
 import StatusUpdate from "./StatusUpdate";
 import MainTemplate from "./MainTemplate";
@@ -16,14 +17,18 @@ import Settings from "./Settings";
 import AltTemplate from "./AltTemplate";
 import { useSelector } from "react-redux";
 import { selectScreenMode } from "../store/mainSlice";
+import RedirectToHome from "./RedirectToHome"
 
 // main interface component
 const Interface = () => {
+
   const screenMode = useSelector(selectScreenMode);
 
   // selecting what to show depending on the screen mode
   let registerComponent = <Register />;
   let mainComponent = <Home />;
+
+    
 
   // return depending on the screenmode
   switch (screenMode) {
@@ -87,7 +92,7 @@ const Interface = () => {
         element={<AltTemplate component={<Profile />} />}
       />
 
-      <Route path="*" element={<Error404 />} />
+      <Route path="*" element={<RedirectToHome />} />
     </Routes>
   );
 };
