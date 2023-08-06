@@ -27,18 +27,15 @@ const Menu = (props) => {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.post("http://localhost:6001/user/logout", {
+      const {data} = await axios.post("http://localhost:6001/user/logout", {
         withCredentials: true,  // Include credentials
       });
 
-      console.log(response);
+      console.log(data);
   
-      if (response.status === 200) {
+      if (data.status === 1) {
 
-        document.cookie = 'connect.sid=; Max-Age=-99999999;';
-
-
-
+        document.cookie = 'connect.sid=; Max-Age=-99999999; path=/;';
 
         // Clear any frontend state if necessary
         dispatch(setScreenMode(0));
@@ -48,7 +45,10 @@ const Menu = (props) => {
           progressColor: "#007b60",
         });
 
-        navigate("/");
+        console.log("logged out!");
+
+        navigate("/login");
+        return;
       } else {
         // Handle the error
         console.error('Logout failed');
@@ -57,6 +57,7 @@ const Menu = (props) => {
           message: "something has gone wrong",
           progressColor: "#c90909",
         });
+        return;
       }
     } catch (error) {
       console.error('There was an error logging out', error);
@@ -65,6 +66,7 @@ const Menu = (props) => {
         message: "something has gone wrong",
         progressColor: "#c90909",
       });
+      return;
     }
   };
 
