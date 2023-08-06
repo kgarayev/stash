@@ -5,6 +5,7 @@ import StatusUpdate from "./StatusUpdate";
 import "../stylesheets/RegisterLogin.css";
 import { toastTrigger } from "../helpers/helpers";
 import { validate } from "../validation";
+import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setErrors,
@@ -36,7 +37,7 @@ const DebitCard = () => {
     dispatch(setDebitInput(result));
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
     if (errors) {
@@ -63,13 +64,49 @@ const DebitCard = () => {
     // Or you can work with it as a plain object:
     const registerJson = Object.fromEntries(formData.entries());
 
-    dispatch(setDebitInput(registerJson));
+    console.log(registerJson);
 
-    setLocalScreenMode(1);
+    try {
+      const { data } = await axios.post(
+        "http://localhost:6001/transaction/",
+        { ...registerJson },
+        {
+          withCredentials: true,
+        }
+      );
 
-    setTimeout(() => {
-      setLocalScreenMode(0);
-    }, 1500);
+      if (data.status === 1) {
+        toastTrigger({
+          message: "payment successful",
+          progressColor: "#007b60",
+        });
+
+        dispatch(setDebitInput(registerJson));
+
+        setLocalScreenMode(1);
+
+        setTimeout(() => {
+          setLocalScreenMode(0);
+        }, 1500);
+
+        return;
+      } else {
+        console.log(data.reason);
+
+        toastTrigger({
+          message: "incorrect data",
+          progressColor: "#c90909",
+        });
+        return;
+      }
+    } catch (error) {
+      console.log(error);
+
+      toastTrigger({
+        message: "something has gone wrong",
+        progressColor: "#c90909",
+      });
+    }
   };
 
   if (localScreenMode === 0) {
@@ -77,6 +114,17 @@ const DebitCard = () => {
       <>
         <div>
           <form onSubmit={onSubmit}>
+            <div className="inputContainer">
+              <Input
+                label="amount *"
+                type="string"
+                name="amount"
+                placeholder="£XX.XX"
+                onInput={onInput}
+              ></Input>
+              <p className="errorMessage">{errors && errors.amount}</p>
+            </div>
+
             <div className="inputContainer">
               <Input
                 label="card number *"
@@ -88,7 +136,7 @@ const DebitCard = () => {
               <p className="errorMessage">{errors && errors.cardNumber}</p>
             </div>
 
-            <div>
+            <div className="debitExtras">
               <div className="inputContainer">
                 <Input
                   label="expiry date *"
@@ -113,7 +161,7 @@ const DebitCard = () => {
             </div>
 
             <div className="payButton">
-              <Button text="pay" type="submit" />
+              <Button text="receive" type="submit" />
             </div>
           </form>
         </div>

@@ -178,6 +178,16 @@ export const pay = {
 // for debit card validation
 
 export const debit = {
+  amount: joi
+    .string()
+    .required()
+    .pattern(/^\d+(\.\d{1,2})?$/) // Allows positive decimal numbers with up to 2 decimal places
+    .messages({
+      "string.empty": "amount is required",
+      "string.pattern.base":
+        "amount must be a valid decimal number with up to 2 decimal places",
+    }),
+
   cardNumber: joi.string().creditCard().required().messages({
     "string.empty": "debit card number is required",
     "string.creditCard": "debit card number must be a valid debit card number",

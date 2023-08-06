@@ -54,7 +54,6 @@
   color: var(--primary-color);
 }
 
-
 .hubContainer {
   display: flex;
   flex-direction: column;
@@ -66,7 +65,6 @@
 .hubContainer h2 {
   margin-bottom: 3rem;
 }
-
 
 .hubContainer > div {
   display: flex;
@@ -83,11 +81,24 @@
 }
 
 .macroElement p {
-font-size: 1.25rem;
+  font-size: 1.25rem;
 }
 
 .loading {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.debitExtras {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  /* border: red 0.1rem solid; */
+}
+
+.debitExtras div {
+  width: 100%;
 }

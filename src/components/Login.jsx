@@ -74,13 +74,17 @@ const Login = () => {
     // dispatch(setLoginInput(loginJson));
 
     try {
-      const {data} = await axios.post("http://localhost:6001/user/login", {...loginJson}, {
-        withCredentials: true
-      });
+      const { data } = await axios.post(
+        "http://localhost:6001/user/login",
+        { ...loginJson },
+        {
+          withCredentials: true,
+        }
+      );
 
-    // const response = await results.json();
+      // const response = await results.json();
 
-    // console.log(data);
+      // console.log(data);
 
       if (data.status === 1) {
         toastTrigger({
