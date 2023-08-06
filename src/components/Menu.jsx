@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import Loading from "./Loading";
+import { toastTrigger } from "../helpers/helpers";
 import { useSelector, useDispatch } from "react-redux";
 import {
   selectRegisterInput,
@@ -21,6 +24,49 @@ const Menu = (props) => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const account = useSelector(selectAccount);
+
+  const handleLogout = async () => {
+    try {
+      const response = await axios.post("http://localhost:6001/user/logout", {
+        withCredentials: true,  // Include credentials
+      });
+
+      console.log(response);
+  
+      if (response.status === 200) {
+
+        document.cookie = 'connect.sid=; Max-Age=-99999999;';
+
+
+
+
+        // Clear any frontend state if necessary
+        dispatch(setScreenMode(0));
+
+        toastTrigger({
+          message: "logout successful",
+          progressColor: "#007b60",
+        });
+
+        navigate("/");
+      } else {
+        // Handle the error
+        console.error('Logout failed');
+
+        toastTrigger({
+          message: "something has gone wrong",
+          progressColor: "#c90909",
+        });
+      }
+    } catch (error) {
+      console.error('There was an error logging out', error);
+
+      toastTrigger({
+        message: "something has gone wrong",
+        progressColor: "#c90909",
+      });
+    }
+  };
 
   return (
     <>
@@ -88,10 +134,7 @@ const Menu = (props) => {
             <div className="menuOptionBox">
               <div
                 className="menuOption logOut"
-                onClick={() => {
-                  dispatch(setScreenMode(0));
-                  navigate("/");
-                }}
+                onClick={handleLogout}
               >
                 <div>
                   <ExitToAppOutlinedIcon fontSize="large" />
