@@ -1,5 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TransactionElement from "./TransactionElement";
+import axios from "axios";
+import { toastTrigger } from "../helpers/helpers";
+import Loading from "./Loading";
 
 import { useSelector, useDispatch } from "react-redux";
 import { selectAccount, selectTransactions } from "../store/mainSlice";
@@ -17,6 +20,47 @@ const Transactions = (props) => {
     <ExpandMoreOutlinedIcon fontSize="large" />,
   ]);
 
+  const [transactions, setTransactions] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(()=>{
+    const fetchData = async()=> {
+      try {
+        const {data} = await axios.get("http://localhost:6001/transaction/", {
+          withCredentials: true,  // Include credentials
+        });
+  
+        if (data.status === 0) {
+          console.log("Error:", data.reason);
+          // navigate("/login");
+          return;
+        }
+
+        setTransactions(data.results);
+  
+        setIsLoading(false);
+  
+        console.log("transactions work fine");
+            return;
+  
+        
+      } catch (error) {
+        console.log(error);
+
+        toastTrigger({
+          message: "something has gone wrong",
+          progressColor: "#c90909",
+        });
+      }
+
+
+    }
+
+    fetchData();
+
+
+  }, [])
+
   const onClick = () => {
     if (expanded[0]) {
       setExpanded([false, <ExpandMoreOutlinedIcon fontSize="large" />]);
@@ -25,7 +69,7 @@ const Transactions = (props) => {
     }
   };
 
-  const transactions = useSelector(selectTransactions);
+  // const transactions = useSelector(selectTransactions);
 
   let recentTransactions;
   let remainingTransactions;
@@ -35,7 +79,11 @@ const Transactions = (props) => {
     remainingTransactions = transactions.slice(4);
   } else {
     recentTransactions = [...transactions];
-    remainingTransactions = [...transactions];
+    remainingTransactions = [];
+  }
+
+  if(isLoading) {
+    return <Loading/>
   }
 
   return (

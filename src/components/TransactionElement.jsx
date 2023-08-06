@@ -8,6 +8,25 @@ import SwapHorizontalCircleOutlinedIcon from "@mui/icons-material/SwapHorizontal
 const TransactionElement = (props) => {
   const { element, currencySymbol } = props;
 
+  const formatDate = (sqlTimestamp) => {
+    const date = new Date(sqlTimestamp);
+  
+    const day = String(date.getUTCDate()).padStart(2, '0');
+    const month = String(date.getUTCMonth() + 1).padStart(2, '0'); // Months are 0-indexed, so +1 is necessary
+    const year = date.getUTCFullYear();
+  
+    return `${day}/${month}/${year}`;
+  }
+
+  const formatMoney = (amount) => {
+    const formatter = new Intl.NumberFormat('en-US', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+    return formatter.format(amount);
+  }
+
+
   return (
     <>
       <div className="transactionElement">
@@ -27,14 +46,14 @@ const TransactionElement = (props) => {
 
             <div className="transactionExtra">
               <p>{element.type}</p>
-              <p>{element.date}</p>
+              <p>{formatDate(element.date)}</p>
             </div>
           </div>
         </div>
 
         <div className="elementSection">
           <div>
-            <h3>{currencySymbol + element.amount}</h3>
+            <h3>{currencySymbol + formatMoney(element.amount)}</h3>
           </div>
         </div>
       </div>
