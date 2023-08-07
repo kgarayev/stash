@@ -4,8 +4,14 @@ import Menu from "./Menu";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setToast, setScreenMode, selectScreenMode, setAccount, selectAccount } from "../store/mainSlice";
-import Loading from "./Loading"
+import {
+  setToast,
+  setScreenMode,
+  selectScreenMode,
+  setAccount,
+  selectAccount,
+} from "../store/mainSlice";
+import Loading from "./Loading";
 import { toastTrigger } from "../helpers/helpers";
 
 // importing stylesheets
@@ -19,7 +25,6 @@ import Footer from "./Footer";
 // main dashboard / home screen component
 
 const MainTemplate = (props) => {
-
   const navigate = useNavigate();
   const [isLoading, setIsLoading] = useState(true);
   const [menuVisibility, setMenuVisibility] = useState(false);
@@ -30,54 +35,71 @@ const MainTemplate = (props) => {
 
   useEffect(() => {
     setTimeout(() => {
-      dispatch(setScreenMode(0));    }, 1500);
+      dispatch(setScreenMode(0));
+    }, 1500);
 
-      const fetchData =async ()=> {
-        try {
-          const {data} = await axios.get("http://localhost:6001/account/", {
-            withCredentials: true,  // Include credentials
-          });
+    const fetchData = async () => {
+      try {
+        const { data } = await axios.get("http://localhost:6001/account/", {
+          withCredentials: true, // Include credentials
+        });
 
-          if (data.status === 0) {
-            console.log("Error:", data.reason);
-            navigate("/login");
-            return;
-          }
+        console.log(data);
 
-          setIsLoading(false);
-  
-          // console.log(data.result.account_name);
-  
-          const {account_name, account_number, balance, currency_code, currency_country, currency_name, currency_symbol, sort_code } = data.result;
-
-          // console.log(account_name);
-
-          const newAccount = {...account, name: account_name, account_name, accountNumber: account_number, balance, currencyCode: currency_code, currencyName: currency_name, currencyCountry: currency_country, currencySymbol: currency_symbol, sortCode: sort_code }
-
-          // console.log(newAccount);
-
-          dispatch(setAccount(newAccount));
-    
-          console.log("main template works fine");
-          return
-
-        } catch (e) {
-          console.log(e);
-
-          toastTrigger({
-            message: "something has gone wrong",
-            progressColor: "#c90909",
-          });
+        if (data.status === 0) {
+          console.log("Error:", data.reason);
+          navigate("/login");
+          return;
         }
-       
+
+        setIsLoading(false);
+
+        // console.log(data.result.account_name);
+
+        const {
+          account_name,
+          account_number,
+          balance,
+          currency_code,
+          currency_country,
+          currency_name,
+          currency_symbol,
+          sort_code,
+        } = data.result;
+
+        // console.log(account_name);
+
+        const newAccount = {
+          ...account,
+          name: account_name,
+          account_name,
+          accountNumber: account_number,
+          balance,
+          currencyCode: currency_code,
+          currencyName: currency_name,
+          currencyCountry: currency_country,
+          currencySymbol: currency_symbol,
+          sortCode: sort_code,
+        };
+
+        // console.log(newAccount);
+
+        dispatch(setAccount(newAccount));
+
+        console.log("main template works fine");
+        return;
+      } catch (e) {
+        console.log(e);
+
+        toastTrigger({
+          message: "something has gone wrong",
+          progressColor: "#c90909",
+        });
       }
+    };
 
-     fetchData();
-
+    fetchData();
   }, []);
-
-
-
 
   const toast = {
     message: "Hello from Main",
@@ -93,8 +115,8 @@ const MainTemplate = (props) => {
     dispatch(setScreenMode(e.currentTarget.id));
   };
 
-  if(isLoading) {
-    return <Loading/>
+  if (isLoading) {
+    return <Loading />;
   }
 
   return (

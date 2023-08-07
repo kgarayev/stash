@@ -27,15 +27,14 @@ const Menu = (props) => {
 
   const handleLogout = async () => {
     try {
-      const {data} = await axios.post("http://localhost:6001/user/logout", {
-        withCredentials: true,  // Include credentials
+      const { data } = await axios.post("http://localhost:6001/user/logout", {
+        withCredentials: true, // Include credentials
       });
 
       console.log(data);
-  
-      if (data.status === 1) {
 
-        document.cookie = 'connect.sid=; Max-Age=-99999999; path=/;';
+      if (data.status === 1) {
+        document.cookie = "connect.sid=; Max-Age=-99999999; path=/;";
 
         // Clear any frontend state if necessary
         dispatch(setScreenMode(0));
@@ -51,7 +50,7 @@ const Menu = (props) => {
         return;
       } else {
         // Handle the error
-        console.error('Logout failed');
+        console.error("Logout failed");
 
         toastTrigger({
           message: "something has gone wrong",
@@ -60,7 +59,7 @@ const Menu = (props) => {
         return;
       }
     } catch (error) {
-      console.error('There was an error logging out', error);
+      console.error("There was an error logging out", error);
 
       toastTrigger({
         message: "something has gone wrong",
@@ -134,10 +133,7 @@ const Menu = (props) => {
             </div>
 
             <div className="menuOptionBox">
-              <div
-                className="menuOption logOut"
-                onClick={handleLogout}
-              >
+              <div className="menuOption logOut" onClick={handleLogout}>
                 <div>
                   <ExitToAppOutlinedIcon fontSize="large" />
                 </div>
