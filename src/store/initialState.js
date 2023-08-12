@@ -20,7 +20,6 @@ export const initialState = {
     payeeName: "",
     sortCode: "",
     accountNumber: "",
-    paymentAmount: "",
   },
 
   passwordChange: {
@@ -50,5 +49,6 @@ export const initialState = {
     currencySymbol: "",
     currencyCountry: "",
     balance: "",
+    transactions: [],
   },
 };

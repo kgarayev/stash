@@ -5,6 +5,7 @@ import StatusUpdate from "./StatusUpdate";
 import "../stylesheets/RegisterLogin.css";
 import { toastTrigger } from "../helpers/helpers";
 import { validate } from "../validation";
+import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
 import {
   setErrors,
@@ -36,7 +37,7 @@ const Pay = () => {
 
   let amountCheck;
 
-  if (accountBalance - payInput.paymentAmount < 0) {
+  if (accountBalance - payInput.amount < 0) {
     amountCheck = "amount exceeds balance";
   } else {
     amountCheck = "";
@@ -45,16 +46,19 @@ const Pay = () => {
   let localErrors = null;
 
   const onInput = async (e) => {
+    // console.log(payInput);
     const result = { ...payInput, [e.target.name]: e.target.value };
 
     // validate
     localErrors = await validate(result, "pay");
 
+    // console.log(localErrors);
+
     dispatch(setErrors(localErrors));
     dispatch(setPayInput(result));
   };
 
-  const onSubmit = (e) => {
+  const onSubmit = async (e) => {
     e.preventDefault();
 
     if (errors) {
@@ -62,6 +66,8 @@ const Pay = () => {
       toastTrigger(errorMessage);
       return;
     }
+
+    console.log(errors);
 
     for (let key in payInput) {
       if (payInput[key] === "") {
@@ -87,10 +93,12 @@ const Pay = () => {
     // Or you can work with it as a plain object:
     const registerJson = Object.fromEntries(formData.entries());
 
-    const paymentAmount = registerJson.paymentAmount;
+    console.log(registerJson);
+
+    const amount = registerJson.amount;
     const transactionDetails = registerJson.payeeName;
 
-    let formattedPaymentAmount = parseFloat(paymentAmount).toFixed(2);
+    let formattedPaymentAmount = parseFloat(amount).toFixed(2);
     const decimalPlaces = formattedPaymentAmount.split(".")[1];
 
     if (decimalPlaces && decimalPlaces.length === 1) {
@@ -109,22 +117,63 @@ const Pay = () => {
       .toString()
       .padStart(2, "0")}/${year}`;
 
-    dispatch(setPayInput(registerJson));
-    dispatch(setBalance(accountBalance - paymentAmount));
-    dispatch(
-      setTransactions({
-        type: "sent",
-        details: transactionDetails,
-        date: transactionDate,
-        amount: formattedPaymentAmount,
-      })
-    );
+    const polishedTransaction = {
+      type: "sent",
+      payeeName: transactionDetails,
+      date: transactionDate,
+      amount: formattedPaymentAmount,
+    };
 
-    setLocalScreenMode(1);
+    try {
+      const { data } = await axios.post(
+        "http://localhost:6001/transaction/pay",
+        { ...registerJson },
+        {
+          withCredentials: true,
+        }
+      );
 
-    setTimeout(() => {
-      setLocalScreenMode(0);
-    }, 1500);
+      if (data.status === 1) {
+        toastTrigger({
+          message: "payment successful",
+          progressColor: "#007b60",
+        });
+
+        dispatch(setPayInput(registerJson));
+        dispatch(setBalance(accountBalance - amount));
+        dispatch(
+          setTransactions({
+            type: "sent",
+            details: transactionDetails,
+            date: transactionDate,
+            amount: formattedPaymentAmount,
+          })
+        );
+
+        setLocalScreenMode(1);
+
+        setTimeout(() => {
+          setLocalScreenMode(0);
+        }, 1500);
+
+        return;
+      } else {
+        console.log(data.reason);
+
+        toastTrigger({
+          message: "incorrect data",
+          progressColor: "#c90909",
+        });
+        return;
+      }
+    } catch (error) {
+      console.log(error);
+
+      toastTrigger({
+        message: "something has gone wrong",
+        progressColor: "#c90909",
+      });
+    }
   };
 
   if (localScreenMode === 0) {
@@ -169,12 +218,12 @@ const Pay = () => {
               <Input
                 label="amount *"
                 type="string"
-                name="paymentAmount"
+                name="amount"
                 placeholder="£99.99"
                 onInput={onInput}
               ></Input>
               <p className="errorMessage">
-                {errors && errors.paymentAmount}
+                {errors && errors.amount}
                 {amountCheck}
               </p>
             </div>

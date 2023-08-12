@@ -164,7 +164,7 @@ export const pay = {
       "string.pattern.base": "bank account number must be 8 digits",
     }),
 
-  paymentAmount: joi
+  amount: joi
     .string()
     .required()
     .pattern(/^\d+(\.\d{1,2})?$/) // Allows positive decimal numbers with up to 2 decimal places
