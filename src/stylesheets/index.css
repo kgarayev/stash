@@ -8,7 +8,7 @@
 
 html {
   box-sizing: border-box;
-  font-size: 12px;
+  font-size: 11px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color-scheme: dark light;
@@ -223,13 +223,13 @@ select {
 
 @media screen and (min-width: 500px) {
   html {
-    font-size: 12.5px;
+    font-size: 11.5px;
   }
 }
 
 @media screen and (min-width: 750px) {
   html {
-    font-size: 13.5px;
+    font-size: 12px;
   }
 }
 

@@ -36,19 +36,6 @@
   /* Hide the scrollbar */
   scrollbar-width: thin; /* For Firefox */
   scrollbar-color: transparent transparent; /* For Firefox */
-
-  /* Webkit browsers (Chrome, Safari) */
-  ::-webkit-scrollbar {
-    width: 6px; /* Adjust the width as needed */
-  }
-
-  ::-webkit-scrollbar-track {
-    background: transparent; /* Make the track transparent */
-  }
-
-  ::-webkit-scrollbar-thumb {
-    background-color: transparent; /* Make the thumb (actual scrollbar) transparent */
-  }
 }
 
 .otherHomeContainer {
