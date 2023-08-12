@@ -27,7 +27,7 @@ const Menu = (props) => {
 
   const handleLogout = async () => {
     try {
-      const { data } = await axios.post("http://localhost:6001/user/logout", {
+      const { data } = await axios.post(`${process.env.API_LINK}user/logout`, {
         withCredentials: true, // Include credentials
       });
 

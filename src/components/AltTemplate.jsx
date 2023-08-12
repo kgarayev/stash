@@ -2,12 +2,11 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import Loading from "./Loading"
+import Loading from "./Loading";
 import { toastTrigger } from "../helpers/helpers";
 import { setToast, setScreenMode, selectAccount } from "../store/mainSlice";
 import Name from "./Name";
 import Menu from "./Menu";
-
 
 // importing stylesheets
 import logo from "../assets/logos/Logo7.svg";
@@ -30,36 +29,31 @@ const AltTemplate = (props) => {
   const dispatch = useDispatch();
 
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const { data } = await axios.get(`${process.env.API_LINK}account/`, {
+          withCredentials: true, // Include credentials
+        });
+        setIsLoading(false);
 
-
-      const fetchData =async ()=> {
-        try {
-          const {data} = await axios.get("http://localhost:6001/account/", {
-            withCredentials: true,  // Include credentials
-          });
-          setIsLoading(false);
-  
-          if (data.status===0) {
-            navigate("/login");
-            // console.log("doesnt work");
-            return
-          }
-          console.log("alt template works fine");
-          return
-
-        } catch (e) {
-          console.log(e);
-
-          toastTrigger({
-            message: "something has gone wrong",
-            progressColor: "#c90909",
-          });
+        if (data.status === 0) {
+          navigate("/login");
+          // console.log("doesnt work");
+          return;
         }
-       
+        console.log("alt template works fine");
+        return;
+      } catch (e) {
+        console.log(e);
+
+        toastTrigger({
+          message: "something has gone wrong",
+          progressColor: "#c90909",
+        });
       }
+    };
 
-     fetchData();
-
+    fetchData();
   }, []);
 
   // trigger toast
@@ -78,8 +72,8 @@ const AltTemplate = (props) => {
     dispatch(setScreenMode(e.currentTarget.id));
   };
 
-  if(isLoading) {
-    return <Loading/>
+  if (isLoading) {
+    return <Loading />;
   }
 
   return (

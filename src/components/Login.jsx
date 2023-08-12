@@ -75,7 +75,7 @@ const Login = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:6001/user/login",
+        `${process.env.API_LINK}user/login`,
         { ...loginJson },
         {
           withCredentials: true,

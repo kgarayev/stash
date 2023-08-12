@@ -137,7 +137,7 @@ const Pay = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:6001/transaction/pay",
+        `${process.env.API_LINK}transaction/pay`,
         { ...registerJson },
         {
           withCredentials: true,

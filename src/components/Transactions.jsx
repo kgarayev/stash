@@ -26,9 +26,12 @@ const Transactions = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get("http://localhost:6001/transaction/", {
-          withCredentials: true, // Include credentials
-        });
+        const { data } = await axios.get(
+          `${process.env.API_LINK}transaction/`,
+          {
+            withCredentials: true, // Include credentials
+          }
+        );
 
         if (data.status === 0) {
           console.log("Error:", data.reason);

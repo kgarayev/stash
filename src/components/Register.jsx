@@ -90,9 +90,12 @@ const Register = () => {
     // dispatch(setRegisterInput(registerJson));
 
     try {
-      const { data } = await axios.post("http://localhost:6001/user/register", {
-        ...registerJson,
-      });
+      const { data } = await axios.post(
+        `${process.env.API_LINK}user/register`,
+        {
+          ...registerJson,
+        }
+      );
 
       console.log(data);
 

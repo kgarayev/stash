@@ -40,7 +40,7 @@ const MainTemplate = (props) => {
 
     const fetchData = async () => {
       try {
-        const { data } = await axios.get("http://localhost:6001/account/", {
+        const { data } = await axios.get(`${process.env.API_LINK}account/`, {
           withCredentials: true, // Include credentials
         });
 

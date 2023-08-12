@@ -71,7 +71,7 @@ const DebitCard = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:6001/transaction/receive",
+        `${process.env.API_LINK}transaction/receive`,
         { ...registerJson },
         {
           withCredentials: true,
