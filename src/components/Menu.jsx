@@ -27,9 +27,12 @@ const Menu = (props) => {
 
   const handleLogout = async () => {
     try {
-      const { data } = await axios.post(`${process.env.API_LINK}user/logout`, {
-        withCredentials: true, // Include credentials
-      });
+      const { data } = await axios.post(
+        `${import.meta.env.VITE_API_LINK}user/logout`,
+        {
+          withCredentials: true, // Include credentials
+        }
+      );
 
       console.log(data);
 

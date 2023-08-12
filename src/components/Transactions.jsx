@@ -27,7 +27,7 @@ const Transactions = (props) => {
     const fetchData = async () => {
       try {
         const { data } = await axios.get(
-          `${process.env.API_LINK}transaction/`,
+          `${import.meta.env.VITE_API_LINK}transaction/`,
           {
             withCredentials: true, // Include credentials
           }

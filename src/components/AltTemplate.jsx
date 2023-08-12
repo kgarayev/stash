@@ -31,9 +31,12 @@ const AltTemplate = (props) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const { data } = await axios.get(`${process.env.API_LINK}account/`, {
-          withCredentials: true, // Include credentials
-        });
+        const { data } = await axios.get(
+          `${import.meta.env.VITE_API_LINK}account/`,
+          {
+            withCredentials: true, // Include credentials
+          }
+        );
         setIsLoading(false);
 
         if (data.status === 0) {

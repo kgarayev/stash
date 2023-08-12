@@ -91,7 +91,7 @@ const Register = () => {
 
     try {
       const { data } = await axios.post(
-        `${process.env.API_LINK}user/register`,
+        `${import.meta.env.VITE_API_LINK}user/register`,
         {
           ...registerJson,
         }

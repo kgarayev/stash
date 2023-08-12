@@ -17,7 +17,7 @@ const HubContent = () => {
       const country = await axios.get(
         "https://api.api-ninjas.com/v1/country?name=United Kingdom",
         {
-          headers: { "X-Api-Key": process.env.API_LINK },
+          headers: { "X-Api-Key": import.meta.env.VITE_X_API_KEY },
         }
       );
 
@@ -26,7 +26,7 @@ const HubContent = () => {
       const inflation = await axios.get(
         "https://api.api-ninjas.com/v1/inflation?country=Great Britain",
         {
-          headers: { "X-Api-Key": process.env.API_LINK },
+          headers: { "X-Api-Key": import.meta.env.VITE_X_API_KEY },
         }
       );
 
@@ -37,7 +37,7 @@ const HubContent = () => {
       const interest = await axios.get(
         "https://api.api-ninjas.com/v1/interestrate?name=British",
         {
-          headers: { "X-Api-Key": process.env.API_LINK },
+          headers: { "X-Api-Key": import.meta.env.VITE_X_API_KEY },
         }
       );
 
