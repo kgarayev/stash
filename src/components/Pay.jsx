@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Input from "./Input";
 import Button from "./Button";
 import StatusUpdate from "./StatusUpdate";
@@ -29,6 +29,17 @@ const Pay = () => {
   const errors = useSelector(selectErrors);
   const payInput = useSelector(selectPayInput);
   const accountBalance = useSelector(selectAccount).balance;
+
+  useEffect(() => {
+    dispatch(
+      setPayInput({
+        payeeName: "",
+        sortCode: "",
+        accountNumber: "",
+        amount: "",
+      })
+    );
+  }, []);
 
   const errorMessage = {
     message: "ensure the entered data is correct",
