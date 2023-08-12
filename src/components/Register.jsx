@@ -106,15 +106,15 @@ const Register = () => {
 
         return;
       } else {
-        console.log(data.reason);
+        console.log(data);
 
-        if (data.reason.toLowerCase().includes("duplicate")) {
-          toastTrigger({
-            message: "email or phone number already registered",
-            progressColor: "#c90909",
-          });
-          return;
-        }
+        // if (data.reason.toLowerCase().includes("duplicate")) {
+        //   toastTrigger({
+        //     message: "email or phone number already registered",
+        //     progressColor: "#c90909",
+        //   });
+        //   return;
+        // }
 
         toastTrigger(errorMessage);
 
