@@ -12,11 +12,14 @@ import {
   selectErrors,
   setDebitInput,
   selectDebitInput,
+  setBalance,
+  selectAccount,
 } from "../store/mainSlice";
 
 const DebitCard = () => {
   const [localScreenMode, setLocalScreenMode] = useState(0);
   const dispatch = useDispatch();
+  const account = useSelector(selectAccount);
   const errors = useSelector(selectErrors);
   const debitInput = useSelector(selectDebitInput);
 
@@ -68,7 +71,7 @@ const DebitCard = () => {
 
     try {
       const { data } = await axios.post(
-        "http://localhost:6001/transaction/",
+        "http://localhost:6001/transaction/receive",
         { ...registerJson },
         {
           withCredentials: true,
@@ -80,6 +83,8 @@ const DebitCard = () => {
           message: "payment successful",
           progressColor: "#007b60",
         });
+
+        dispatch(setBalance(account.balance + registerJson.amount));
 
         dispatch(setDebitInput(registerJson));
 

@@ -23,13 +23,13 @@ const Transactions = (props) => {
   const [transactions, setTransactions] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  useEffect(()=>{
-    const fetchData = async()=> {
+  useEffect(() => {
+    const fetchData = async () => {
       try {
-        const {data} = await axios.get("http://localhost:6001/transaction/", {
-          withCredentials: true,  // Include credentials
+        const { data } = await axios.get("http://localhost:6001/transaction/", {
+          withCredentials: true, // Include credentials
         });
-  
+
         if (data.status === 0) {
           console.log("Error:", data.reason);
           // navigate("/login");
@@ -37,13 +37,11 @@ const Transactions = (props) => {
         }
 
         setTransactions(data.results);
-  
+
         setIsLoading(false);
-  
+
         console.log("transactions work fine");
-            return;
-  
-        
+        return;
       } catch (error) {
         console.log(error);
 
@@ -52,14 +50,10 @@ const Transactions = (props) => {
           progressColor: "#c90909",
         });
       }
-
-
-    }
+    };
 
     fetchData();
-
-
-  }, [])
+  }, []);
 
   const onClick = () => {
     if (expanded[0]) {
@@ -82,8 +76,8 @@ const Transactions = (props) => {
     remainingTransactions = [];
   }
 
-  if(isLoading) {
-    return <Loading/>
+  if (isLoading) {
+    return <Loading />;
   }
 
   return (

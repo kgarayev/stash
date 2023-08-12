@@ -99,7 +99,7 @@ const MainTemplate = (props) => {
     };
 
     fetchData();
-  }, []);
+  }, [account.balance]);
 
   const toast = {
     message: "Hello from Main",
