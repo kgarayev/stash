@@ -77,7 +77,7 @@ const Transactions = (props) => {
   }
 
   if (isLoading) {
-    return <Loading />;
+    return <p style={{ textAlign: "center" }}>no transactions</p>;
   }
 
   return (
