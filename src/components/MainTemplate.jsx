@@ -65,6 +65,10 @@ const MainTemplate = (props) => {
           currency_name,
           currency_symbol,
           sort_code,
+          first_name,
+          last_name,
+          dob,
+          number,
         } = data.result;
 
         // console.log(account_name);
@@ -80,6 +84,10 @@ const MainTemplate = (props) => {
           currencyCountry: currency_country,
           currencySymbol: currency_symbol,
           sortCode: sort_code,
+          firstName: first_name,
+          lastName: last_name,
+          dob,
+          phoneNumber: number,
         };
 
         // console.log(newAccount);
