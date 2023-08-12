@@ -26,7 +26,7 @@ const Transfer = () => {
           <h1>Pay & Receive</h1>
         </div>
 
-        <div className="homeContainer">
+        <div className="otherHomeContainer">
           <div className="accountHeader">
             <div className="transferControls">
               <div>

@@ -6,7 +6,8 @@
   flex-direction: column;
   height: 100%;
   overflow-y: none;
-  margin-bottom: 12rem;
+  /* margin-bottom: 12rem; */
+  /* padding-bottom: 20rem; */
   margin-top: 6rem;
 }
 
@@ -26,6 +27,60 @@
   width: 100%;
   max-width: 700px;
   align-self: center;
+  /* margin-bottom: 50rem; */
+  /* border: 0.1rem solid red; */
+  min-height: 475px;
+  max-height: 475px;
+  overflow-y: auto;
+
+  /* Hide the scrollbar */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: transparent transparent; /* For Firefox */
+
+  /* Webkit browsers (Chrome, Safari) */
+  ::-webkit-scrollbar {
+    width: 6px; /* Adjust the width as needed */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent; /* Make the track transparent */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Make the thumb (actual scrollbar) transparent */
+  }
+}
+
+.otherHomeContainer {
+  background-color: #f5f5f5;
+  border-radius: var(--border-radius-2);
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 700px;
+  align-self: center;
+  /* margin-bottom: 50rem; */
+  /* border: 0.1rem solid red; */
+
+  overflow-y: auto;
+
+  /* Hide the scrollbar */
+  scrollbar-width: thin; /* For Firefox */
+  scrollbar-color: transparent transparent; /* For Firefox */
+
+  /* Webkit browsers (Chrome, Safari) */
+  ::-webkit-scrollbar {
+    width: 6px; /* Adjust the width as needed */
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent; /* Make the track transparent */
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: transparent; /* Make the thumb (actual scrollbar) transparent */
+  }
 }
 
 .currencyIcon {
@@ -41,6 +96,7 @@
 
 .transactionsMain {
   padding-right: 0.5rem;
+  /* overflow-y: scroll; */
 }
 
 .transactionsMainHeader {
@@ -113,6 +169,7 @@ form {
 
   .homeContainer {
     max-width: 750px;
+    min-height: 550px;
   }
 }
 

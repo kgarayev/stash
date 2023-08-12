@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Loading from "./Loading";
 import HubContent from "./HubContent";
@@ -10,9 +10,6 @@ import "../stylesheets/Button.css";
 // hub component
 
 const Hub = () => {
-  
-
-
   return (
     <>
       <div className="mainHomeContainer">
@@ -20,10 +17,10 @@ const Hub = () => {
           <h1>Hub</h1>
         </div>
 
-        <div className="homeContainer">
+        <div className="otherHomeContainer">
           <div className="accountHeader">
             <div className="hubContainer">
-              <HubContent/>
+              <HubContent />
             </div>
           </div>
         </div>
