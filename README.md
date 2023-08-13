@@ -26,12 +26,11 @@ Stash is a user-friendly fintech web app designed to assist users in managing th
 
 ## :gear: Core Features
 
-- User registration, GBP account setup, and transaction capabilities.
-- Profile editing, password resets, and notification management.
-- Responsive design, ensuring accessibility across devices.
-- Joi Validator ensures robust form validation on both ends.
-- Local storage capabilities for improved user experience and data retention.
-- Security features built-in, ensuring user data protection.
+- Transactions: Enables users to pay and receive money seamlessly.
+- Hub Section: Delivers insights on UK macroeconomic data, including interest rates and inflation.
+- User Management: Features like registration, GBP account setup, profile editing, and more.
+- Responsive Design: Guarantees flawless access across various devices.
+- Security: Robust form validation and implemented protective measures against potential security threats.
   
 ## :bust_in_silhouette: Creator's Note
 
@@ -52,12 +51,15 @@ Stash's aesthetic appeal is a testament to detailed craftsmanship. Primarily sty
 - Custom logo and CSS stylings for unique aesthetics
 - Advanced form validation processes using Joi Validator
 - Local storage integration for superior user experiences
+- The "hub" section offering insights into macroeconomic data.
 - Version control established via Git
   
 #### :zap: Future Scope:
 
-- Integration of TypeScript for better type safety
-- Enhanced features like autocomplete, transaction filtering, and analytics
-- Incorporate mechanisms for share trading within the platform
+-Enhancements: Improve the "hub" section with financial news, goal setting, financial planning features.
+- Stocks & Crypto: Introduce tools for buying/selling shares and cryptocurrencies.
+- Integrations: Implementation of multi-factor authentication, OAuth, third-party integrations, and WebSocket for live chat support.
+- Code Base: Consider using TypeScript for enhanced type safety.
+- Functionalities: Additional features like autocomplete, transaction filtering, and analytics visualisation.
 
 Stash is a testament to the dedication and skill of its creator, Kanan Garayev. Serving currently as an MVP, it already showcases robust functionalities and a promise of more to come. 
