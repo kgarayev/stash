@@ -1,58 +1,63 @@
 # :moneybag: Stash - Fintech Web App :chart_with_upwards_trend:
 
-## :computer: Tech Used
+## :computer: Tech Stack
 
-- Frontend: React.js
-- Backend: Node.js
-- State Management: Redux Toolkit
-- UI Library: Material-UI
-- Responsiveness: Fully Responsive Design
-- UX/UI Design: Collaboration with a UX Designer
-- Logo Design: Created by Myself
-- Form Validation: Joi Validator
-- Local Storage: Utilised for Functionality
-- Version Control: Git
-- CSS: Custom Styling with Some Material-UI Components
-- Testing: Eslint and Vitest
+- **Frontend**: React.js (Functional React components)
+- **Backend**: Node.js and Express.js using TypeScript
+- **State Management**: Redux Toolkit
+- **Database**: MySQL relational database (hosted separately)
+- **UI Library**: Material-UI
+- **Responsiveness**: Fully Responsive Design
+- **UX/UI Design**: Collaborated with Tahmina Mustafayeva, a gifted UX/UI designer
+- **Logo Design**: Created by Myself
+- **Form Validation**: Joi Validator (both front and backend)
+- **Authentication**: Token-based
+- **Security**: Implemented security measures to safeguard user data
+- **Integration**: Played with third-party open banking integration using TrueLayer (in development phase)
+- **Local Storage**: Used for persistence and enhanced functionality
+- **Version Control**: Git
+- **CSS**: Custom Styling with some Material-UI components integrated
+- **Testing**: Eslint, Vitest, and Jest
+- **Deployment**: Hosted in the cloud on Render
 
-## :book: Overview
+## :book: About Stash
 
-Stash is a full-scale functional fintech web app built using React.js on the frontend and Node.js on the backend. It provides users with the ability to register, set up a GBP account, and perform payments and money transfers. Users can also view and edit their details, change passwords, and manage notifications. Stash is an MVP version, and more functionality will be added in the future. The app utilises toasts to generate messages for user interactions.
+Stash is a user-friendly fintech web app designed to assist users in managing their finances. Whether it's setting up a GBP account, making transfers, or editing profile details, Stash provides a seamless experience. While the app presently serves as an MVP version, there's scope for significant future expansions.
 
-## :gear: Functionality
+## :gear: Core Features
 
-Stash leverages the power of React.js and Redux Toolkit for efficient state management and seamless user interactions. It features versatile components that facilitate user registration, account setup, money transactions, and profile management. The app ensures a smooth user experience with responsive design and local storage functionality for data persistence. Stash incorporates various features such as form validation, secure password handling, and notification management.
+- User registration, GBP account setup, and transaction capabilities.
+- Profile editing, password resets, and notification management.
+- Responsive design, ensuring accessibility across devices.
+- Joi Validator ensures robust form validation on both ends.
+- Local storage capabilities for improved user experience and data retention.
+- Security features built-in, ensuring user data protection.
+  
+## :bust_in_silhouette: Creator's Note
 
-## :bust_in_silhouette: Author
+I, Kanan Garayev, envisioned and brought Stash to life during my personal time. Working both on the design and development, I also collaborated with Tahmina Mustafayeva, an expert UX/UI designer, which added a touch of professionalism to the design.
 
-Stash is the brainchild of Kanan Garayev, developed independently during personal time. As the sole developer, Kanan implemented the frontend and backend functionalities, collaborated with a UX designer for UI design, and created the logo. 
+## :art: Design & Responsiveness
 
-## :art: Styling
+Stash's aesthetic appeal is a testament to detailed craftsmanship. Primarily styled using custom CSS, it integrates certain Material-UI components for specific purposes. Responsiveness isn't an afterthought – it's a core feature ensuring the app's fluidity across different devices.
 
-Stash boasts a visually appealing design crafted with attention to detail. The CSS styling is entirely developed from scratch by Kanan, with some exceptions when utilising Material-UI components for specific cases. The app's responsive design ensures seamless user experiences across all devices.
+## :link: Experience Stash
 
-## :link: Link
+### :star: [Stash Web App](https://stash-uwns.onrender.com/) :star:
 
-### :star: [Stash Web App](https://stash-fintech-app.netlify.app/) :star:
+#### :sparkles: Highlights:
 
-#### :sparkles: Main features:
+- Full-scale functional fintech application
+- Efficient state management using Redux Toolkit
+- Custom logo and CSS stylings for unique aesthetics
+- Advanced form validation processes using Joi Validator
+- Local storage integration for superior user experiences
+- Version control established via Git
+  
+#### :zap: Future Scope:
 
-- Registration, GBP account setup, and money transactions
-- Profile management, password change, and notification settings
-- Responsive design for optimal user experience on all devices
-- Full-scale functional fintech web app developed using React.js and Node.js
-- State management using Redux Toolkit for efficient data handling
-- Collaboration with a UX designer for intuitive and user-friendly interfaces
-- Custom logo design and extensive CSS styling by the author
-- Integration of form validation with Joi Validator
-- Utilisation of local storage for enhanced functionality and data persistence
-- Version control with Git for effective collaboration and code management
+- Integration of TypeScript for better type safety
+- Enhanced features like autocomplete, transaction filtering, and analytics
+- Incorporate mechanisms for share trading within the platform
 
-#### :zap: Opportunities for improvement:
-
-- Consider using TypeScript for enhanced type safety in the future
-- Implement additional features such as autocomplete, sorting, and filtering of transactions
-- Incorporate analytics visualisation, including spending graphs, for better insights
-- Introduce functionality for buying and selling shares within the app
-
-Stash represents an impressive achievement by Kanan Garayev, showcasing a full-scale functional fintech web app developed independently. Whilst it currently serves as an MVP, the possibilities for future improvements and enhancements are vast.
+Stash is a testament to the dedication and skill of its creator, Kanan Garayev. Serving currently as an MVP, it already showcases robust functionalities and a promise of more to come. 
