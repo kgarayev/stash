@@ -39,10 +39,15 @@ const MainTemplate = (props) => {
     }, 1500);
 
     const fetchData = async () => {
+      const token = localStorage.getItem("token");
+
       try {
         const { data } = await axios.get(
           `${import.meta.env.VITE_API_LINK}account/`,
           {
+            headers: {
+              token: token,
+            },
             withCredentials: true, // Include credentials
           }
         );

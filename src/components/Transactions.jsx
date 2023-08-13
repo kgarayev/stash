@@ -24,11 +24,16 @@ const Transactions = (props) => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    const token = localStorage.getItem("token");
+
     const fetchData = async () => {
       try {
         const { data } = await axios.get(
           `${import.meta.env.VITE_API_LINK}transaction/`,
           {
+            headers: {
+              token: token,
+            },
             withCredentials: true, // Include credentials
           }
         );

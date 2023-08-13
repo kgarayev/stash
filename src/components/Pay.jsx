@@ -135,12 +135,17 @@ const Pay = () => {
       amount: formattedPaymentAmount,
     };
 
+    const token = localStorage.getItem("token");
+
     try {
       const { data } = await axios.post(
         `${import.meta.env.VITE_API_LINK}transaction/pay`,
         { ...registerJson },
         {
-          withCredentials: true,
+          headers: {
+            token: token,
+          },
+          withCredentials: true, // Include credentials
         }
       );
 

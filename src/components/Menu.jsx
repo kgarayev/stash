@@ -26,10 +26,15 @@ const Menu = (props) => {
   const account = useSelector(selectAccount);
 
   const handleLogout = async () => {
+    const token = localStorage.getItem("token");
+
     try {
       const { data } = await axios.post(
         `${import.meta.env.VITE_API_LINK}user/logout`,
         {
+          headers: {
+            token: token,
+          },
           withCredentials: true, // Include credentials
         }
       );
@@ -37,6 +42,9 @@ const Menu = (props) => {
       console.log(data);
 
       if (data.status === 1) {
+        // Clear token from localStorage
+        localStorage.removeItem("token");
+
         document.cookie = "connect.sid=; Max-Age=-99999999; path=/;";
 
         // Clear any frontend state if necessary

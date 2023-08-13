@@ -86,13 +86,13 @@ const Login = () => {
 
       // console.log(data);
 
-      if (data.status === 1) {
+      if (data.status === 1 && data.token) {
         toastTrigger({
           message: "login successful",
           progressColor: "#007b60",
         });
 
-        // localStorage.setItem("token", data.token);
+        localStorage.setItem("token", data.token);
 
         // Change the route to "/main"
         navigate("/main");
