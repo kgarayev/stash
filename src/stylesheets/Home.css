@@ -5,8 +5,8 @@
   align-items: center;
   flex-direction: column;
   height: 100%;
-  overflow-y: none;
-  /* margin-bottom: 12rem; */
+  overflow-y: auto;
+  margin-bottom: 0;
   /* padding-bottom: 20rem; */
   margin-top: 6rem;
 }
@@ -27,15 +27,17 @@
   width: 100%;
   max-width: 700px;
   align-self: center;
-  /* margin-bottom: 50rem; */
-  /* border: 0.1rem solid red; */
-  min-height: 475px;
-  max-height: 475px;
+
   overflow-y: auto;
 
   /* Hide the scrollbar */
   scrollbar-width: thin; /* For Firefox */
   scrollbar-color: transparent transparent; /* For Firefox */
+}
+
+.mainAccountContainer {
+  min-height: 300px;
+  max-height: 550px;
 }
 
 .otherHomeContainer {

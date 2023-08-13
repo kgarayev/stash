@@ -15,7 +15,7 @@ const Account = () => {
 
   return (
     <>
-      <div className="homeContainer">
+      <div className="homeContainer mainAccountContainer">
         <div className="accountHeader">
           <div>
             <h2>
