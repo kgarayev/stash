@@ -73,12 +73,19 @@ const Login = () => {
 
     // dispatch(setLoginInput(loginJson));
 
+    const token = localStorage.getItem("token");
+
+    console.log(token);
+
     try {
       const { data } = await axios.post(
         `${import.meta.env.VITE_API_LINK}user/login`,
         { ...loginJson },
         {
-          withCredentials: true,
+          headers: {
+            token: token,
+          },
+          withCredentials: true, // Include credentials
         }
       );
 

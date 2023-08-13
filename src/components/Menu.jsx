@@ -28,9 +28,12 @@ const Menu = (props) => {
   const handleLogout = async () => {
     const token = localStorage.getItem("token");
 
+    console.log(token);
+
     try {
       const { data } = await axios.post(
         `${import.meta.env.VITE_API_LINK}user/logout`,
+        {}, // Request body (can be empty for logout)
         {
           headers: {
             token: token,
