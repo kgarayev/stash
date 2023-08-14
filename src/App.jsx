@@ -4,16 +4,12 @@ import Toast from "./components/Toast";
 import "./stylesheets/App.css";
 import "./stylesheets/components.css";
 import theme from "./theme";
+import axios from "axios";
 import { useTheme } from "@mui/material/styles";
 import "react-toastify/dist/ReactToastify.css";
 
 const App = () => {
   const theme = useTheme();
-
-  // possibly a useEffect hook 
-  // has interval to check the token existence 
-
-  // importing and rendering toast and interface components
 
   return (
     <>
