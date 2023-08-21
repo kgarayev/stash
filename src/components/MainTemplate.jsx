@@ -79,7 +79,7 @@ const MainTemplate = (props) => {
           number,
         } = data.result;
 
-        // console.log(account_name);
+        console.log(account_name);
 
         const newAccount = {
           ...account,
