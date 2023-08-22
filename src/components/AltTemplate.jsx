@@ -46,7 +46,7 @@ const AltTemplate = (props) => {
 
         if (data.status === 0) {
           navigate("/login");
-          // console.log("doesnt work");
+          console.log("doesnt work");
           return;
         }
         console.log("alt template works fine");
