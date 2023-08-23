@@ -12,6 +12,8 @@ const Home = () => {
   const dispatch = useDispatch();
   const screenMode = useSelector(selectScreenMode);
 
+  console.log("screenMode");
+
   return (
     <>
       <div className="mainHomeContainer">
