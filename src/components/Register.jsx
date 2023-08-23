@@ -109,7 +109,7 @@ const Register = () => {
 
         return;
       } else {
-        console.log(data);
+        // console.log(data);
 
         toastTrigger({
           message: "email or phone number already registered",
