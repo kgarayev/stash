@@ -1,7 +1,7 @@
 import React from "react";
 import "../stylesheets/Button.css";
 
-// custom button component
+// custom button components
 
 const Button = (props) => {
   const { text, type, textSize, onClick, id } = props;
