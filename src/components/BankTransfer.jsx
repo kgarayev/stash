@@ -20,6 +20,8 @@ const BankTransfer = () => {
 
   let text = `\nBeneficiary: ${account.holderName}\n\nAccount: ${account.accountNumber}\n\nSort Code: ${formattedSortCode}`;
 
+  // check 
+
   // copy to clipboard
   const handleCopy = async () => {
     try {
