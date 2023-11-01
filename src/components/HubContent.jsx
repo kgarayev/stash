@@ -21,16 +21,18 @@ const HubContent = () => {
         }
       );
 
+      console.log(country);
+
       const { unemployment } = country.data[0];
 
       const inflation = await axios.get(
-        "https://api.api-ninjas.com/v1/inflation?country=Great Britain",
+        "https://api.api-ninjas.com/v1/inflation?country=United Kingdom",
         {
           headers: { "X-Api-Key": import.meta.env.VITE_X_API_KEY },
         }
       );
 
-      // console.log(data);
+      console.log(inflation);
 
       const { yearly_rate_pct } = inflation.data[0];
 
@@ -41,7 +43,7 @@ const HubContent = () => {
         }
       );
 
-      // console.log(interest.data);
+      console.log(interest.data);
 
       const { rate_pct, last_updated } = interest.data.central_bank_rates[0];
 
@@ -53,7 +55,7 @@ const HubContent = () => {
       });
       setIsLoading(false);
 
-      // console.log(yearly_rate_pct, last_updated);
+      console.log(yearly_rate_pct, last_updated);
     };
     fetchData();
   }, []);
