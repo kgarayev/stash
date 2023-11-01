@@ -38,6 +38,8 @@ const Transactions = (props) => {
           }
         );
 
+        console.log(data);
+
         if (data.status === 0) {
           console.log("Error:", data.reason);
           // navigate("/login");
@@ -100,7 +102,7 @@ const Transactions = (props) => {
             <TransactionElement
               element={element}
               currencySymbol={currencySymbol}
-              key={`${element.type}-${element.details}-${element.date}-${element.amount}`}
+              key={`${element.type}-${element.details}-${element.created}-${element.amount}`}
             />
           );
         })}

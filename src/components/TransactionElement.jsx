@@ -10,22 +10,21 @@ const TransactionElement = (props) => {
 
   const formatDate = (sqlTimestamp) => {
     const date = new Date(sqlTimestamp);
-  
-    const day = String(date.getUTCDate()).padStart(2, '0');
-    const month = String(date.getUTCMonth() + 1).padStart(2, '0'); // Months are 0-indexed, so +1 is necessary
+
+    const day = String(date.getUTCDate()).padStart(2, "0");
+    const month = String(date.getUTCMonth() + 1).padStart(2, "0"); // Months are 0-indexed, so +1 is necessary
     const year = date.getUTCFullYear();
-  
+
     return `${day}/${month}/${year}`;
-  }
+  };
 
   const formatMoney = (amount) => {
-    const formatter = new Intl.NumberFormat('en-US', {
+    const formatter = new Intl.NumberFormat("en-US", {
       minimumFractionDigits: 2,
       maximumFractionDigits: 2,
     });
     return formatter.format(amount);
-  }
-
+  };
 
   return (
     <>
@@ -46,7 +45,7 @@ const TransactionElement = (props) => {
 
             <div className="transactionExtra">
               <p>{element.type}</p>
-              <p>{formatDate(element.date)}</p>
+              <p>{formatDate(element.created)}</p>
             </div>
           </div>
         </div>
